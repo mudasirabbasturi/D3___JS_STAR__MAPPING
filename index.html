@@ -10,24 +10,14 @@
     <meta name="author" content="WrapTheme, design by: ThemeMakker.com">
 
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="icon" href="assets/images/logo/usstadmin.png">
+    <!-- <link rel="icon" href="assets/images/logo/usstadmin.png"> -->
     <!-- VENDOR CSS -->
     <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
 
-    <link rel="stylesheet" href="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.css">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-datepicker/css/bootstrap-datepicker3.min.css">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-colorpicker/css/bootstrap-colorpicker.css" />
-    <link rel="stylesheet" href="assets/vendor/multi-select/css/multi-select.css">
-    <link rel="stylesheet" href="assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.css">
-    <link rel="stylesheet" href="assets/vendor/nouislider/nouislider.min.css" />
-
-    <!-- Select2 -->
-    <link rel="stylesheet" href="assets/vendor/select2/select2.css" />
-
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="assets/css/main.css">
-    <link rel="stylesheet" href="assets/css/color_skins.css">
+    <link rel="stylesheet" href="css/jquery.datetimepicker.css">
     <link rel="stylesheet" href="assets/css/style.css">
 </head>
 
@@ -37,7 +27,7 @@
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="m-t-30">
-                <img src="assets/images/logo/usstadmin.png" alt="Mudasir Abbas Turi" width="48" height="48">
+                <!-- <img src="assets/images/logo/usstadmin.png" alt="Mudasir Abbas Turi" width="48" height="48"> -->
             </div>
             <p>Please wait...</p>
         </div>
@@ -213,13 +203,155 @@
                     </div>
 
                     <!-- Moment -->
-                    <div class="tab-pane p-l-15 p-r-15" id="moment">
-                        Moment
+                    <div class="tab-pane p-l-15 p-r-15" id="moment"><hr>
+                        <h6><img src="assets/svg/place.svg" alt="">Location:</h6>
+                        <div class="form-group">
+                            <input type="text" 
+                                   class="form-control mb-1 border-top-0 border-left-0 border-right-0 border-dark" 
+                                   id="usr" 
+                                   value="London, Greater London, England, United Kingdom">
+                            <label for="usr">
+                                <small>Search the place of your moment</small>
+                            </label>
+                        </div>
+                        <h6><img src="assets/svg/date.svg" alt="">Date:</h6>
+                        <div class="form-group">
+                            <input type="text" 
+                                   class="form-control mb-1 border-top-0 border-left-0 border-right-0 border-dark" 
+                                   placeholder="" 
+                                   id="datetimepicker2" />
+                            <label for="usr">
+                                <small>Select the date of your moment</small>
+                            </label>
+                        </div>
+                        <h6>
+                            <img src="assets/svg/time.svg" alt="">
+                            Time:
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </h6>
+                        <div class="form-group">
+                            <input type="text" 
+                                    class="form-control mb-1 border-top-0 border-left-0 border-right-0 border-dark" 
+                                    id="datetimepicker1"
+                                    placeholder="Select Time" />
+                            <label for="usr">
+                                <small>Select a specific time (optional). The default time is midnight.</small>
+                            </label>
+                        </div>
+                        <h6>
+                            <img src="assets/svg/coordinates.svg" alt="">
+                            Coordinates:
+                            <label class="switch">
+                                <input type="checkbox">
+                                <span class="slider round"></span>
+                            </label>
+                        </h6>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="number" 
+                                       class="form-control  border-top-0 border-left-0 border-right-0 border-dark" 
+                                       value="0.1276"
+                                       placeholder="" />
+                                <div class="input-group-prepend">
+                                    <select name="cars" class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
+                                        <option value="north">N</option>
+                                        <option value="south">S</option>
+                                      </select>
+                                </div>
+                            </div>
+                            <div class="input-group">
+                                <input type="number" 
+                                       class="form-control  border-top-0 border-left-0 border-right-0 border-dark" 
+                                       value="51.5073"
+                                       placeholder="" />
+                                <div class="input-group-prepend">
+                                    <select name="cars" class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
+                                        <option value="north">E</option>
+                                        <option value="south">W</option>
+                                      </select>
+                                </div>
+                            </div>
+                            <label for="usr">
+                                <small>Note: Changes to the coordinates and cardinals will change the location and the visible night sky.</small>
+                            </label>
+                        </div>
                     </div>
 
                     <!-- Text -->
                     <div class="tab-pane p-l-15 p-r-15" id="text">
-                        Text
+                        <h6><img src="assets/svg/text_messages.svg" alt="">Message:</h6>
+                        <div class="form-group">
+                            <input type="text" 
+                                   class="form-control mb-1 border-top-0 border-left-0 border-right-0 border-dark" 
+                                   id="usr" 
+                                   value="🤍 OUR LUCKY STARS 🤍">
+                            <label for="usr">
+                                <small>Find your sayings here.</small>
+                            </label>
+                        </div>
+                        <h6><img src="assets/svg/text_messages.svg" alt="">Date:</h6>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" 
+                                       class="form-control mb-1 border-top-0 border-left-0 border-right-0 border-dark" 
+                                       id="usr" 
+                                       value="20th September 2021">
+                                <div class="input-group-prepend" style="position: relative;">
+                                    <div class="cus_toggle">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="usr" style="display: inline-block; width: 70%;">
+                                <small>Customize the date text here. Stars position is not affected by this.</small>
+                            </label>
+                        </div>
+                        <h6><img src="assets/svg/text_messages.svg" alt="">Location:</h6>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" 
+                                       class="form-control mb-1 border-top-0 border-left-0 border-right-0 border-dark" 
+                                       id="usr" 
+                                       value="London, United Kingdom">
+                                <div class="input-group-prepend" style="position: relative;">
+                                    <div class="cus_toggle">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="usr" style="display: inline-block; width: 70%;">
+                                <small>Customize the location text here. Stars position is not affected by this.</small>
+                            </label>
+                        </div>
+                        <h6><img src="assets/svg/text_messages.svg" alt="">Coordinates:</h6>
+                        <div class="form-group">
+                            <div class="input-group">
+                                <input type="text" 
+                                       class="form-control mb-1 border-top-0 border-left-0 border-right-0 border-dark" 
+                                       id="usr" 
+                                       value="51.5073° N, 0.1276° W">
+                                <div class="input-group-prepend" style="position: relative;">
+                                    <div class="cus_toggle">
+                                        <label class="switch">
+                                            <input type="checkbox">
+                                            <span class="slider round"></span>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                            <label for="usr" style="display: inline-block; width: 70%;">
+                                <small>Customize the coordinates text here. Stars position is not affected by this.</small>
+                            </label>
+                        </div>
                     </div>
 
                     <!-- Design -->
@@ -585,28 +717,27 @@
 
     <script src="assets/bundles/libscripts.bundle.js"></script>
     <script src="assets/bundles/vendorscripts.bundle.js"></script>
-
-    <script src="assets/vendor/bootstrap-colorpicker/js/bootstrap-colorpicker.js"></script>
-    <!-- Bootstrap Colorpicker Js -->
-    <script src="assets/vendor/jquery-inputmask/jquery.inputmask.bundle.js"></script> <!-- Input Mask Plugin Js -->
-    <script src="assets/vendor/jquery.maskedinput/jquery.maskedinput.min.js"></script>
-    <script src="assets/vendor/multi-select/js/jquery.multi-select.js"></script> <!-- Multi Select Plugin Js -->
-    <script src="assets/vendor/bootstrap-multiselect/bootstrap-multiselect.js"></script>
-    <script src="assets/vendor/bootstrap-datepicker/js/bootstrap-datepicker.min.js"></script>
-    <script src="assets/vendor/bootstrap-tagsinput/bootstrap-tagsinput.js"></script>
-    <!-- Bootstrap Tags Input Plugin Js -->
-    <script src="assets/vendor/nouislider/nouislider.js"></script> <!-- noUISlider Plugin Js -->
-
-    <script src="assets/vendor/select2/select2.min.js"></script> <!-- Select2 Js -->
-
-    <script src="assets/bundles/mainscripts.bundle.js"></script>
-    <script src="assets/js/pages/forms/advanced-form-elements.js"></script>
+    <script src="assets/bundles/mainscripts.bundle.js"></script> 
     <script src="assets/js/index.js"></script>
+    <script src="jquery.datetimepicker.full.js"></script>
     <script>
         function redirectTo(target) {
             $('.new_tab_content .tab-pane').removeClass('active');
             $(target).addClass('active');
         }
+
+        $('#datetimepicker1').datetimepicker({
+            datepicker: false,
+            format: 'H:i',
+            step: 1
+        });
+        
+        $('#datetimepicker2').datetimepicker({
+            lang: 'ch',
+            timepicker: false,
+            format: 'd/m/Y',
+        });
+
     </script>
 </body>
 
