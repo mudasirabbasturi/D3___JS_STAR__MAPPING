@@ -2844,7 +2844,7 @@ html.fullscreen-bg #wrapper {
 }
 
 .layout-fullwidth #wrapper #left-sidebar {
-    left: -250px
+    left: -250px;
 }
 
 .layout-fullwidth #wrapper #left-sidebar.ps {

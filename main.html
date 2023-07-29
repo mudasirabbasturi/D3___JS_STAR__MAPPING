@@ -1,0 +1,234 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>:: Mudasir Abbas Turi :: Home</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta name="description" content="Appas Turi Star Mapping Editor.">
+    <meta name="author" content="Editor Theme, design by: Mudasir Abbas Turi.">
+
+    <!--<link rel="icon" href="favicon.ico" type="image/x-icon">-->
+    <link rel="icon" href="assets/svg/milky-way.svg">
+    <!-- VENDOR CSS -->
+    <link rel="stylesheet" href="assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/vendor/font-awesome/css/font-awesome.min.css">
+
+    <link rel="stylesheet" href="assets/vendor/toastr/toastr.min.css">
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet" href="assets/css/main.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="assets/css/color_skins.css">
+</head>
+
+<body class="theme-cyan">
+
+<!-- Page Loader -->
+<div class="page-loader-wrapper">
+    <div class="loader">
+        <div class="m-t-30"><img src="assets/svg/milky-way.svg" alt="Mudasir Abbas Turi" width="48" height="48"></div>
+        <p>Please wait...</p>        
+    </div>
+</div>
+<!-- Overlay For Sidebars -->
+
+<div id="wrapper">
+
+    <nav class="navbar navbar-fixed-top">
+
+        <div class="container-fluid pb-2 pt-2 shadow-lg bg-white pl-0 pr-0">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link active" data-toggle="tab" href="#menu">
+                        <span class="nav_img">
+                            <img src="assets/svg/style-icon.svg" alt="">
+                        </span>
+                        <span>Style</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#Chat">
+                        <span class="nav_img">
+                            <img src="assets/svg/moment-icon.svg" alt="">
+                        </span>
+                        <span>Moment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#setting">
+                        <span class="nav_img">
+                            <img src="assets/svg/text-icon.svg" alt="">
+                        </span>
+                        <span>Text</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#question">
+                        <span class="nav_img">
+                            <img src="assets/svg/design-icon.svg" alt="">
+                        </span>
+                        <span>Design</span>
+                    </a>
+                </li>              
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#m">
+                        <span class="nav_img">
+                            <img src="assets/svg/product-icon.svg" alt="">
+                        </span>
+                        <span>Product</span>
+                    </a>
+                </li>
+                <li class="nav-item lst_menu">
+                    <a class="nav-link" data-toggle="tab" href="#">
+                        <span class="nav_img">
+                            <div class="navbar-btn">
+                                <button type="button" class="btn-toggle-offcanvas">
+                                    <i class="lnr lnr-menu fa fa-bars"></i>
+                                </button>
+                            </div>
+                        </span>
+                        <span class="menu_text">Menu</span>
+                    </a>
+                </li>          
+            </ul>
+        </div>
+    </nav>
+
+    <div id="left-sidebar" class="sidebar">
+        <div class="pt-5 pb-5 mt-5 mb-5">
+            <!-- Tab panes -->
+            <div class="tab-content p-l-0 p-r-0">
+                <div class="tab-pane active" id="menu">
+                </div>
+                <div class="tab-pane p-l-15 p-r-15" id="Chat">
+                </div>
+                <div class="tab-pane p-l-15 p-r-15" id="setting">
+                    <h6>Choose Skin</h6>
+                    <ul class="choose-skin list-unstyled">
+                        <li data-theme="purple">
+                            <div class="purple"></div>
+                            <span>Purple</span>
+                        </li>                   
+                        <li data-theme="blue">
+                            <div class="blue"></div>
+                            <span>Blue</span>
+                        </li>
+                        <li data-theme="cyan" class="active">
+                            <div class="cyan"></div>
+                            <span>Cyan</span>
+                        </li>
+                        <li data-theme="green">
+                            <div class="green"></div>
+                            <span>Green</span>
+                        </li>
+                        <li data-theme="orange">
+                            <div class="orange"></div>
+                            <span>Orange</span>
+                        </li>
+                        <li data-theme="blush">
+                            <div class="blush"></div>
+                            <span>Blush</span>
+                        </li>
+                    </ul>
+                    <hr>
+                    <h6>General Settings</h6>
+                    <ul class="setting-list list-unstyled">
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox">
+                                <span>Report Panel Usag</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox" checked>
+                                <span>Email Redirect</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox" checked>
+                                <span>Notifications</span>
+                            </label>                      
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox">
+                                <span>Auto Updates</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox">
+                                <span>Offline</span>
+                            </label>
+                        </li>
+                        <li>
+                            <label class="fancy-checkbox">
+                                <input type="checkbox" name="checkbox">
+                                <span>Location Permission</span>
+                            </label>
+                        </li>
+                    </ul>
+                </div>
+                <div class="tab-pane p-l-15 p-r-15" id="question">
+                    <form>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" ><i class="icon-magnifier"></i></span>
+                            </div>
+                            <input type="text" class="form-control" placeholder="Search...">
+                        </div>
+                    </form>
+                    <ul class="list-unstyled question">
+                        <li class="menu-heading">HOW-TO</li>
+                        <li><a href="javascript:void(0);">How to Create Campaign</a></li>
+                        <li><a href="javascript:void(0);">Boost Your Sales</a></li>
+                        <li><a href="javascript:void(0);">Website Analytics</a></li>
+                        <li class="menu-heading">ACCOUNT</li>
+                        <li><a href="javascript:void(0);">Cearet New Account</a></li>
+                        <li><a href="javascript:void(0);">Change Password?</a></li>
+                        <li><a href="javascript:void(0);">Privacy &amp; Policy</a></li>
+                        <li class="menu-heading">BILLING</li>
+                        <li><a href="javascript:void(0);">Payment info</a></li>
+                        <li><a href="javascript:void(0);">Auto-Renewal</a></li>                        
+                        <li class="menu-button m-t-30">
+                            <a href="javascript:void(0);" class="btn btn-primary"><i class="icon-question"></i> Need Help?</a>
+                        </li>
+                    </ul>
+                </div>                
+            </div>          
+        </div>
+    </div>
+
+    <div id="main-content">
+        <div class="container-fluid">
+        </div>
+    </div>
+
+    <div class="fixed_bottom">
+        <div class="container_fluid pt-3 pb-3 pl-2 pr-2">
+            <div class="row">
+                <div class="col-6">
+                    <span>£ 44.00</span><br>
+                    <a href="">Save for later</a>
+                </div>
+                <div class="col-6">
+                    <a href="#" class="btn btn-info float-right">Next.</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+
+<!-- Javascript -->
+<script src="assets/bundles/libscripts.bundle.js"></script>    
+<script src="assets/bundles/vendorscripts.bundle.js"></script>
+<script src="assets/bundles/mainscripts.bundle.js"></script>
+</body>
+
+</html>
