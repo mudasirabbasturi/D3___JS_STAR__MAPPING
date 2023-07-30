@@ -22,6 +22,7 @@
     <link rel="stylesheet" href="css/jquery.datetimepicker.css">
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="assets/css/color_skins.css">
+    <link rel="stylesheet" href="css/new.css">
 </head>
 
 <body class="theme-cyan">
@@ -38,7 +39,7 @@
 
     <div id="wrapper">
 
-        <nav class="navbar navbar-fixed-top">
+        <nav class="navbar navbar-fixed-top" id="nav_bar">
 
             <div class="container-fluid pb-2 pt-2 shadow-lg bg-white pl-0 pr-0">
                 <ul class="nav nav-tabs" id="myTab">
@@ -741,10 +742,18 @@
 
         <div id="main-content">
             <div class="container-fluid">
+                <div class="preview_wrapper" id="preview_wrapper">
+                    <div class="wrapper_shape horizontal" id="vertical"></div>
+                    <!-- 
+                    <div class="wrapper_shape vertical"></div>
+                    <div class="wrapper_shape horizontal"></div>
+                    <div class="wrapper_shape square"></div> 
+                    -->
+                </div>
             </div>
         </div>
 
-        <div class="fixed_bottom">
+        <div class="fixed_bottom" id="fixed_bottom">
             <div class="container_fluid pt-1 pb-1 pl-2 pr-2">
                 <div class="row" style="align-items: center;">
                     <div class="col-6">
@@ -760,13 +769,14 @@
 
     </div>
 
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
+        aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header">
                     <h5 class="modal-title" id="exampleModalCenterTitle">Modal title</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">×</span>
+                        <span aria-hidden="true">×</span>
                     </button>
                 </div>
                 <div class="modal-body">
@@ -786,6 +796,36 @@
     <script src="assets/bundles/mainscripts.bundle.js"></script>
     <script src="jquery.datetimepicker.full.js"></script>
     <script>
+
+        var mainEle = document.getElementById('preview_wrapper')
+
+        var VerticalEle = document.getElementById('vertical')
+        var HorizontalEle = document.getElementById('horizontal')
+        var SquareEle = document.getElementById('square')
+
+        var VerticalEleInitWidth = VerticalEle.offsetWidth
+        var VerticalEleInitHeight = VerticalEle.offsetHeight
+
+        var HorizontalInitHeight = HorizontalEle.offsetHeight
+        var HorizontalInitWidth = HorizontalEle.offsetHeight
+
+        var SquareInitHeight = SquareEle.offsetHeight
+        var SquareInitWidth = SquareEle.offsetHeight
+
+
+        function RationHandler() {
+            if(mainEle.offsetWidth > mainEle.offsetHeight) {
+                VerticalEle.style.width = VerticalEle.offsetHeight / 1.333 + "px"
+            }
+            else if (mainEle.offsetWidth < mainEle.offsetHeight) {
+                VerticalEle.style.width = VerticalEleInitWidth + "px"
+            }
+        }
+
+
+        window.addEventListener("resize", RationHandler);
+
+
         function redirectTo(target) {
             $('.new_tab_content .tab-pane').removeClass('active');
             $(target).addClass('active');
@@ -850,6 +890,7 @@
 
             // Set the initial "Next" button text on page load
             updateNextButtonText();
+
         });
     </script>
 </body>
