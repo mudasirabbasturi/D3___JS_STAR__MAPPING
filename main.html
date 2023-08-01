@@ -23,6 +23,13 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="assets/css/color_skins.css">
     <link rel="stylesheet" href="css/new.css">
+    <style>
+        *,
+        *::after,
+        *::before {
+            font-family: "Segoe UI", Tahoma, sans-serif !important;
+        }
+    </style>
 </head>
 
 <body class="theme-cyan">
@@ -83,16 +90,16 @@
                             <span>Product</span>
                         </a>
                     </li>
-                    <li class="nav-item lst_menu">
+                    <li class="nav-item list_menu btn-toggle-offcanvas" onclick="toggleFunction(this)">
                         <a class="nav-link" data-toggle="tab" href="#">
-                            <span class="nav_img">
-                                <div class="navbar-btn">
-                                    <button type="button" class="btn-toggle-offcanvas">
-                                        <i class="lnr lnr-menu fa fa-bars"></i>
-                                    </button>
+                            <span class="nav_toggle">
+                                <div class="toggle">
+                                    <div class="bar1"></div>
+                                    <div class="bar2"></div>
+                                    <div class="bar3"></div>
                                 </div>
                             </span>
-                            <span class="menu_text">Menu</span>
+                            <span class="menu_text">Form</span>
                         </a>
                     </li>
                 </ul>
@@ -161,19 +168,19 @@
                         <h6>Print Layout</h6>
                         <hr>
                         <div class="image_select_wrapper print_layout">
-                            <div class="image_select type_radio square selected">
+                            <div class="image_select layout_style vertical selected">
                                 <span class="image">
                                     <img src="assets/svg/vertical.svg" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Vertical</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select layout_style horizontal">
                                 <span class="image">
                                     <img src="assets/svg/horizontal.svg" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Horizontal</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select layout_style square">
                                 <span class="image">
                                     <img src="assets/svg/square.svg" alt="img" class="img-fluid">
                                 </span>
@@ -743,12 +750,9 @@
         <div id="main-content">
             <div class="container-fluid">
                 <div class="preview_wrapper" id="preview_wrapper">
-                    <div class="wrapper_shape horizontal" id="vertical"></div>
-                    <!-- 
-                    <div class="wrapper_shape vertical"></div>
-                    <div class="wrapper_shape horizontal"></div>
-                    <div class="wrapper_shape square"></div> 
-                    -->
+                    <div class="wrapper_shape vertical" id="wrapper_shape">
+                        <img src="assets/images/layout/vertical_img.png" alt="" style="width: 100%;height: 100%;">
+                    </div>
                 </div>
             </div>
         </div>
@@ -795,103 +799,26 @@
     <script src="assets/bundles/vendorscripts.bundle.js"></script>
     <script src="assets/bundles/mainscripts.bundle.js"></script>
     <script src="jquery.datetimepicker.full.js"></script>
+    <!-- <script src="main.js"></script> -->
     <script>
 
-        var mainEle = document.getElementById('preview_wrapper')
+        function toggleFunction(x) {
+            x.classList.toggle("rotate")
+        }
+        // JavaScript code
+        const bodyEle = document.getElementsByTagName('body')[0];
+        const liEle = document.getElementsByClassName('nav-item');
 
-        var VerticalEle = document.getElementById('vertical')
-        var HorizontalEle = document.getElementById('horizontal')
-        var SquareEle = document.getElementById('square')
+        for (let i = 0; i < liEle.length; i++) {
+            const clicked = liEle[i];
 
-        var VerticalEleInitWidth = VerticalEle.offsetWidth
-        var VerticalEleInitHeight = VerticalEle.offsetHeight
-
-        var HorizontalInitHeight = HorizontalEle.offsetHeight
-        var HorizontalInitWidth = HorizontalEle.offsetHeight
-
-        var SquareInitHeight = SquareEle.offsetHeight
-        var SquareInitWidth = SquareEle.offsetHeight
-
-
-        function RationHandler() {
-            if(mainEle.offsetWidth > mainEle.offsetHeight) {
-                VerticalEle.style.width = VerticalEle.offsetHeight / 1.333 + "px"
-            }
-            else if (mainEle.offsetWidth < mainEle.offsetHeight) {
-                VerticalEle.style.width = VerticalEleInitWidth + "px"
+            if (i !== liEle.length - 1) {
+                clicked.addEventListener('click', function () {
+                    bodyEle.classList.add('offcanvas-active');
+                });
             }
         }
 
-
-        window.addEventListener("resize", RationHandler);
-
-
-        function redirectTo(target) {
-            $('.new_tab_content .tab-pane').removeClass('active');
-            $(target).addClass('active');
-        }
-
-        $('#datetimepicker1').datetimepicker({
-            datepicker: false,
-            format: 'H:i',
-            step: 1
-        });
-
-        $('#datetimepicker2').datetimepicker({
-            lang: 'ch',
-            timepicker: false,
-            format: 'd/m/Y',
-        });
-
-
-        $(document).ready(function () {
-            // Function to get the next tab
-            function getNextTab() {
-                let activeTab = $("#myTab").find(".nav-link.active");
-                let nextLi = activeTab.parent().next();
-                if (nextLi.length > 0) {
-                    return nextLi.find(".nav-link");
-                }
-                return null;
-            }
-
-            // Function to update the "Next" button text
-            function updateNextButtonText() {
-                let nextTab = getNextTab();
-                if (nextTab) {
-                    $("#next").text("Next");
-                } else {
-                    $("#next").text("Final Preview");
-                }
-            }
-
-            // Click event for the "Next" button
-            $("#next").click(function () {
-                let nextTab = getNextTab();
-                if (nextTab) {
-                    nextTab.tab("show");
-                    updateNextButtonText();
-                } else {
-                    // Handle the case when the last tab is active
-                    // You can put your final preview logic here
-                    $("#exampleModalCenter").modal("show");
-                }
-            });
-
-            // Tab show event to set the active class on the tab
-            $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
-                $(e.target).addClass("active");
-                let prevTab = getNextTab();
-                if (prevTab) {
-                    prevTab.removeClass("active");
-                }
-                updateNextButtonText();
-            });
-
-            // Set the initial "Next" button text on page load
-            updateNextButtonText();
-
-        });
     </script>
 </body>
 
