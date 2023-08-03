@@ -28,6 +28,33 @@
         *::after,
         *::before {
             font-family: "Segoe UI", Tahoma, sans-serif !important;
+            /* font-family: 'Consolas', 'Courier New', monospace !important; */
+        }
+
+        .disabledEdit {
+            /* pointer-events: none;
+            opacity: 0.4;  */
+            position: relative;
+        }
+
+        .disabledEdit::after {
+            content: "";
+            position: absolute;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(249, 250, 251, .8509803922);
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .sml_desc {
+            color: #777;
+            display: inline-block;
+            line-height: 1.4;
+            font-size: 13px;
         }
     </style>
 </head>
@@ -49,7 +76,7 @@
         <nav class="navbar navbar-fixed-top" id="nav_bar">
 
             <div class="container-fluid pb-2 pt-2 shadow-lg bg-white pl-0 pr-0">
-                <ul class="nav nav-tabs" id="myTab">
+                <ul class="nav nav-tabs nav_scroll_horizontally" id="myTab">
                     <li class="nav-item">
                         <a class="nav-link active" data-toggle="tab" href="#style">
                             <span class="nav_img">
@@ -237,7 +264,7 @@
                             <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
                                 id="usr" value="London, Greater London, England, United Kingdom">
                             <label for="usr">
-                                <small>Search the place of your moment</small>
+                                <small class="sml_desc">Search the place of your moment</small>
                             </label>
                         </div>
                         <hr>
@@ -245,9 +272,9 @@
                         <hr>
                         <div class="form-group">
                             <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                                placeholder="" id="datetimepicker2" />
+                                placeholder="01/08/2023" id="datetimepicker2" />
                             <label for="usr">
-                                <small>Select the date of your moment</small>
+                                <small class="sml_desc">Select the date of your moment</small>
                             </label>
                         </div>
                         <hr>
@@ -255,16 +282,18 @@
                             <img src="assets/svg/time.svg" alt="">
                             Time:
                             <label class="switch">
-                                <input type="checkbox">
+                                <input type="checkbox" class="toggleSwitch" data-target="time_moment">
                                 <span class="slider round"></span>
                             </label>
                         </h6>
                         <hr>
-                        <div class="form-group">
-                            <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                                id="datetimepicker1" placeholder="Select Time" />
-                            <label for="usr">
-                                <small>Select a specific time (optional). The default time is midnight.</small>
+                        <div class="form-group disabledEdit" id="time_moment">
+                            <input type="text" id="datetimepicker1"
+                                class="form-control mb-1 border-top-0 border-right-0 border-dark" placeholder="00:00" />
+
+                            <label for="">
+                                <small class="sml_desc">Select a specific time (optional). The default time is
+                                    midnight.</small>
                             </label>
                         </div>
                         <hr>
@@ -272,34 +301,37 @@
                             <img src="assets/svg/coordinates.svg" alt="">
                             Coordinates:
                             <label class="switch">
-                                <input type="checkbox">
+                                <input type="checkbox" class="toggleSwitch" data-target="coordinates_moment">
                                 <span class="slider round"></span>
                             </label>
                         </h6>
                         <hr>
-                        <div class="form-group">
-                            <div class="input-group mb-1">
+                        <div class="form-group disabledEdit" id="coordinates_moment">
+                            <div class="input-group mb-2">
                                 <input type="number" class="form-control  border-top-0 border-right-0 border-dark"
                                     value="0.1276" placeholder="" />
                                 <div class="input-group-prepend">
-                                    <select name="cars" class="custom-select border-top-0 border-left-0 border-right-0">
+                                    <select name="cars"
+                                        class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
                                         <option value="north">N</option>
                                         <option value="south">S</option>
                                     </select>
                                 </div>
                             </div>
-                            <div class="input-group">
+                            <div class="input-group mb-1">
                                 <input type="number" class="form-control border-top-0 border-right-0 border-dark"
                                     value="51.5073" placeholder="" />
                                 <div class="input-group-prepend">
-                                    <select name="cars" class="custom-select border-top-0 border-left-0 border-right-0">
+                                    <select name="cars"
+                                        class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
                                         <option value="north">E</option>
                                         <option value="south">W</option>
                                     </select>
                                 </div>
                             </div>
                             <label for="usr">
-                                <small>Note: Changes to the coordinates and cardinals will change the location and the
+                                <small class="sml_desc">Note: Changes to the coordinates and cardinals will change the
+                                    location and the
                                     visible night sky.</small>
                             </label>
                         </div>
@@ -312,67 +344,67 @@
                             <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
                                 id="usr" value="🤍 OUR LUCKY STARS 🤍">
                             <label for="usr">
-                                <small>Find your sayings here.</small>
+                                <small class="sml_desc">Find your sayings here.</small>
                             </label>
                         </div>
                         <hr>
                         <h6><img src="assets/svg/text_messages.svg" alt="">Date:</h6>
                         <hr>
-                        <div class="form-group">
-                            <div class="input-group">
+                        <div class="form-group disabledEdit" id="time_message">
+                            <div class="input-group align-items-center">
                                 <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
                                     id="usr" value="20th September 2021">
-                                <div class="input-group-prepend" style="position: relative;">
-                                    <div class="cus_toggle">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
+                                <div class="input-group-prepend ml-2 border border-left-0 border-right-0 border-top-0 border-dark"
+                                    style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
+                                    <label class="switch">
+                                        <input type="checkbox" class="toggleSwitch" data-target="time_message">
+                                        <span class="slider round"></span>
+                                    </label>
                                 </div>
                             </div>
                             <label for="usr" style="display: inline-block; width: 70%;">
-                                <small>Customize the date text here. Stars position is not affected by this.</small>
+                                <small class="sml_desc">Customize the date text here. Stars position is not affected by
+                                    this.</small>
                             </label>
                         </div>
                         <hr>
                         <h6><img src="assets/svg/text_messages.svg" alt="">Location:</h6>
                         <hr>
-                        <div class="form-group">
-                            <div class="input-group">
+                        <div class="form-group disabledEdit" id="location_message">
+                            <div class="input-group align-items-center">
                                 <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
                                     id="usr" value="London, United Kingdom">
-                                <div class="input-group-prepend" style="position: relative;">
-                                    <div class="cus_toggle">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
+                                <div class="input-group-prepend ml-2 border border-left-0 border-right-0 border-top-0 border-dark"
+                                    style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
+                                    <label class="switch">
+                                        <input type="checkbox" class="toggleSwitch" data-target="location_message">
+                                        <span class="slider round"></span>
+                                    </label>
                                 </div>
                             </div>
                             <label for="usr" style="display: inline-block; width: 70%;">
-                                <small>Customize the location text here. Stars position is not affected by this.</small>
+                                <small class="sml_desc">Customize the location text here. Stars position is not affected
+                                    by this.</small>
                             </label>
                         </div>
                         <hr>
                         <h6><img src="assets/svg/text_messages.svg" alt="">Coordinates:</h6>
                         <hr>
-                        <div class="form-group">
-                            <div class="input-group">
+                        <div class="form-group disabledEdit" id="coordinates_message">
+                            <div class="input-group align-items-center">
                                 <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
                                     id="usr" value="51.5073° N, 0.1276° W">
-                                <div class="input-group-prepend" style="position: relative;">
-                                    <div class="cus_toggle">
-                                        <label class="switch">
-                                            <input type="checkbox">
-                                            <span class="slider round"></span>
-                                        </label>
-                                    </div>
+                                <div class="input-group-prepend ml-2 border border-left-0 border-right-0 border-top-0 border-dark"
+                                    style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
+                                    <label class="switch">
+                                        <input type="checkbox" class="toggleSwitch" data-target="coordinates_message">
+                                        <span class="slider round"></span>
+                                    </label>
                                 </div>
                             </div>
                             <label for="usr" style="display: inline-block; width: 70%;">
-                                <small>Customize the coordinates text here. Stars position is not affected by
+                                <small class="sml_desc">Customize the coordinates text here. Stars position is not
+                                    affected by
                                     this.</small>
                             </label>
                         </div>
@@ -663,14 +695,14 @@
                                 <h6><small><b>Product Details</b></small></h6>
                                 <hr>
                                 <div class="alert alert-warning" role="alert">
-                                    3 for 2 Offer Order 3 and only pay for 2!
+                                    <small><b>3 for 2 Offer</b> Order 3 and only pay for 2!</small>
                                 </div>
                                 <div class="alert alert-success" role="alert">
-                                    Free Shipping Delivery in 5-7 business days.
+                                    <small><b>Free Shipping</b> Delivery in <b>5-7 business days</b>.</small>
                                 </div>
                                 <p>
                                     <b>Canvas:</b>
-                                    <small>
+                                    <small class="sml_desc">
                                         Our canvases are a finely textured linen fabric (340g/m²) which consistently
                                         reproduces image details with outstanding clarity and detail.
                                         The canvas frame is made of FSC® certified wood.
@@ -678,7 +710,7 @@
                                 </p>
                                 <p>
                                     <b>Edge Finishing:</b>
-                                    <small>
+                                    <small class="sml_desc">
                                         The star map is wrapped around the edges of the canvas frame in the full
                                         background color.
                                     </small>
@@ -689,14 +721,15 @@
                                 <h6><small><b>Product Details</b></small></h6>
                                 <hr>
                                 <div class="alert alert-warning" role="alert">
-                                    3 for 2 Offer Order 3 and only pay for 2!
+                                    <small class="sml_desc"><b>3 for 2 Offer </b> Order 3 and only pay for 2!</small>
                                 </div>
                                 <div class="alert alert-success" role="alert">
-                                    Free Shipping Delivery in 5-7 business days.
+                                    <small class="sml_desc"><b>Free Shipping </b> Delivery in <b>5-7 business
+                                            days</b>.</small>
                                 </div>
                                 <p>
                                     <b>Canvas:</b>
-                                    <small>
+                                    <small class="sml_desc">
                                         Our canvases are a finely textured linen fabric (340g/m²) which consistently
                                         reproduces image details with outstanding clarity and detail.
                                         The canvas frame is made of FSC® certified wood.
@@ -704,7 +737,7 @@
                                 </p>
                                 <p>
                                     <b>Edge Finishing:</b>
-                                    <small>
+                                    <small class="sml_desc">
                                         The star map is wrapped around the edges of the canvas frame in the full
                                         background color.
                                     </small>
@@ -722,20 +755,20 @@
                                 </div>
                                 <p>
                                     <b>Printing Files:</b>
-                                    <small>
+                                    <small class="sml_desc">
                                         Our digital print files are especially useful if you run out of time. Simply
                                         order the digital files and print your star map with a local print shop.
                                     </small>
                                 </p>
                                 <p>
                                     <b>File Formats:</b>
-                                    <small>
+                                    <small class="sml_desc">
                                         You receive your star map as JPG and PDF file.
                                     </small>
                                 </p>
                                 <p>
                                     <b>Resolution:</b>
-                                    <small>
+                                    <small class="sml_desc">
                                         The printing files are in 300 DPI respective to the print size. For example:
                                         50x70 cm has an image size of 5906 x 8268 Pixel (48.84 Megapixel).
                                     </small>
@@ -751,7 +784,28 @@
             <div class="container-fluid">
                 <div class="preview_wrapper" id="preview_wrapper">
                     <div class="wrapper_shape vertical" id="wrapper_shape">
-                        <img src="assets/images/layout/vertical_img.png" alt="" style="width: 100%;height: 100%;">
+                        <img src="assets/images/layout/vertical.png" alt="" style="width: 100%;height: 100%;"
+                            id="shape_image">
+                        <div class="product_wrapper">
+                            <div class="product">
+                                <div class="classic">
+                                    <div class="map_wrapper circle" id="circle">
+                                    </div>
+                                    <div class="wrapper_message">
+                                        <div class="message_heading">
+                                            <h5>🤍 OUR LUCKY STARS 🤍</h5>
+                                        </div>
+                                        <div class="message_desc">
+                                            <small>
+                                                <b id="date">20th September 2021</b>
+                                                <b id="location">London, United Kingdom</b>
+                                                <b id="longitude">51.5073° N, 0.1276° W</b>
+                                            </small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -762,7 +816,7 @@
                 <div class="row" style="align-items: center;">
                     <div class="col-6">
                         <span>£ 44.00</span><br>
-                        <a href="">Save for later</a>
+                        <a href="javascript:void();" style="color: rgb(0, 0, 0) !important;">Save for later</a>
                     </div>
                     <div class="col-6">
                         <a href="javascript:void();" class="btn btn-info float-right" id="next">Next.</a>
@@ -802,22 +856,99 @@
     <!-- <script src="main.js"></script> -->
     <script>
 
+        // function circle() {
+        //     const cirEle = document.getElementById("circle")
+        //     const width = cirEle.offsetWidth
+        //     cirEle.style.width = width + "px"
+        //     cirEle.style.height = width + "px"
+        // }
+        // circle()
+
+        const wrapperShapeEle = document.getElementById("wrapper_shape")
+        const shapeImageEle = document.getElementById("shape_image")
+        const layOutEle = document.getElementsByClassName("layout_style")
+        for (i = 0; i < layOutEle.length; i++) {
+            const clickedEle = layOutEle[i]
+            clickedEle.addEventListener('click', function () {
+                const NamesArray = this.className.split(' ');
+                if (NamesArray.includes('vertical')) {
+                    wrapperShapeEle.classList.add('vertical')
+                    wrapperShapeEle.classList.remove('horizontal')
+                    wrapperShapeEle.classList.remove('square')
+                    shapeImageEle.src = "assets/images/layout/vertical.png"
+                }
+                else if (NamesArray.includes('horizontal')) {
+                    wrapperShapeEle.classList.add('horizontal')
+                    wrapperShapeEle.classList.remove('vertical')
+                    wrapperShapeEle.classList.remove('square')
+                    shapeImageEle.src = "assets/images/layout/horizontal.png"
+                }
+                else if (NamesArray.includes('square')) {
+                    wrapperShapeEle.classList.add('square')
+                    wrapperShapeEle.classList.remove('horizontal')
+                    wrapperShapeEle.classList.remove('vertical')
+                    shapeImageEle.src = "assets/images/layout/square.png"
+                }
+            })
+        }
+
         function toggleFunction(x) {
             x.classList.toggle("rotate")
         }
-        // JavaScript code
+
         const bodyEle = document.getElementsByTagName('body')[0];
         const liEle = document.getElementsByClassName('nav-item');
-
+        const toggleEle = document.querySelector('.list_menu')
+        const classNamesArray = toggleEle.className.split(' ');
         for (let i = 0; i < liEle.length; i++) {
             const clicked = liEle[i];
 
             if (i !== liEle.length - 1) {
-                clicked.addEventListener('click', function () {
+                clicked.removeEventListener('click', function () {
                     bodyEle.classList.add('offcanvas-active');
+                    if (classNamesArray.includes('rotate')) {
+                        return
+                    }
+                    else {
+                        toggleEle.classList.add('rotate')
+                    }
                 });
             }
         }
+
+
+        $(document).ready(function () {
+            var toggleSwitches = $(".toggleSwitch");
+            toggleSwitches.on("click", function () {
+                var targetId = $(this).data("target");
+                var inputField = $("#" + targetId);
+                if ($(this).prop("checked")) {
+                    inputField.removeClass('disabledEdit')
+                } else {
+                    inputField.addClass('disabledEdit')
+                }
+            });
+        });
+
+
+
+
+        function redirectTo(target) {
+            $('.new_tab_content .tab-pane').removeClass('active');
+            $(target).addClass('active');
+        }
+
+        $('#datetimepicker1').datetimepicker({
+            datepicker: false,
+            format: 'H:i',
+            step: 1
+        });
+
+        $('#datetimepicker2').datetimepicker({
+            lang: 'ch',
+            timepicker: false,
+            format: 'd/m/Y',
+        });
 
     </script>
 </body>

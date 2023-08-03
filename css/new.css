@@ -12,16 +12,25 @@
     margin-top: 82px;
 }
 
+.wrapper_shape {
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
 
 .wrapper_shape.vertical {
     max-width: 66.59%;
-    /* max-width: 90%;
-    max-height: 84%; */
     max-height: 84%;
     aspect-ratio: 3/4;
     /* transform: scale(0.8); */
-    transition: height .5s ease-in-out;
+    transition: all .5s ease-in-out;
     /* 0.8,0.93,0.98,1.05 */
+}
+
+@media(max-width: 819px) {
+    .wrapper_shape.vertical {
+        max-width: 90%;
+    }
 }
 
 
@@ -29,8 +38,8 @@
     max-width: 81.710%;
     max-height: 57%;
     aspect-ratio: 4/3;
-    /* transform: scale(0.82); */
-    transition: width .5s ease-in-out;
+    transform: scale(0.82);
+    transition: all .5s ease-in-out;
     /*0.65,0.82,0.87,1 */
 }
 
@@ -38,8 +47,8 @@
     max-width: 66.59%;
     max-height: 66.59%;
     aspect-ratio: 1/1;
-    /* transform: scale(0.82); */
-    transition: width,height .5s ease-in-out;
+    transform: scale(0.82);
+    transition: all .5s ease-in-out;
     /*0.65,0.82 */
 }
 
@@ -53,3 +62,85 @@
         height: 84%;
     } */
 }  
+
+.product_wrapper {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    top: 0;
+    margin: auto;
+    background-color: rgb(0, 0, 0);
+}
+
+.product {
+    height: 100%;
+    position: relative;
+}
+
+.classic, .poet {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 92%;
+    height: 94%;
+    border: 1px solid rgb(255, 255, 255);
+}
+.classic {
+    justify-content: space-around;
+}
+
+.poet {
+    justify-content: space-between;
+}
+
+.map_wrapper {position: relative;}
+
+.vertical .map_wrapper {
+    width: 90%;
+    aspect-ratio: 1/1;
+}
+.horizontal .map_wrapper {
+    width: 55%;
+    aspect-ratio: 1/1;
+}
+
+.square .map_wrapper {
+    width: 70%;
+    aspect-ratio: 1/1;
+}
+
+.map_wrapper.circle {
+    border-radius: 50%;
+    border: 1px solid white;
+}
+
+.wrapper_message {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.message_heading {
+    color: white;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.message_heading h1,h2,h3,h4,h5,h6 {
+    font-size: 1rem;
+}
+
+.message_desc small b {
+    display: block;
+    text-align: center;
+    color: white;
+    font-size: .5rem;
+}
