@@ -105,19 +105,19 @@ var classNamesArray = wrapShapeEle.className.split(' ');
 // }
 
 
-// function ClickEvent() {
-//     const classNamesArray = wrapShapeEle.className.split(' ');
-//     const imageSelectOptions = document.querySelectorAll(".type_radio_layout");
-//     imageSelectOptions.forEach(option => {
-//         option.addEventListener("click", function () {
-//             imageSelectOptions.forEach(opt => opt.classList.remove("selected"));
-//             this.classList.add("selected");
-//             var newClassName = this.classList[2];
-//             wrapShapeEle.className = `wrapper_shape ${newClassName}`;
-//             ResizeEvent(classNamesArray);
-//         });
-//     });
-// }
+function ClickEvent() {
+    const classNamesArray = wrapShapeEle.className.split(' ');
+    const imageSelectOptions = document.querySelectorAll(".type_radio_layout");
+    imageSelectOptions.forEach(option => {
+        option.addEventListener("click", function () {
+            imageSelectOptions.forEach(opt => opt.classList.remove("selected"));
+            this.classList.add("selected");
+            var newClassName = this.classList[2];
+            wrapShapeEle.className = `wrapper_shape ${newClassName}`;
+            ResizeEvent(classNamesArray);
+        });
+    });
+}
 
 window.addEventListener("resize", ResizeEvent);
 //window.addEventListener("load", LoadEvent);

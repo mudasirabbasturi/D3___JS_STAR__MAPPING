@@ -142,49 +142,49 @@
                         <h6>Print Style</h6>
                         <hr>
                         <div class="image_select_wrapper print_style">
-                            <div class="image_select type_radio square selected">
+                            <div class="image_select type_style selected" data-type="classic">
                                 <span class="image">
                                     <img src="assets/images/classic.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Classic</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select type_style" data-type="poet">
                                 <span class="image">
                                     <img src="assets/images/poet.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Poet</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select type_style" data-type="astronomer">
                                 <span class="image">
                                     <img src="assets/images/astronomer.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Astronomer</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select type_style" data-type="aquarelles">
                                 <span class="image">
                                     <img src="assets/images/aquarelles.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Aquarelles</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select type_style" data-type="romantic">
                                 <span class="image">
                                     <img src="assets/images/romantic.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Romantic</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select type_style" data-type="modern">
                                 <span class="image">
                                     <img src="assets/images/modern.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Modern</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select type_style" data-type="photographer">
                                 <span class="image">
                                     <img src="assets/images/photographer.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Photographer</span>
                             </div>
-                            <div class="image_select type_radio square">
+                            <div class="image_select type_style" data-type="explorer">
                                 <span class="image">
                                     <img src="assets/images/explorer.png" alt="img" class="img-fluid">
                                 </span>
@@ -195,19 +195,19 @@
                         <h6>Print Layout</h6>
                         <hr>
                         <div class="image_select_wrapper print_layout">
-                            <div class="image_select layout_style vertical selected">
+                            <div class="image_select layout_style vertical selected" data-type="vertical">
                                 <span class="image">
                                     <img src="assets/svg/vertical.svg" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Vertical</span>
                             </div>
-                            <div class="image_select layout_style horizontal">
+                            <div class="image_select layout_style horizontal" data-type="horizontal">
                                 <span class="image">
                                     <img src="assets/svg/horizontal.svg" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Horizontal</span>
                             </div>
-                            <div class="image_select layout_style square">
+                            <div class="image_select layout_style square" data-type="square">
                                 <span class="image">
                                     <img src="assets/svg/square.svg" alt="img" class="img-fluid">
                                 </span>
@@ -788,7 +788,7 @@
                             id="shape_image">
                         <div class="product_wrapper">
                             <div class="product">
-                                <div class="photographer">
+                                <div class="classic" id="product_type">
                                     <div class="message_heading astronomer_heading">
                                         <h5>🤍 OUR LUCKY STARS 🤍</h5>
                                     </div>
@@ -856,38 +856,38 @@
     <script src="assets/bundles/vendorscripts.bundle.js"></script>
     <script src="assets/bundles/mainscripts.bundle.js"></script>
     <script src="jquery.datetimepicker.full.js"></script>
-    <!-- <script src="main.js"></script> -->
+    <script src="new.js"></script>
     <script>
 
-        const wrapperShapeEle = document.getElementById("wrapper_shape")
-        const shapeImageEle = document.getElementById("shape_image")
-        const layOutEle = document.getElementsByClassName("layout_style")
-        const shapeStyEle = document.getElementById("shape_style")
-        const wrapperMsgEle = document.getElementById("wrapper_message")
-        for (i = 0; i < layOutEle.length; i++) {
-            const clickedEle = layOutEle[i]
-            clickedEle.addEventListener('click', function () {
-                const NamesArray = this.className.split(' ');
-                if (NamesArray.includes('vertical')) {
-                    wrapperShapeEle.classList.add('vertical')
-                    wrapperShapeEle.classList.remove('horizontal')
-                    wrapperShapeEle.classList.remove('square')
-                    shapeImageEle.src = "assets/images/layout/vertical.png"
-                }
-                else if (NamesArray.includes('horizontal')) {
-                    wrapperShapeEle.classList.add('horizontal')
-                    wrapperShapeEle.classList.remove('vertical')
-                    wrapperShapeEle.classList.remove('square')
-                    shapeImageEle.src = "assets/images/layout/horizontal.png"
-                }
-                else if (NamesArray.includes('square')) {
-                    wrapperShapeEle.classList.add('square')
-                    wrapperShapeEle.classList.remove('horizontal')
-                    wrapperShapeEle.classList.remove('vertical')
-                    shapeImageEle.src = "assets/images/layout/square.png"
-                }
-            })
-        }
+        // const wrapperShapeEle = document.getElementById("wrapper_shape")
+        // const shapeImageEle = document.getElementById("shape_image")
+        // const layOutEle = document.getElementsByClassName("layout_style")
+        // const shapeStyEle = document.getElementById("shape_style")
+        // const wrapperMsgEle = document.getElementById("wrapper_message")
+        // for (i = 0; i < layOutEle.length; i++) {
+        //     const clickedEle = layOutEle[i]
+        //     clickedEle.addEventListener('click', function () {
+        //         const NamesArray = this.className.split(' ');
+        //         if (NamesArray.includes('vertical')) {
+        //             wrapperShapeEle.classList.add('vertical')
+        //             wrapperShapeEle.classList.remove('horizontal')
+        //             wrapperShapeEle.classList.remove('square')
+        //             shapeImageEle.src = "assets/images/layout/vertical.png"
+        //         }
+        //         else if (NamesArray.includes('horizontal')) {
+        //             wrapperShapeEle.classList.add('horizontal')
+        //             wrapperShapeEle.classList.remove('vertical')
+        //             wrapperShapeEle.classList.remove('square')
+        //             shapeImageEle.src = "assets/images/layout/horizontal.png"
+        //         }
+        //         else if (NamesArray.includes('square')) {
+        //             wrapperShapeEle.classList.add('square')
+        //             wrapperShapeEle.classList.remove('horizontal')
+        //             wrapperShapeEle.classList.remove('vertical')
+        //             shapeImageEle.src = "assets/images/layout/square.png"
+        //         }
+        //     })
+        // }
 
         function toggleFunction(x) {
             x.classList.toggle("rotate")
