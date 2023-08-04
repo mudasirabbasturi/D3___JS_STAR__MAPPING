@@ -156,13 +156,13 @@
                             </div>
                             <div class="image_select type_radio square">
                                 <span class="image">
-                                    <img src="assets/images/aquarelles.png" alt="img" class="img-fluid">
+                                    <img src="assets/images/astronomer.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Astronomer</span>
                             </div>
                             <div class="image_select type_radio square">
                                 <span class="image">
-                                    <img src="assets/images/astronomer.png" alt="img" class="img-fluid">
+                                    <img src="assets/images/aquarelles.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Aquarelles</span>
                             </div>
@@ -784,14 +784,17 @@
             <div class="container-fluid">
                 <div class="preview_wrapper" id="preview_wrapper">
                     <div class="wrapper_shape vertical" id="wrapper_shape">
-                        <img src="assets/images/layout/vertical.png" alt="" style="width: 100%;height: 100%;"
+                        <img src="assets/images/layout/vertical_img.png" alt="" style="width: 100%;height: 100%;"
                             id="shape_image">
                         <div class="product_wrapper">
                             <div class="product">
-                                <div class="classic">
-                                    <div class="map_wrapper circle" id="circle">
+                                <div class="photographer">
+                                    <div class="message_heading astronomer_heading">
+                                        <h5>🤍 OUR LUCKY STARS 🤍</h5>
                                     </div>
-                                    <div class="wrapper_message">
+                                    <div class="map_wrapper shape_style" id="shape_style">
+                                    </div>
+                                    <div class="wrapper_message" id="wrapper_message">
                                         <div class="message_heading">
                                             <h5>🤍 OUR LUCKY STARS 🤍</h5>
                                         </div>
@@ -856,17 +859,11 @@
     <!-- <script src="main.js"></script> -->
     <script>
 
-        // function circle() {
-        //     const cirEle = document.getElementById("circle")
-        //     const width = cirEle.offsetWidth
-        //     cirEle.style.width = width + "px"
-        //     cirEle.style.height = width + "px"
-        // }
-        // circle()
-
         const wrapperShapeEle = document.getElementById("wrapper_shape")
         const shapeImageEle = document.getElementById("shape_image")
         const layOutEle = document.getElementsByClassName("layout_style")
+        const shapeStyEle = document.getElementById("shape_style")
+        const wrapperMsgEle = document.getElementById("wrapper_message")
         for (i = 0; i < layOutEle.length; i++) {
             const clickedEle = layOutEle[i]
             clickedEle.addEventListener('click', function () {
@@ -896,25 +893,27 @@
             x.classList.toggle("rotate")
         }
 
-        const bodyEle = document.getElementsByTagName('body')[0];
-        const liEle = document.getElementsByClassName('nav-item');
-        const toggleEle = document.querySelector('.list_menu')
-        const classNamesArray = toggleEle.className.split(' ');
-        for (let i = 0; i < liEle.length; i++) {
-            const clicked = liEle[i];
+        // const bodyEle = document.getElementsByTagName('body')[0];
+        // const liEle = document.getElementsByClassName('nav-item');
+        // const toggleEle = document.querySelector('.list_menu')
+        // const classNamesArray = toggleEle.className.split(' ');
+        // for (let i = 0; i < liEle.length; i++) {
+        //     const clicked = liEle[i];
 
-            if (i !== liEle.length - 1) {
-                clicked.removeEventListener('click', function () {
-                    bodyEle.classList.add('offcanvas-active');
-                    if (classNamesArray.includes('rotate')) {
-                        return
-                    }
-                    else {
-                        toggleEle.classList.add('rotate')
-                    }
-                });
-            }
-        }
+        //     if (i !== liEle.length - 1) {
+
+        //         clicked.removeEventListener('click', function () {
+        //             bodyEle.classList.add('offcanvas-active');
+        //             if (classNamesArray.includes('rotate')) {
+        //                 return
+        //             }
+        //             else {
+        //                 toggleEle.classList.add('rotate')
+        //             }
+        //         });
+                
+        //     }
+        // }
 
 
         $(document).ready(function () {
@@ -949,6 +948,51 @@
             timepicker: false,
             format: 'd/m/Y',
         });
+
+        $(document).ready(function () {
+            // Function to get the next tab
+            function getNextTab() {
+                let activeTab = $("#myTab").find(".nav-link.active");
+                let nextLi = activeTab.parent().next();
+                if (nextLi.length > 0) {
+                    return nextLi.find(".nav-link");
+                }
+                return null;
+            }
+
+            // Function to update the "Next" button text
+            function updateNextButtonText() {
+                let nextTab = getNextTab();
+                if (nextTab) {
+                    $("#next").text("Next");
+                } else {
+                    $("#next").text("Final Preview");
+                }
+            }
+
+            // Click event for the "Next" button
+            $("#next").click(function () {
+                let nextTab = getNextTab();
+                if (nextTab) {
+                    nextTab.tab("show");
+                    updateNextButtonText();
+                } else {
+                    $("#exampleModalCenter").modal("show");
+                }
+            });
+
+            $('a[data-toggle="tab"]').on("shown.bs.tab", function (e) {
+                $(e.target).addClass("active");
+                let prevTab = getNextTab();
+                if (prevTab) {
+                    prevTab.removeClass("active");
+                }
+                updateNextButtonText();
+            });
+            updateNextButtonText();
+
+        });
+
 
     </script>
 </body>
