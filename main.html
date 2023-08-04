@@ -56,6 +56,11 @@
             line-height: 1.4;
             font-size: 13px;
         }
+        .print_style_tab_content {padding: 0px;}
+        .print_style_tab_content .tab-pane.active {
+            display: flex;
+        }
+
     </style>
 </head>
 
@@ -64,7 +69,8 @@
     <!-- Page Loader -->
     <div class="page-loader-wrapper">
         <div class="loader">
-            <div class="m-t-30"><img src="assets/svg/milky-way.svg" alt="Mudasir Abbas Turi" width="48" height="48">
+            <div class="m-t-30">
+                <img src="assets/svg/milky-way.svg" alt="Mudasir Abbas Turi" width="48" height="48">
             </div>
             <p>Please wait...</p>
         </div>
@@ -73,6 +79,7 @@
 
     <div id="wrapper">
 
+        <!-- NAVBAR -->
         <nav class="navbar navbar-fixed-top" id="nav_bar">
 
             <div class="container-fluid pb-2 pt-2 shadow-lg bg-white pl-0 pr-0">
@@ -132,68 +139,116 @@
                 </ul>
             </div>
         </nav>
+        <!-- END OF NAVBAR -->
 
+        <!-- LEFT SIDEBAR -->
         <div id="left-sidebar" class="sidebar">
             <div class="pt-5 pb-5 mt-5 mb-5">
                 <!-- Tab panes -->
                 <div class="tab-content p-l-0 p-r-0">
-                    <div class="tab-pane p-l-15 p-r-15 active" id="style">
-                        <hr>
-                        <h6>Print Style</h6>
-                        <hr>
+
+                    <!-- STYLE -->
+                    <div class="tab-pane p-l-15 p-r-15 active" id="style"><hr>
+
+                        <!-- PRINT STYLE -->
+                        <h6>Print Style</h6><hr>
                         <div class="image_select_wrapper print_style">
-                            <div class="image_select type_style selected" data-type="classic">
+
+                            <div class="image_select type_style selected" 
+                                 data-type="classic" 
+                                 data-href="#classic" 
+                                 onclick="redirectToPrintSize('#classic')">
+
                                 <span class="image">
                                     <img src="assets/images/classic.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Classic</span>
+
                             </div>
-                            <div class="image_select type_style" data-type="poet">
+
+                            <div class="image_select type_style" 
+                                 data-type="poet" 
+                                 data-href="#poet" 
+                                 onclick="redirectToPrintSize('#poet')">
                                 <span class="image">
                                     <img src="assets/images/poet.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Poet</span>
                             </div>
-                            <div class="image_select type_style" data-type="astronomer">
+
+                            <div class="image_select type_style" 
+                                 data-type="astronomer" 
+                                 data-href="#astronomer" 
+                                 onclick="redirectToPrintSize('#astronomer')">
+
                                 <span class="image">
                                     <img src="assets/images/astronomer.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Astronomer</span>
+
                             </div>
-                            <div class="image_select type_style" data-type="aquarelles">
+                            <div class="image_select type_style" 
+                                 data-type="aquarelles" 
+                                 data-href="#aquarelles" 
+                                 onclick="redirectToPrintSize('#aquarelles')">
+
                                 <span class="image">
                                     <img src="assets/images/aquarelles.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Aquarelles</span>
+                                
                             </div>
-                            <div class="image_select type_style" data-type="romantic">
+                            <div class="image_select type_style" 
+                                 data-type="romantic" 
+                                 data-href="#romantic" 
+                                 onclick="redirectToPrintSize('#romantic')">
+
                                 <span class="image">
                                     <img src="assets/images/romantic.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Romantic</span>
+
                             </div>
-                            <div class="image_select type_style" data-type="modern">
+                            <div class="image_select type_style" 
+                                 data-type="modern" 
+                                 data-href="#modern" 
+                                 onclick="redirectToPrintSize('#modern')">
+
                                 <span class="image">
                                     <img src="assets/images/modern.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Modern</span>
+
                             </div>
-                            <div class="image_select type_style" data-type="photographer">
+
+                            <div class="image_select type_style" 
+                                 data-type="photographer" 
+                                 data-href="#photographer" 
+                                 onclick="redirectToPrintSize('#photographer')">
+
                                 <span class="image">
                                     <img src="assets/images/photographer.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Photographer</span>
+
                             </div>
-                            <div class="image_select type_style" data-type="explorer">
+
+                            <div class="image_select type_style" 
+                                 data-type="explorer" 
+                                 data-href="#explorer" 
+                                 onclick="redirectToPrintSize('#explorer')">
+
                                 <span class="image">
                                     <img src="assets/images/explorer.png" alt="img" class="img-fluid">
                                 </span>
                                 <span class="name">Explorer</span>
+
                             </div>
-                        </div>
-                        <hr>
-                        <h6>Print Layout</h6>
-                        <hr>
+                        </div><hr>
+                        <!-- END OF PRINT STYLE -->
+
+                        <!-- PRINT LAYOUT -->
+                        <h6>Print Layout</h6><hr>
                         <div class="image_select_wrapper print_layout">
                             <div class="image_select layout_style vertical selected" data-type="vertical">
                                 <span class="image">
@@ -213,49 +268,340 @@
                                 </span>
                                 <span class="name">Square</span>
                             </div>
+                        </div><hr>
+                        <!-- END OF PRINT LAYOUT -->
+
+                        <!-- PRINT SIZE -->
+                        <h6>Print Size</h6><hr>
+                        <div class="tab-content print_style_tab_content">
+                            
+                            <div class="image_select_wrapper print_size tab-pane active" id="classic">
+
+                                <div class="image_select print_size_classic selected" data-size="0.8">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_classic" data-size="0.93">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_classic" data-size="0.98">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+                                <div class="image_select print_size_classic" data-size="1.05">
+                                    <span class="image">
+                                        <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">60x80 cm</span>
+                                </div>
+
+                            </div>
+
+                            <div class="image_select_wrapper print_size tab-pane" id="poet">
+
+                                <div class="image_select print_size_poet selected" data-size="0.8">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_poet" data-size="0.9">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_poet" data-size="1">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+
+                            </div>
+                            
+                            <div class="image_select_wrapper print_size tab-pane" id="astronomer">
+
+                                <div class="image_select print_size_astronomer selected" data-size="0.8">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_astronomer" data-size="0.93">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_astronomer" data-size="0.98">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+                                <div class="image_select print_size_astronomer" data-size="1.05">
+                                    <span class="image">
+                                        <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">60x80 cm</span>
+                                </div>
+
+                            </div>
+
+                            <div class="image_select_wrapper print_size tab-pane" id="aquarelles">
+                               
+                                <div class="image_select print_size_aquarelles selected" data-size="0.8">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_aquarelles" data-size="0.93">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_aquarelles" data-size="0.98">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+                                <div class="image_select print_size_aquarelles" data-size="1.05">
+                                    <span class="image">
+                                        <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">60x80 cm</span>
+                                </div>
+
+                            </div>
+
+                            <div class="image_select_wrapper print_size tab-pane" id="romantic">
+                                
+                                <div class="image_select print_size_romantic selected" data-size="0.8">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_romantic" data-size="0.93">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_romantic" data-size="0.98">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+                                <div class="image_select print_size_romantic" data-size="1.05">
+                                    <span class="image">
+                                        <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">60x80 cm</span>
+                                </div>
+
+                            </div>
+
+                            <div class="image_select_wrapper print_size tab-pane" id="modern">
+                               
+                                <div class="image_select print_size_modern selected" data-size="0.8">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_modern" data-size="0.93">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_modern" data-size="0.98">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+                                <div class="image_select print_size_modern" data-size="1.05">
+                                    <span class="image">
+                                        <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">60x80 cm</span>
+                               
+                                </div>
+                            </div>
+                            
+                            <div class="image_select_wrapper print_size tab-pane" id="photographer">
+                              
+                                <div class="image_select print_size_photographer selected" data-size="0.8">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_photographer" data-size="0.93">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_photographer" data-size="0.98">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+                                <div class="image_select print_size_photographer" data-size="1.05">
+                                    <span class="image">
+                                        <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">60x80 cm</span>
+                               
+                                </div>
+
+                            </div>
+                            
+                            <div class="image_select_wrapper print_size tab-pane" id="explorer">
+                                
+                                <div class="image_select print_size_explorer selected" data-size="0.8">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_explorer" data-size="0.93">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_explorer" data-size="0.98">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+                                <div class="image_select print_size_explorer" data-size="1.05">
+                                    <span class="image">
+                                        <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">60x80 cm</span>
+                                </div>
+
+                            </div>
+
                         </div>
-                        <hr>
-                        <h6>Print Size</h6>
-                        <hr>
-                        <div class="image_select_wrapper print_size">
-                            <div class="image_select type_radio square selected">
-                                <span class="image">
-                                    <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
-                                </span>
-                                <span class="price">
-                                    <small><b>£ 34.00</b></small>
-                                </span>
-                                <span class="name">30x40 cm</span>
-                            </div>
-                            <div class="image_select type_radio square">
-                                <span class="image">
-                                    <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
-                                </span>
-                                <span class="price">
-                                    <small><b>£ 34.00</b></small>
-                                </span>
-                                <span class="name">45x60 cm</span>
-                            </div>
-                            <div class="image_select type_radio square">
-                                <span class="image">
-                                    <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
-                                </span>
-                                <span class="price">
-                                    <small><b>£ 34.00</b></small>
-                                </span>
-                                <span class="name">50x70 cm</span>
-                            </div>
-                            <div class="image_select type_radio square">
-                                <span class="image">
-                                    <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
-                                </span>
-                                <span class="price">
-                                    <small><b>£ 34.00</b></small>
-                                </span>
-                                <span class="name">60x80 cm</span>
-                            </div>
-                        </div>
+                        <!-- END OF PRINT SIZE -->
+
                     </div>
+                    <!-- END OF STYLE -->
+
+                    <!-- MOMENT -->
                     <div class="tab-pane p-l-15 p-r-15" id="moment">
                         <hr>
                         <h6><img src="assets/svg/place.svg" alt="">Location:</h6>
@@ -336,6 +682,9 @@
                             </label>
                         </div>
                     </div>
+                    <!-- END OF MOMENT -->
+
+                    <!-- TEXT -->
                     <div class="tab-pane p-l-15 p-r-15" id="text">
                         <hr>
                         <h6><img src="assets/svg/text_messages.svg" alt="">Message:</h6>
@@ -409,6 +758,9 @@
                             </label>
                         </div>
                     </div>
+                    <!-- END OF TEXT -->
+
+                    <!-- DESIGN -->
                     <div class="tab-pane p-l-15 p-r-15" id="design">
                         <hr>
                         <h6>Star Map Elements</h6>
@@ -616,10 +968,11 @@
                             </div>
                         </div>
                     </div>
-                    <div class="tab-pane p-l-15 p-r-15" id="product">
-                        <hr>
-                        <h6>Product Finish</h6>
-                        <hr>
+                    <!-- END OF DESIGN -->
+
+                    <!-- PRODUCT -->
+                    <div class="tab-pane p-l-15 p-r-15" id="product"><hr>
+                        <h6>Product Finish</h6><hr>
                         <div class="image_select_wrapper star_map_elements">
                             <div class="image_select type_radio square selected " data-href="#poster"
                                 onclick="redirectTo('#poster')">
@@ -776,10 +1129,13 @@
                             </div>
                         </div>
                     </div>
+                    <!-- END OF PRODUCT -->
                 </div>
             </div>
         </div>
+        <!-- END OF SIDEBAR -->
 
+        <!-- MAIN CONTENT -->
         <div id="main-content">
             <div class="container-fluid">
                 <div class="preview_wrapper" id="preview_wrapper">
@@ -813,7 +1169,9 @@
                 </div>
             </div>
         </div>
+        <!-- END OF MAIN CONTENT -->
 
+        <!-- FIXED BOTTOM -->
         <div class="fixed_bottom" id="fixed_bottom">
             <div class="container_fluid pt-1 pb-1 pl-2 pr-2">
                 <div class="row" style="align-items: center;">
@@ -827,9 +1185,11 @@
                 </div>
             </div>
         </div>
+        <!-- END OF FIX BOTTOM -->
 
     </div>
 
+    <!-- MODAL FOR FINAL PREVIEW -->
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog"
         aria-labelledby="exampleModalCenterTitle" style="display: none;" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
@@ -850,6 +1210,7 @@
             </div>
         </div>
     </div>
+    <!-- END OF MODAL -->
 
     <!-- Javascript -->
     <script src="assets/bundles/libscripts.bundle.js"></script>
@@ -932,10 +1293,7 @@
 
 
 
-        function redirectTo(target) {
-            $('.new_tab_content .tab-pane').removeClass('active');
-            $(target).addClass('active');
-        }
+
 
         $('#datetimepicker1').datetimepicker({
             datepicker: false,
