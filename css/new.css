@@ -212,25 +212,25 @@
 }
 
 .astronomer .map_wrapper.shape_style {
-    background-image: url('/astro.svg');
+    background-image: url('https://mudasirabbasturi.github.io/D3___JS_STAR__MAPPING/astro.svg');
 }
 
 .aquarelles .map_wrapper.shape_style {
-    background-image: url('/assets/svg/aquarelles.png');
+    background-image: url('https://mudasirabbasturi.github.io/D3___JS_STAR__MAPPING/assets/svg/aquarelles.png');
 }
 
 .romantic .map_wrapper.shape_style {
-    background-image: url('/heart.svg');
+    background-image: url('https://mudasirabbasturi.github.io/D3___JS_STAR__MAPPING/heart.svg');
     background-size: contain;
     background-repeat: no-repeat;
 }
 
 .photographer .map_wrapper.shape_style {
-    background-image: url('/Capture.PNG');
+    background-image: url('https://mudasirabbasturi.github.io/D3___JS_STAR__MAPPING/Capture.PNG');
 }
 
 .explorer .map_wrapper.shape_style {
-    background-image: url('/Capture.PNG');
+    background-image: url('https://mudasirabbasturi.github.io/D3___JS_STAR__MAPPING/Capture.PNG');
 }
 
 .photographer .shape_style,

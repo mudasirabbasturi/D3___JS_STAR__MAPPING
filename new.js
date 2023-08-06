@@ -368,6 +368,8 @@ function ProductFrame() {
         const newImg = document.createElement('img')
         const domainName = "https://mudasirabbasturi.github.io/D3___JS_STAR__MAPPING/"
         // newImg.src = `/assets/images/${imgURL}.png`
+        // const domainName = window.location.hostname;
+        // const repoName = window.location.pathname.split("/")[1];
         newImg.src = `${domainName}/assets/images/${imgURL}.png`
         newImg.alt = ''
         newDiv.appendChild(newImg)
