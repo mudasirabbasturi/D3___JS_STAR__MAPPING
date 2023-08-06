@@ -366,9 +366,9 @@ function ProductFrame() {
         newDiv.classList.add('bg_frame');
 
         const newImg = document.createElement('img')
-        const domainName = window.location.hostname
+        const domainName = "https://mudasirabbasturi.github.io/D3___JS_STAR__MAPPING/"
         // newImg.src = `/assets/images/${imgURL}.png`
-        newImg.src = `https://${domainName}/assets/images/${imgURL}.png`
+        newImg.src = `${domainName}/assets/images/${imgURL}.png`
         newImg.alt = ''
         newDiv.appendChild(newImg)
         wrapperShapeEle.appendChild(newDiv)
