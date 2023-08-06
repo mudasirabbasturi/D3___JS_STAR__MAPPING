@@ -1,6 +1,6 @@
-const bodyEle = document.getElementsByTagName('body')[0];
-const toggleEle = document.querySelector('.list_menu');
-const liEle = document.getElementsByClassName('nav-item');
+const bodyEle = document.getElementsByTagName('body')[0]
+const toggleEle = document.querySelector('.list_menu')
+const liEle = document.getElementsByClassName('nav-item')
 
 function addOffcanvasActiveClass() {
   bodyEle.classList.add('offcanvas-active');
@@ -362,17 +362,19 @@ function ProductFrame() {
           return;
         }
 
-        const newDiv = document.createElement('div');
+        const newDiv = document.createElement('div')
         newDiv.classList.add('bg_frame');
 
-        const newImg = document.createElement('img');
-        newImg.src = `/assets/images/${imgURL}.png`;
-        newImg.alt = '';
-        newDiv.appendChild(newImg);
-        wrapperShapeEle.appendChild(newDiv);
-        dynamicDiv = newDiv;
-        dynamicCreated = true;
-      });
+        const newImg = document.createElement('img')
+        const domainName = window.location.hostname
+        // newImg.src = `/assets/images/${imgURL}.png`
+        newImg.src = domainName + `/assets/images/${imgURL}.png`
+        newImg.alt = ''
+        newDiv.appendChild(newImg)
+        wrapperShapeEle.appendChild(newDiv)
+        dynamicDiv = newDiv
+        dynamicCreated = true
+      })
     }
   }
 

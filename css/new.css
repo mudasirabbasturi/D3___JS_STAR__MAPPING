@@ -141,6 +141,7 @@
 .explorer {
     border: 0;
 }
+
 .photographer .astronomer_heading,
 .explorer .astronomer_heading {
     height: 0;
@@ -151,14 +152,13 @@
     width: 100%;
 }
 
-
-
 .map_wrapper {position: relative;}
 
 .vertical .map_wrapper {
     width: 90%;
     aspect-ratio: 1/1;
 }
+
 .horizontal .map_wrapper {
     width: 55%;
     aspect-ratio: 1/1;
@@ -200,10 +200,12 @@
     background-position: center center;
     background-size: cover;
 }
+
 .modern {
     border: 0px;
     background-color: #1D1D1D;
 }
+
 .modern .map_wrapper.shape_style {
     border: 0;
     background-color: black;
@@ -212,9 +214,11 @@
 .astronomer .map_wrapper.shape_style {
     background-image: url('/astro.svg');
 }
+
 .aquarelles .map_wrapper.shape_style {
     background-image: url('/assets/svg/aquarelles.png');
 }
+
 .romantic .map_wrapper.shape_style {
     background-image: url('/heart.svg');
     background-size: contain;
@@ -281,8 +285,6 @@
     justify-content: center;
 }
 
-
-
 .photographer .wrapper_message {
     justify-content: space-around;
 }
@@ -292,6 +294,7 @@
     font-weight: 500;
     text-transform: uppercase;
 }
+
 .message_heading h1,
 .message_heading h2
 .message_heading h3,
