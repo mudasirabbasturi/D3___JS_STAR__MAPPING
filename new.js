@@ -8,7 +8,7 @@ function toggleFunction(x) {
 
 var wrapperShapeEle = document.getElementById("wrapper_shape")
 
-function functionPrintStyle() {
+function PrintStyle() {
 
     const printStyEle = document.getElementsByClassName("type_style")
     const prdtTypEle = document.getElementById("product_type")
@@ -35,7 +35,7 @@ function functionPrintStyle() {
     }
 } 
 
-function functionPrintLayout() {
+function PrintLayout() {
 
     const wrapperShapeEle = document.getElementById("wrapper_shape")
     const shapeImageEle = document.getElementById("shape_image")
@@ -64,7 +64,7 @@ function functionPrintLayout() {
 
     }
 
-} 
+}
 
 function PrintSizesVertical() {
 
@@ -146,6 +146,113 @@ function PrintSizesSquare() {
 
 }
 
+function StarMapElement() {
+    const mapEle = document.getElementsByClassName("map_element")
+    for(let i = 0; i < mapEle.length; i++) {
+        const clicked = mapEle[i]
+        clicked.addEventListener('click', function() {
+            if(this.className.includes("selected")) {
+                this.classList.remove('selected')
+            }
+            else {
+                this.classList.add("selected")
+            }
+        })
+    }
+}
+
+function StarMapColor() {
+    const mapColorEle = document.getElementsByClassName("map_color")
+    for(let i = 0; i < mapColorEle.length; i++) {
+        const clicked = mapColorEle[i]
+        clicked.addEventListener('click', function(){
+            for(let j = 0; j < mapColorEle.length; j++) {
+                mapColorEle[j].classList.remove('selected')
+            }
+            this.classList.add("selected")
+        })
+    }
+}
+
+function StarMapBgColor() {
+    const mapBgColorEle = document.getElementsByClassName("map_bg_color")
+    for(let i = 0; i < mapBgColorEle.length; i++) {
+        const clicked = mapBgColorEle[i]
+        clicked.addEventListener('click', function(){
+            for(let j = 0; j < mapBgColorEle.length; j++) {
+                mapBgColorEle[j].classList.remove('selected')
+            }
+            this.classList.add("selected")
+        })
+    }
+}
+
+function StarMapBorder() {
+    const mapBorderEle = document.getElementsByClassName("map_border")
+    for(let i = 0; i < mapBorderEle.length; i++) {
+        const clicked = mapBorderEle[i]
+        clicked.addEventListener('click', function(){
+            for(let j = 0; j < mapBorderEle.length; j++) {
+                mapBorderEle[j].classList.remove('selected')
+            }
+            this.classList.add("selected")
+        })
+    }
+}
+
+function StarMapMessageFonts() {
+    const mapMsgFontsEle = document.getElementsByClassName("map_message_fonts")
+    for(let i = 0; i < mapMsgFontsEle.length; i++) {
+        const clicked = mapMsgFontsEle[i]
+        clicked.addEventListener('click', function(){
+            for(let j = 0; j < mapMsgFontsEle.length; j++) {
+                mapMsgFontsEle[j].classList.remove('selected')
+            }
+            this.classList.add("selected")
+        })
+    }
+}
+
+function StarMapDetailsFonts() {
+    const mapFontDetailEle = document.getElementsByClassName("font_details")
+    for(let i = 0; i < mapFontDetailEle.length; i++) {
+        const clicked = mapFontDetailEle[i]
+        clicked.addEventListener('click', function(){
+            for(let j = 0; j < mapFontDetailEle.length; j++) {
+                mapFontDetailEle[j].classList.remove('selected')
+            }
+            this.classList.add("selected")
+        })
+    }
+}
+
+function ProductFinish() {
+    const productFinishEle = document.getElementsByClassName("product_finish")
+    for(let i = 0; i < productFinishEle.length; i++) {
+        const clicked = productFinishEle[i]
+        clicked.addEventListener('click', function(){
+            for(let j = 0; j < productFinishEle.length; j++) {
+                productFinishEle[j].classList.remove('selected')
+            }
+            this.classList.add("selected")
+        })
+    }
+}
+
+function ProductFrame() {
+    const productFrameEle = document.getElementsByClassName("product_frame")
+    for(let i = 0; i < productFrameEle.length; i++) {
+        const clicked = productFrameEle[i]
+        clicked.addEventListener('click', function(){
+            for(let j = 0; j < productFrameEle.length; j++) {
+                productFrameEle[j].classList.remove('selected')
+            }
+            this.classList.add("selected")
+        })
+    }
+}
+
+
 
 function redirectToPrintSize(target) {
     $('.print_style_tab_content .tab-pane').removeClass('active');
@@ -153,61 +260,26 @@ function redirectToPrintSize(target) {
     console.log(ok)
 }
 
-functionPrintStyle()
-functionPrintLayout()
+function redirectTo(target) {
+    $('.detail_tab_content .tab-pane').removeClass('active');
+   var ok =  $(target).addClass('active');
+    console.log(ok)
+}
+
+
+PrintStyle()
+PrintLayout()
 PrintSizesVertical()
 PrintSizesHorizontal()
 PrintSizesSquare()
-
-
-
-
-
-// function initAutocomplete() {
-
-//     autocomplete = new google.maps.places.Autocomplete(
-//         /** @type {!HTMLInputElement} */(document.getElementById('search_place')),
-//         {types: ['geocode']});
-
-//     autocomplete.addListener('place_changed', fillInAddress);
-//   }
-
-//   function fillInAddress() {
-//     var place = autocomplete.getPlace();
-//   }
-
-  function initialize()
-    {
-        var input = document.getElementById('location');
-        var autocomplete = new google.maps.places.Autocomplete(
-                /** @type {HTMLInputElement} */(input),
-                {
-                    types: ['(cities)'],
-                });
-        google.maps.event.addListener(autocomplete, 'place_changed', function() {
-            var place = autocomplete.getPlace();
-            if (!place.geometry) {
-                return;
-            }
-            //document.getElementById('fLat').value = place.geometry.location.lat();
-            //document.getElementById('fLong').value = place.geometry.location.lng();
-
-            var address = '';
-            if (place.address_components)
-            {
-                address = [
-                    (place.address_components[0] && place.address_components[0].short_name || ''),
-                    (place.address_components[1] && place.address_components[1].short_name || ''),
-                    (place.address_components[2] && place.address_components[2].short_name || '')
-                ].join(' ');
-            }
-            LoadEventCategory();
-            LoadYelpData();
-        });
-    }
-
-google.maps.event.addDomListener(window, 'load', initialize);
-
+StarMapElement()
+StarMapColor()
+StarMapBgColor()
+StarMapBorder()
+StarMapMessageFonts()
+StarMapDetailsFonts()
+ProductFinish()
+ProductFrame()
 
 $('#datetimepicker1').datetimepicker({
     datepicker: false,
@@ -275,5 +347,39 @@ $(document).ready(function () {
         updateNextButtonText();
     });
     updateNextButtonText();
-
 });
+
+
+
+
+// function initialize() {
+//     var input = document.getElementById('location');
+//     var autocomplete = new google.maps.places.Autocomplete(
+//             /** @type {HTMLInputElement} */(input),
+//             {
+//                 types: ['(cities)'],
+//             });
+
+//     google.maps.event.addListener(autocomplete, 'place_changed', function() {
+//         var place = autocomplete.getPlace();
+//         if (!place.geometry) {
+//             return;
+//         }
+//         //document.getElementById('fLat').value = place.geometry.location.lat();
+//         //document.getElementById('fLong').value = place.geometry.location.lng();
+
+//         var address = '';
+//         if (place.address_components)
+//         {
+//             address = [
+//                 (place.address_components[0] && place.address_components[0].short_name || ''),
+//                 (place.address_components[1] && place.address_components[1].short_name || ''),
+//                 (place.address_components[2] && place.address_components[2].short_name || '')
+//             ].join(' ');
+//         }
+//         LoadEventCategory();
+//         LoadYelpData();
+//     });
+// }
+
+// google.maps.event.addDomListener(window, 'load', initialize);
