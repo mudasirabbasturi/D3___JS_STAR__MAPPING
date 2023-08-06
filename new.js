@@ -368,7 +368,7 @@ function ProductFrame() {
         const newImg = document.createElement('img')
         const domainName = window.location.hostname
         // newImg.src = `/assets/images/${imgURL}.png`
-        newImg.src = domainName + `/assets/images/${imgURL}.png`
+        newImg.src = `https://${domainName}/assets/images/${imgURL}.png`
         newImg.alt = ''
         newDiv.appendChild(newImg)
         wrapperShapeEle.appendChild(newDiv)
