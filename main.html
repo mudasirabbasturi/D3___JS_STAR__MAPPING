@@ -297,7 +297,7 @@
 
                             <div class="image_select_wrapper print_size tab-pane" id="horizontal">
 
-                                <div class="image_select print_size_horizontal selected" data-size="0.8">
+                                <div class="image_select print_size_horizontal" data-size="0.65">
                                     <span class="image">
                                         <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
                                     </span>
@@ -306,7 +306,7 @@
                                     </span>
                                     <span class="name">30x40 cm</span>
                                 </div>
-                                <div class="image_select print_size_horizontal" data-size="0.9">
+                                <div class="image_select print_size_horizontal selected" data-size="0.82">
                                     <span class="image">
                                         <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
                                     </span>
@@ -314,56 +314,46 @@
                                         <small><b>£ 34.00</b></small>
                                     </span>
                                     <span class="name">45x60 cm</span>
+                                </div>
+                                <div class="image_select print_size_horizontal" data-size="0.87">
+                                    <span class="image">
+                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">50x70 cm</span>
                                 </div>
                                 <div class="image_select print_size_horizontal" data-size="1">
-                                    <span class="image">
-                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
-                                    </span>
-                                    <span class="price">
-                                        <small><b>£ 34.00</b></small>
-                                    </span>
-                                    <span class="name">50x70 cm</span>
-                                </div>
-
-                            </div>
-                            
-                            <div class="image_select_wrapper print_size tab-pane" id="square">
-
-                                <div class="image_select print_size_square selected" data-size="0.8">
-                                    <span class="image">
-                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
-                                    </span>
-                                    <span class="price">
-                                        <small><b>£ 34.00</b></small>
-                                    </span>
-                                    <span class="name">30x40 cm</span>
-                                </div>
-                                <div class="image_select print_size_square" data-size="0.93">
-                                    <span class="image">
-                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
-                                    </span>
-                                    <span class="price">
-                                        <small><b>£ 34.00</b></small>
-                                    </span>
-                                    <span class="name">45x60 cm</span>
-                                </div>
-                                <div class="image_select print_size_square" data-size="0.98">
-                                    <span class="image">
-                                        <img src="assets/svg/size-l.svg" alt="img" class="img-fluid">
-                                    </span>
-                                    <span class="price">
-                                        <small><b>£ 34.00</b></small>
-                                    </span>
-                                    <span class="name">50x70 cm</span>
-                                </div>
-                                <div class="image_select print_size_square" data-size="1.05">
                                     <span class="image">
                                         <img src="assets/svg/size-xl.svg" alt="img" class="img-fluid">
                                     </span>
                                     <span class="price">
                                         <small><b>£ 34.00</b></small>
                                     </span>
-                                    <span class="name">60x80 cm</span>
+                                    <span class="name">50x70 cm</span>
+                                </div>
+                            </div>
+                            
+                            <div class="image_select_wrapper print_size tab-pane" id="square">
+
+                                <div class="image_select print_size_square" data-size="0.65">
+                                    <span class="image">
+                                        <img src="assets/svg/size-s.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">30x40 cm</span>
+                                </div>
+                                <div class="image_select print_size_square selected" data-size="0.82">
+                                    <span class="image">
+                                        <img src="assets/svg/size-m.svg" alt="img" class="img-fluid">
+                                    </span>
+                                    <span class="price">
+                                        <small><b>£ 34.00</b></small>
+                                    </span>
+                                    <span class="name">45x60 cm</span>
                                 </div>
 
                             </div>
@@ -376,18 +366,23 @@
                     <!-- END OF STYLE -->
 
                     <!-- MOMENT -->
-                    <div class="tab-pane p-l-15 p-r-15" id="moment">
-                        <hr>
-                        <h6><img src="assets/svg/place.svg" alt="">Location:</h6>
-                        <hr>
+                    <div class="tab-pane p-l-15 p-r-15" id="moment"><hr>
+
+                        <!-- Moment Location -->
+                        <h6><img src="assets/svg/place.svg" alt="">Location:</h6><hr>
                         <div class="form-group">
-                            <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                                id="location" placeholder="">
+                            <input type="text" 
+                                   class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                                   id="location" 
+                                   placeholder="London, United Kingdom"
+                                   value="London, United Kingdom">
                             <label for="search_place">
                                 <small class="sml_desc">Search the place of your moment</small>
                             </label>
-                        </div>
-                        <hr>
+                        </div><hr>
+                        <!-- Moment Location End -->
+
+                        <!-- Moment Date -->
                         <h6><img src="assets/svg/date.svg" alt="">Date:</h6>
                         <hr>
                         <div class="form-group">
@@ -396,8 +391,10 @@
                             <label for="usr">
                                 <small class="sml_desc">Select the date of your moment</small>
                             </label>
-                        </div>
-                        <hr>
+                        </div><hr>
+                        <!-- Moment Date End -->
+
+                        <!-- Moment Time -->
                         <h6>
                             <img src="assets/svg/time.svg" alt="">
                             Time:
@@ -405,18 +402,21 @@
                                 <input type="checkbox" class="toggleSwitch" data-target="time_moment">
                                 <span class="slider round"></span>
                             </label>
-                        </h6>
-                        <hr>
+                        </h6><hr>
                         <div class="form-group disabledEdit" id="time_moment">
-                            <input type="text" id="datetimepicker1"
-                                class="form-control mb-1 border-top-0 border-right-0 border-dark" placeholder="00:00" />
+                            <input type="text" 
+                                   id="datetimepicker1"
+                                   class="form-control mb-1 border-top-0 border-right-0 border-dark" 
+                                   placeholder="00:00" />
 
                             <label for="">
                                 <small class="sml_desc">Select a specific time (optional). The default time is
                                     midnight.</small>
                             </label>
-                        </div>
-                        <hr>
+                        </div><hr>
+                        <!-- Moment Time End -->
+
+                        <!-- Moment Coordinates -->
                         <h6>
                             <img src="assets/svg/coordinates.svg" alt="">
                             Coordinates:
@@ -424,20 +424,25 @@
                                 <input type="checkbox" class="toggleSwitch" data-target="coordinates_moment">
                                 <span class="slider round"></span>
                             </label>
-                        </h6>
-                        <hr>
+                        </h6><hr>
                         <div class="form-group disabledEdit" id="coordinates_moment">
+
+                            <!-- Coordinate North-South -->
                             <div class="input-group mb-2">
-                                <input type="number" class="form-control  border-top-0 border-right-0 border-dark"
-                                    value="0.1276" placeholder="" />
+                                <input type="number" 
+                                       class="form-control  border-top-0 border-right-0 border-dark"
+                                       value="0.1276" placeholder="" />
                                 <div class="input-group-prepend">
                                     <select name="cars"
-                                        class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
+                                            class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
                                         <option value="north">N</option>
                                         <option value="south">S</option>
                                     </select>
                                 </div>
                             </div>
+                            <!-- Coordinate North-South End -->
+
+                            <!-- Coordinate East-West -->
                             <div class="input-group mb-1">
                                 <input type="number" class="form-control border-top-0 border-right-0 border-dark"
                                     value="51.5073" placeholder="" />
@@ -449,12 +454,15 @@
                                     </select>
                                 </div>
                             </div>
+                            <!-- Coordinate East-West End -->
                             <label for="usr">
                                 <small class="sml_desc">Note: Changes to the coordinates and cardinals will change the
                                     location and the
                                     visible night sky.</small>
                             </label>
                         </div>
+                        <!-- Moment Coordinate End -->
+
                     </div>
                     <!-- END OF MOMENT -->
 
@@ -783,7 +791,7 @@
                                 <h6><small><b>Solid Wood Frame</b></small></h6>
                                 <hr>
                                 <div class="image_select_wrapper star_map_elements">
-                                    <div class="image_select product_frame selected">
+                                    <div class="image_select product_frame selected" data-src="none">
                                         <span class="image">
                                             <img src="assets/svg/none.svg">
                                         </span>
@@ -791,7 +799,7 @@
                                         <span class="name">frame (None)</span>
                                     </div>
 
-                                    <div class="image_select product_frame">
+                                    <div class="image_select product_frame" data-src="black_beach">
                                         <span class="image">
                                             <img src="assets/svg/black-beech.svg">
                                         </span>
@@ -800,7 +808,7 @@
                                         <span class="name">Black (Beech)</span>
                                     </div>
 
-                                    <div class="image_select product_frame">
+                                    <div class="image_select product_frame" data-src="white_beach">
                                         <span class="image">
                                             <img src="assets/svg/white-beech.svg">
                                         </span>
@@ -808,7 +816,7 @@
                                         <span class="name">White (Beech)</span>
                                     </div>
 
-                                    <div class="image_select product_frame">
+                                    <div class="image_select product_frame" data-src="natural_beech">
                                         <span class="image">
                                             <img src="assets/svg/natural-beech.svg">
                                         </span>
@@ -816,7 +824,7 @@
                                         <span class="name">Natural (Beech)</span>
                                     </div>
 
-                                    <div class="image_select product_frame">
+                                    <div class="image_select product_frame" data-src="natural_oak">
                                         <span class="image">
                                             <img src="assets/svg/natural-oak.svg">
                                         </span>
@@ -924,7 +932,7 @@
                     <div class="wrapper_shape vertical" id="wrapper_shape">
                         <img src="assets/images/layout/vertical_img.png" alt="" style="width: 100%;height: 100%;"
                             id="shape_image">
-                        <div class="product_wrapper">
+                        <div class="product_wrapper" id="product_wrapper">
                             <div class="product">
                                 <div class="classic" id="product_type">
                                     <div class="message_heading astronomer_heading">
@@ -938,9 +946,15 @@
                                         </div>
                                         <div class="message_desc">
                                             <small>
-                                                <b id="date">20th September 2021</b>
-                                                <b id="location">London, United Kingdom</b>
-                                                <b id="longitude">51.5073° N, 0.1276° W</b>
+                                                <span class="date_time">
+                                                    <span id="date">20th September 2021 </span>
+                                                    <span id="time"> -18:00</span>
+                                                </span>
+                                                <span id="location">London, United Kingdom</span>
+                                                <span class="coordinates">
+                                                    <span id="n_s">51.5073° N,</span>
+                                                    <span id="e_w">51.5073° W</span>
+                                                </span>
                                             </small>
                                         </div>
                                     </div>

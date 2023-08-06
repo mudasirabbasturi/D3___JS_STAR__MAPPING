@@ -22,15 +22,24 @@
     max-width: 66.59%;
     max-height: 84%;
     aspect-ratio: 3/4;
-    /* transform: scale(0.8); */
+    transform: scale(0.8);
     transition: all .5s ease-in-out;
-    /* 0.8,0.93,0.98,1.05 */
 }
 
-@media(max-width: 819px) {
-    .wrapper_shape.vertical {
-        max-width: 90%;
-    }
+.bg_frame {
+    position: relative;
+}
+
+.bg_frame::after {
+    content: "";
+    position: absolute;
+    width: 106%;
+    height: 104%;
+    left: -3%;
+    top: -2%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -1;
 }
 
 
@@ -52,15 +61,24 @@
     /*0.65,0.82 */
 }
 
+@media(max-width: 819px) {
+
+    .wrapper_shape.vertical,
+    .wrapper_shape.horizontal,
+    .wrapper_shape.square {
+        transform: scale(1);
+    }
+
+    .wrapper_shape.vertical {
+        max-width: 90%;
+    }
+}
+
 @media(min-width: 820px) {
     .preview_wrapper {
         height: 100vh;
         margin-top: unset;
     }
-    /* .wrapper_shape.vertical {
-        width: 66.69%;
-        height: 84%;
-    } */
 }  
 
 .product_wrapper {
@@ -72,7 +90,7 @@
     bottom: 0;
     top: 0;
     margin: auto;
-    background-color: rgb(83, 81, 81);
+    background-color: rgb(0, 0, 0);
 }
 
 .product {
@@ -89,6 +107,8 @@
 .photographer,
 .explorer{
     position: absolute;
+    width: 92%;
+    height: 94%;
     left: 0;
     top: 0;
     right: 0;
@@ -98,10 +118,13 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-around;
-    width: 92%;
-    height: 94%;
     border: 1px solid rgb(255, 255, 255);
 }
+
+.astronomer .map_wrapper {
+    position: relative;
+}
+
 .photographer,
 .explorer {
     border: 0;
@@ -115,10 +138,7 @@
     background-color: #000000;
     width: 100%;
 }
-.photographer .wrapper_message .message_heading, 
-.photographer .wrapper_message .message_desc small b{
-    color: rgb(34, 34, 34) !important;
-}
+
 
 
 .map_wrapper {position: relative;}
@@ -145,7 +165,7 @@
 .square .explorer .map_wrapper{
     width: 100%;
     aspect-ratio: 1/1.2;
-    background-color: rgb(204, 201, 201);
+    /* background-color: rgb(204, 201, 201); */
     margin-bottom: 1rem;
 }
 
@@ -156,6 +176,45 @@
 .map_wrapper.shape_style {
     border-radius: 50%;
     border: 1px solid white;
+}
+
+.astronomer .map_wrapper.shape_style,
+.aquarelles .map_wrapper.shape_style,
+.romantic .map_wrapper.shape_style,
+.photographer .map_wrapper.shape_style,
+.explorer .map_wrapper.shape_style {
+    border: 0px;
+    border-radius: 0;
+    background-position: center center;
+    background-size: cover;
+}
+.modern {
+    border: 0px;
+    background-color: #1D1D1D;
+}
+.modern .map_wrapper.shape_style {
+    border: 0;
+    background-color: black;
+}
+
+.astronomer .map_wrapper.shape_style {
+    background-image: url('/astro.svg');
+}
+.aquarelles .map_wrapper.shape_style {
+    background-image: url('/assets/svg/aquarelles.png');
+}
+.romantic .map_wrapper.shape_style {
+    background-image: url('/heart.svg');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.photographer .map_wrapper.shape_style {
+    background-image: url('/Capture.PNG');
+}
+
+.explorer .map_wrapper.shape_style {
+    background-image: url('/Capture.PNG');
 }
 
 .photographer .shape_style,
@@ -187,6 +246,11 @@
     visibility: hidden;
 }
 
+.photographer .wrapper_message {
+    background-color: white;
+    width: 100%;
+}
+
 .photographer .astronomer_heading {
     height: 0;
 }
@@ -201,23 +265,60 @@
     justify-content: space-around;
 }
 
+.modern .wrapper_message {
+    justify-content: center;
+}
+
+
+
 .photographer .wrapper_message {
     justify-content: space-around;
 }
 
 
 .message_heading {
-    color: white;
     font-weight: 500;
     text-transform: uppercase;
 }
-.message_heading h1,h2,h3,h4,h5,h6 {
-    font-size: 1rem;
+.message_heading h1,
+.message_heading h2
+.message_heading h3,
+.message_heading h4,
+.message_heading h5,
+.message_heading h6 {
+    font-size: 9px;
+    color: white;
 }
 
-.message_desc small b {
-    display: block;
-    text-align: center;
+.message_desc>small {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.message_desc small span {
     color: white;
-    font-size: .5rem;
+    font-weight: 400;
+    font-size: 8px;
+}
+
+.photographer .message_desc small span,
+.photographer .message_heading h5,
+.aquarelles .message_desc small span,
+.aquarelles .message_heading h5{
+    color: black;
+}
+
+@media(min-width: 820px) {
+    .message_heading h1,
+    .message_heading h2,
+    .message_heading h3,
+    .message_heading h4,
+    .message_heading h5,
+    .message_heading h6 {
+        font-size: 1rem;
+    }
+    .message_desc small span {
+        font-size: .7rem;
+    }
 }

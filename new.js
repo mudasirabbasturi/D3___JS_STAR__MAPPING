@@ -1,10 +1,50 @@
-// Function Js
+const bodyEle = document.getElementsByTagName('body')[0];
+const toggleEle = document.querySelector('.list_menu');
+const liEle = document.getElementsByClassName('nav-item');
+
+function addOffcanvasActiveClass() {
+  bodyEle.classList.add('offcanvas-active');
+  if (!toggleEle.classList.contains('rotate')) {
+    toggleEle.classList.add('rotate');
+  }
+}
+
+function removeOffcanvasActiveClass() {
+  bodyEle.classList.remove('offcanvas-active');
+  toggleEle.classList.remove('rotate');
+}
+
+function handleMediaQueryChange(mediaQuery) {
+  if (mediaQuery.matches) {
+    // Add event listeners and classes when the media query is matched (viewport width < 820)
+    for (let i = 0; i < liEle.length; i++) {
+      const clicked = liEle[i];
+      if (i !== liEle.length - 1) {
+        clicked.addEventListener('click', addOffcanvasActiveClass);
+      }
+    }
+  } else {
+    // Remove event listeners and classes when the media query is not matched (viewport width >= 820)
+    for (let i = 0; i < liEle.length; i++) {
+      const clicked = liEle[i];
+      clicked.removeEventListener('click', addOffcanvasActiveClass);
+      removeOffcanvasActiveClass();
+    }
+  }
+}
+
+const mediaQuery = window.matchMedia('(max-width: 819px)');
+
+// Initial check when the page loads
+handleMediaQueryChange(mediaQuery);
+
+// Listen for changes to the media query and update the event listeners accordingly
+mediaQuery.addEventListener('change', handleMediaQueryChange);
 
 function toggleFunction(x) {
     x.classList.toggle("rotate")
 }
 
-/* Global Variable */
 
 var wrapperShapeEle = document.getElementById("wrapper_shape")
 
@@ -29,6 +69,23 @@ function PrintStyle() {
             this.classList.add("selected")
             const getAttribute = this.getAttribute("data-type")
             prdtTypEle.classList.add(getAttribute)
+            const productWrapperEle = document.getElementById("product_wrapper")
+            const productTypeEle = document.getElementById("product_type")
+            if(productTypeEle.className.includes("aquarelles")) {
+                productWrapperEle.style.backgroundColor = "white"
+            }
+            else if(productTypeEle.className.includes("modern")) {
+                productWrapperEle.style.backgroundColor = "white"
+            }
+            else if(productTypeEle.className.includes("photographer")) {
+                productWrapperEle.style.backgroundColor = "white"
+            }
+            else if(productTypeEle.className.includes("explorer")) {
+                productWrapperEle.style.backgroundColor = "white"
+            }
+            else {
+                productWrapperEle.style.backgroundColor = "black"
+            }
 
         })
 
@@ -244,10 +301,15 @@ function ProductFrame() {
     for(let i = 0; i < productFrameEle.length; i++) {
         const clicked = productFrameEle[i]
         clicked.addEventListener('click', function(){
+
+            const wrapperShapeEle = document.getElementById("wrapper_shape")
+
             for(let j = 0; j < productFrameEle.length; j++) {
                 productFrameEle[j].classList.remove('selected')
             }
             this.classList.add("selected")
+            wrapperShapeEle.classList.add('bg_frame')
+            const img = this.getAttribute("data-src")
         })
     }
 }
