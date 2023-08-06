@@ -296,24 +296,85 @@ function ProductFinish() {
     }
 }
 
+// function ProductFrame() {
+//     const productFrameEle = document.getElementsByClassName("product_frame")
+//     for(let i = 0; i < productFrameEle.length; i++) {
+//         const clicked = productFrameEle[i]
+//         clicked.addEventListener('click', function(){
+
+//             const wrapperShapeEle = document.getElementById("wrapper_shape")
+
+//             for(let j = 0; j < productFrameEle.length; j++) {
+//                 productFrameEle[j].classList.remove('selected')
+//             }
+//             this.classList.add("selected")
+
+//             const imgURL = this.getAttribute("data-src")
+
+//             if (dynamicDiv) {
+//                 wrapperShapeEle.removeChild(dynamicDiv);
+//                 dynamicDiv = null;
+//               }
+//               if (imgURL === "none") {
+//                 return;
+//               }
+//               const newDiv = document.createElement('div');
+//               newDiv.classList.add('bg_frame');
+//               const newImg = document.createElement('img');
+//               newImg.src = `/assets/images/${imgURL}.png`;
+//               newImg.alt = '';
+//               newDiv.appendChild(newImg);
+//               wrapperShapeEle.appendChild(newDiv);
+//               dynamicDiv = newDiv;
+//         })
+//     }
+// }
+
 function ProductFrame() {
-    const productFrameEle = document.getElementsByClassName("product_frame")
-    for(let i = 0; i < productFrameEle.length; i++) {
-        const clicked = productFrameEle[i]
-        clicked.addEventListener('click', function(){
+    const productFrameEle = document.getElementsByClassName("product_frame");
+    const wrapperShapeEle = document.getElementById("wrapper_shape");
+    let dynamicDiv = null;
+    let dynamicCreated = false;
+  
+    for (let i = 0; i < productFrameEle.length; i++) {
+      const clicked = productFrameEle[i];
+      clicked.addEventListener('click', function() {
+        const imgURL = this.getAttribute("data-src");
+  
+        // Check if the clicked element has data-src as "none," and if it's the same as the last selected element, do nothing.
+        if (imgURL === "none" && this === dynamicDiv) {
+          return;
+        }
+  
+        for (let j = 0; j < productFrameEle.length; j++) {
+          productFrameEle[j].classList.remove('selected');
+        }
+  
+        this.classList.add("selected");
+  
+        if (dynamicDiv && dynamicCreated) {
+          wrapperShapeEle.removeChild(dynamicDiv);
+          dynamicDiv = null;
+          dynamicCreated = false;
+        }
 
-            const wrapperShapeEle = document.getElementById("wrapper_shape")
+        if (imgURL === "none") {
+          return;
+        }
 
-            for(let j = 0; j < productFrameEle.length; j++) {
-                productFrameEle[j].classList.remove('selected')
-            }
-            this.classList.add("selected")
-            wrapperShapeEle.classList.add('bg_frame')
-            const img = this.getAttribute("data-src")
-        })
+        const newDiv = document.createElement('div');
+        newDiv.classList.add('bg_frame');
+
+        const newImg = document.createElement('img');
+        newImg.src = `/assets/images/${imgURL}.png`;
+        newImg.alt = '';
+        newDiv.appendChild(newImg);
+        wrapperShapeEle.appendChild(newDiv);
+        dynamicDiv = newDiv;
+        dynamicCreated = true;
+      });
     }
-}
-
+  }
 
 
 function redirectToPrintSize(target) {
