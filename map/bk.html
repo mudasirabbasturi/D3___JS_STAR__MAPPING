@@ -54,7 +54,6 @@
         <button id="graticule">Graticule</button>
         <button id="milky_way">Milky Way</button>
         <button id="constellation_name">Constellations Name</button>
-        <button id="constellation_bonds">Bonds</button>
         <button id="equatorial">Equatorial</button>
         <button id="ecliptic">Ecliptic</button>
         <button id="galactic">Galactic</button>
@@ -110,32 +109,19 @@
 
             dsos: {
                 show: false,
-                names: false,
+                names: false
             },
-            // constellations: {
-            //     names: false,
-            //     namesType: "iau",
-            //     nameStyle: {
-            //         fill: "#ffffff",
-            //         align: "center",
-            //         baseline: "middle",
-            //         font: [`14px ${FONT}`, `8px ${FONT}`, `0px ${FONT}`]
-            //     },
-            //     lines: false,
-            //     lineStyle: { stroke: "#cccccc", width: 1, opacity: 0.4 }
-            // },
             constellations: {
-                show: false, 
-                names: false,
-                desig: false,
-                namestyle: {
-                    fill: "#ffffff", align: "center", baseline: "middle", opacity: 0.8,
+                names: true,
+                namesType: "iau",
+                nameStyle: {
+                    fill: "#ffffff",
+                    align: "center",
+                    baseline: "middle",
                     font: [`14px ${FONT}`, `8px ${FONT}`, `0px ${FONT}`]
                 },
                 lines: false,
-                linestyle: { stroke: "#cccccc", width: 1, opacity: 0.4 },
-                bounds: false,
-                boundstyle: { stroke: "#cccc00", width: 0.5, opacity: 0.8, dash: [2, 4] }
+                lineStyle: { stroke: "#cccccc", width: 1, opacity: 0.4 }
             },
 
             mw: {
@@ -195,23 +181,13 @@
 
         document.getElementById("constellation_name").onclick = () => {
             config.constellations.names = !config.constellations.names
-            updateConfigAndRedraw()
+            updateConfigAndRedraw();
         };
 
         document.getElementById("constellations_line").onclick = () => {
             config.constellations.lines = !config.constellations.lines
             updateConfigAndRedraw();
         };
-
-        document.getElementById("constellation_bonds").onclick = () => {
-            config.constellations.bounds = !config.constellations.bounds
-            updateConfigAndRedraw();
-        };
-
-        // document.getElementById("constellations_bonds").onclick = () => {
-        //     config.constellations.bounds = !config.constellations.bounds
-        //     updateConfigAndRedraw();
-        // };
 
         document.getElementById("graticule").onclick = () => {
             config.lines.graticule.show = !config.lines.graticule.show
@@ -244,9 +220,7 @@
         };
 
         Celestial.display(config);
-        
         Celestial.skyview({ date: DATE });
-
         function updateConfigAndRedraw() {
             Celestial.apply(config)
         }
