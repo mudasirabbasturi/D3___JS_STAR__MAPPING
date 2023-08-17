@@ -23,6 +23,10 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="assets/css/color_skins.css">
     <link rel="stylesheet" href="css/new.css">
+    <script type="text/javascript" src="map/d3.min.js"></script>
+    <script type="text/javascript" src="map/d3.geo.projection.min.js"></script>
+    <script type="text/javascript" src="map/celestial.min.js"></script>
+    <link rel="stylesheet" href="map/celestial.css">
     <style>
         *,
         *::after,
@@ -59,6 +63,13 @@
         .print_style_tab_content {padding: 0px;}
         .print_style_tab_content .tab-pane.active {
             display: flex;
+        }
+        #map canvas {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0;
         }
 
     </style>
@@ -944,6 +955,7 @@
                                         <h5>🤍 OUR LUCKY STARS 🤍</h5>
                                     </div>
                                     <div class="map_wrapper shape_style" id="shape_style">
+                                        <div id="map"></div>
                                     </div>
                                     <div class="wrapper_message" id="wrapper_message">
                                         <div class="message_heading">
@@ -1046,6 +1058,146 @@
 
 
     </script>
+        <script type="text/javascript">
+
+            const DATE = new Date("2021-09-25T04:00:00+0000");
+            const [LAT, LON] = [36.525321, -121.815916];
+            const FONT = "Raleway";
+    
+        const config = {
+                container: "map",
+                // width: 500,
+    
+                form: false,
+                advanced: false,
+                interactive: false,
+                disableAnimations: true,
+    
+                zoomlevel: null,
+                zoomextend: 1,
+    
+                projection: "airy",
+                transform: "equatorial",
+    
+                follow: "zenith",
+                geopos: [LAT, LON],
+                datapath: "https://ofrohn.github.io/data/",
+    
+                lines: {
+                    graticule: { show: false },
+                    equatorial: { show: false },
+                    ecliptic: { show: false },
+                    galactic: { show: false },
+                    supergalactic: { show: false }
+                },
+    
+                planets: {
+                    show: true,
+                    which: ["mer", "ven", "ter", "lun", "mar", "jup", "sat"],
+                    symbolType: "disk",
+                    names: false,
+                    nameStyle: {
+                        fill: "#00ccff",
+                        font: `14px ${FONT}`,
+                        align: "center",
+                        baseline: "top"
+                    },
+                    namesType: "en"
+                },
+    
+                dsos: {
+                    show: false,
+                    names: false,
+                },
+                // constellations: {
+                //     names: false,
+                //     namesType: "iau",
+                //     nameStyle: {
+                //         fill: "#ffffff",
+                //         align: "center",
+                //         baseline: "middle",
+                //         font: [`14px ${FONT}`, `8px ${FONT}`, `0px ${FONT}`]
+                //     },
+                //     lines: false,
+                //     lineStyle: { stroke: "#cccccc", width: 1, opacity: 0.4 }
+                // },
+                constellations: {
+                    show: false, 
+                    names: false,
+                    desig: false,
+                    namestyle: {
+                        fill: "#ffffff", align: "center", baseline: "middle", opacity: 0.8,
+                        font: [`14px ${FONT}`, `8px ${FONT}`, `0px ${FONT}`]
+                    },
+                    lines: false,
+                    linestyle: { stroke: "#cccccc", width: 1, opacity: 0.4 },
+                    bounds: false,
+                    boundstyle: { stroke: "#cccc00", width: 0.5, opacity: 0.8, dash: [2, 4] }
+                },
+    
+                mw: {
+                    show: false,
+                    // style: { fill: "#ffffff", opacity: 0.02 }
+                    style: { fill: "#000000", opacity: 1 }
+                },
+    
+                lines: {
+                    graticule: {
+                        show: false,
+                        stroke: "#cccccc",
+                        width: 0.6,
+                        opacity: 0.8,
+                        lon: {
+                            pos: [""],
+                            fill: "#eee",
+                            font: "10px Helvetica, Arial, sans-serif"
+                        },
+                        lat: {
+                            pos: [""],
+                            fill: "#eee",
+                            font: "10px Helvetica, Arial, sans-serif"
+                        }
+                    },
+                    equatorial: { show: false, stroke: "#aaaaaa", width: 1.3, opacity: 0.7 },
+                    ecliptic: { show: false, stroke: "#66cc66", width: 1.3, opacity: 0.7 },
+                    galactic: { show: false, stroke: "#cc6666", width: 1.3, opacity: 0.7 },
+                    supergalactic: { show: false, stroke: "#cc66cc", width: 1.3, opacity: 0.7 }
+                },
+    
+                background: {
+                    fill: "#0b1a26",
+                    stroke: "#ffffff",
+                    opacity: 1,
+                    width: 2
+                },
+    
+                stars: {
+                    colors: true,
+                    size: 4,
+                    limit: 6,
+                    exponent: -0.28,
+                    designation: false,
+    
+                    propername: false,
+                    propernameType: "name",
+                    propernameStyle: {
+                        fill: "#ddddbb",
+                        font: `8px ${FONT}`,
+                        align: "right",
+                        baseline: "center"
+                    },
+                    propernameLimit: 2.0
+                }
+            };
+    
+    
+    
+            Celestial.display(config);
+            
+            Celestial.skyview({ date: DATE });
+
+    
+        </script>
 </body>
 
 </html>

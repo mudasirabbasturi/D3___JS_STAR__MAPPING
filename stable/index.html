@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Mapping Design.</title>
+    <link rel="stylesheet" href="assets/dashboard/assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/dashboard/assets/vendor/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="assets/dashboard/assets/css/main.css">
+    <link rel="stylesheet" href="assets/dashboard/assets/css/color_skins.css">
+    <link rel="stylesheet" href="assets/editor/css/style.css">
+    <link rel="stylesheet" href="assets/editor/css/main.css">
+    <link rel="stylesheet" href="assets/editor/css/sidebar.css">
+
+</head>
+
+<body class="theme-cyan">
+
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="m-t-30">
+                <img src="assets/svg/milky-way.svg" alt="Mudasir Abbas Turi" width="48" height="48">
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- End Of Loader -->
+
+    <div id="wrapper">
+        <nav class="navbar navbar-fixed-top" id="fixed_nav_bar">
+            <ul class="nav nav-tabs">
+                <li class="nav-item">
+                    <a class="nav-link btn-toggle-offcanvas active" data-toggle="tab" href="#style">style</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="#moment">moment</a>
+                </li>
+                <!-- <li class="nav-item">
+                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="#text">text</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="#design">design</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="#product">product</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="javascript:void();">
+                        <i class="lnr lnr-menu fa fa-bars"></i>
+                    </a>
+                </li> -->
+            </ul>
+        </nav>
+        <div id="left-sidebar" class="sidebar">
+            <!-- <div class="tab-content p-l-0 p-r-0 pt-0">
+                <div class="tab-pane p-l-15 p-r-15 active" id="style">
+                    <hr>
+                    <h6>STYLE</h6>
+                    <hr>
+                </div>
+                <div class="tab-pane p-l-15 p-r-15" id="moment">
+                    <hr>
+                    moment
+                </div>
+            </div> -->
+        </div>
+        <div id="main-content">
+            <div class="preview_wrapper" id="preview_wrapper">
+                <div class="wrapper_shape vertical" id="wrapper_shape">
+                    <div class="product_wrapper" id="product_wrapper">
+                        <div class="product">
+                            <div class="product_type classic" id="product_type">
+                                <!-- <div class="message_heading astronomer_heading">
+                                    <h5>🤍 OUR LUCKY STARS 🤍</h5>
+                                </div> -->
+                                <div class="map" id="map">
+                                </div>
+                                <!-- <div class="wrapper_message" id="wrapper_message">
+                                    <div class="message_heading">
+                                        <h5>🤍 OUR LUCKY STARS 🤍</h5>
+                                    </div>
+                                    <div class="message_desc">
+                                        <small>
+                                            <span class="date_time">
+                                                <span id="date">20th September 2021 </span>
+                                                <span id="time"> -18:00</span>
+                                            </span>
+                                            <span id="location">London, United Kingdom</span>
+                                            <span class="coordinates">
+                                                <span id="n_s">51.5073° N,</span>
+                                                <span id="e_w">51.5073° W</span>
+                                            </span>
+                                        </small>
+                                    </div>
+                                </div> -->
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="assets/dashboard/assets/bundles/libscripts.bundle.js"></script>
+    <script src="assets/dashboard/assets/bundles/vendorscripts.bundle.js"></script>
+    <script src="assets/dashboard/assets/bundles/mainscripts.bundle.js"></script>
+    <script src="assets/editor/js/jquery.datetimepicker.full.js"></script>
+
+    <script type="text/javascript" src="assets/map/d3.min.js"></script>
+    <script type="text/javascript" src="assets/map/d3.geo.projection.min.js"></script>
+    <script type="text/javascript" src="assets/map/celestial.min.js"></script>
+    <script src="assets/editor/js/main.js"></script>
+    <!-- <script src="assets/editor/js/map.js"></script> -->
+
+</body>
+
+</html>

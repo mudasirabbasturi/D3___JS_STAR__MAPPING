@@ -1,0 +1,130 @@
+.offcanvas-active {
+    #wrapper {
+        #left-sidebar {
+            width: 100%;
+        }
+    }
+}
+
+
+#wrapper {
+    height: 100vh;
+    overflow: hidden;
+    background-color: #be0000;
+    .navbar-fixed-top {
+        width: 100%;
+        background-color: rgba(0, 0, 255, 0.37);
+        .nav-tabs {
+            .nav-item {
+                .nav-link {
+                    text-transform: uppercase;
+                }
+            }
+        }
+    }
+
+    #left-sidebar {
+        width: 0%;
+        height: 100%;
+        left: unset;
+        background-color: greenyellow;
+
+        hr {
+            margin-top: .5rem;
+            margin-bottom: .5rem;
+        }
+    }
+
+    #main-content {
+        margin-right: 5px;
+        width: calc(100% - 10px);
+        height: 100%;
+        background-color: #E0E0E0;
+        padding: 0;
+        overflow: hidden;
+
+        .preview_wrapper {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            .wrapper_shape {
+                position: relative;
+                background-color: black;
+
+                &.vertical .map_wrapper {
+                    width: 90%;
+                    aspect-ratio: 1/1;
+                }
+
+                .product_wrapper {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    .product {
+                        position: absolute;
+                        max-width: 100%;
+                        max-height: 100%;
+                        top: 0;
+                        left: 0;
+                        bottom: 0;
+                        right: 0;
+                        margin: 10px;
+                        border: 2px solid rgb(255, 255, 255);
+                        .product_type {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-around;
+                            .map {
+                                canvas {
+                                    width: inherit;
+                                    position: absolute;
+                                    left: 0;
+                                    top: 0;
+                                    right: 0;
+                                    bottom: 0;
+                                    margin: auto;
+                                    overflow: hidden;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 820px) {
+    #wrapper {
+        .navbar-fixed-top {
+            width: calc(100% - 67.2%);
+        }
+
+        #left-sidebar {
+            width: calc(100% - 67.2%);
+        }
+
+        #main-content {
+            width: calc(67.2% - 5px);
+            margin-right: 5px;
+            .preview_wrapper {
+                .wrapper_shape {
+                    .product_wrapper {
+                        .product {
+                            margin: 25px;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
