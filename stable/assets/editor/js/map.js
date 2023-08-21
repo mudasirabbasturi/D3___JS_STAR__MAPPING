@@ -1,8 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
 
     function MapFunction() {
-        const DATE = new Date("2021-09-25T04:00:00+0000");
-        const [LAT, LON] = [36.525321, -121.815916];
+        // const DATE = new Date("2021-09-25T04:00:00+0000");
+        // const [LAT, LON] = [36.525321, -121.815916];
         // const FONT = "Raleway";
 
         const config = {
@@ -21,7 +21,8 @@ document.addEventListener("DOMContentLoaded", function () {
             transform: "equatorial",
 
             follow: "zenith",
-            geopos: [LAT, LON],
+            // geopos: [LAT, LON],
+            geopos: [0, 0],
             geopos: null,
             datapath: "https://ofrohn.github.io/data/",
 
@@ -147,6 +148,7 @@ document.addEventListener("DOMContentLoaded", function () {
             updateConfigAndRedraw();
         };
 
+
         function updateConfigAndRedraw() {
             Celestial.apply(config)
         }
@@ -193,10 +195,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         var latitude = results[0].geometry.location.lat();
                         var longitude = results[0].geometry.location.lng();
 
-                        config.location.latitude = latitude;
-                        config.location.longitude = longitude;
-
-                        updateConfigAndRedraw()
 
                         const longEle = document.getElementById("longitude")
                         const latiEle = document.getElementById("latitude")
@@ -204,9 +202,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         latiEle.value = latitude;
                         longEle.value = longitude;
 
-                        var changeEvent = new Event('change', { bubbles: true });
-                        latiEle.dispatchEvent(changeEvent);
-                        longEle.dispatchEvent(changeEvent);
+                        Celestial.skyview({ "location": [latitude, longitude] });
+
+                        // var changeEvent = new Event('change', { bubbles: true });
+                        // latiEle.dispatchEvent(changeEvent);
+                        // longEle.dispatchEvent(changeEvent);
 
 
                     } else {
