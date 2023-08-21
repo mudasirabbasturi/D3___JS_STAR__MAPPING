@@ -21,7 +21,7 @@
     <div class="page-loader-wrapper">
         <div class="loader">
             <div class="m-t-30">
-                <img src="assets/svg/milky-way.svg" alt="Mudasir Abbas Turi" width="48" height="48">
+                <img src="assets/editor/svg/milky-way.svg" alt="Mudasir Abbas Turi" width="48" height="48">
             </div>
             <p>Please wait...</p>
         </div>
@@ -30,54 +30,148 @@
 
     <div id="wrapper">
         <nav class="navbar navbar-fixed-top" id="fixed_nav_bar">
-            <ul class="nav nav-tabs">
+            <ul class="nav nav-tabs nav_scroll_horizontally clearfix" id="myTab">
                 <li class="nav-item">
-                    <a class="nav-link btn-toggle-offcanvas active" data-toggle="tab" href="#style">style</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="#moment">moment</a>
-                </li>
-                <!-- <li class="nav-item">
-                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="#text">text</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="#design">design</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="#product">product</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link btn-toggle-offcanvas" data-toggle="tab" href="javascript:void();">
-                        <i class="lnr lnr-menu fa fa-bars"></i>
+                    <a class="nav-link active" data-toggle="tab" href="#style">
+                        <span class="nav_img">
+                            <img src="assets/editor/svg/style-icon.svg" alt="">
+                        </span>
+                        <span>Style</span>
                     </a>
-                </li> -->
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#moment">
+                        <span class="nav_img">
+                            <img src="assets/editor/svg/moment-icon.svg" alt="">
+                        </span>
+                        <span>Moment</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#text">
+                        <span class="nav_img">
+                            <img src="assets/editor/svg/text-icon.svg" alt="">
+                        </span>
+                        <span>Text</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#design">
+                        <span class="nav_img">
+                            <img src="assets/editor/svg/design-icon.svg" alt="">
+                        </span>
+                        <span>Design</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" data-toggle="tab" href="#product">
+                        <span class="nav_img">
+                            <img src="assets/editor/svg/product-icon.svg" alt="">
+                        </span>
+                        <span>Product</span>
+                    </a>
+                </li>
+                <li class="nav-item list_menu btn-toggle-offcanvas" onclick="toggleFunction(this)">
+                    <a class="nav-link" data-toggle="tab" href="#">
+                        <span class="nav_toggle">
+                            <div class="toggle">
+                                <div class="bar1"></div>
+                                <div class="bar2"></div>
+                                <div class="bar3"></div>
+                            </div>
+                        </span>
+                        <span class="menu_text">Form</span>
+                    </a>
+                </li>
             </ul>
         </nav>
         <div id="left-sidebar" class="sidebar">
-            <!-- <div class="tab-content p-l-0 p-r-0 pt-0">
-                <div class="tab-pane p-l-15 p-r-15 active" id="style">
+            <div class="tab-content p-l-0 p-r-0 mt-4">
+                <!-- Design Start.. -->
+                <div class="tab-pane p-l-15 p-r-15 active" id="design">
+                    <h6>
+                        <hr>DESIGN.
+                        <hr>
+                    </h6>
+                    <div class="image_select_wrapper map_design">
+                        <div class="image_select design_element selected" id="constellations_line">
+                            <span class="image">
+                                <img src="assets/editor/svg/constellations.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">Constellations</span>
+                        </div>
+                        <div class="image_select design_element">
+                            <span class="image">
+                                <img src="assets/editor/svg/moon.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">Moon</span>
+                        </div>
+                        <div class="image_select design_element" id="milky_way">
+                            <span class="image">
+                                <img src="assets/editor/svg/milky-way.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">Milky Way</span>
+                        </div>
+                        <div class="image_select design_element" id="graticule">
+                            <span class="image">
+                                <img src="assets/editor/svg/graticule.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">Graticule</span>
+                        </div>
+                        <div class="image_select design_element" id="constellation_name">
+                            <span class="image">
+                                <img src="assets/editor/svg/constellations-name.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">Taurus</span>
+                        </div>
+                        <div class="image_select design_element">
+                            <span class="image">
+                                <img src="assets/editor/svg/planet-position.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">Position</span>
+                        </div>
+                    </div>
+                    <h6><img src="assets/svg/place.svg" alt="">Location:</h6>
                     <hr>
-                    <h6>STYLE</h6>
+                    <div class="form-group">
+                        <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                            id="location" placeholder="London, United Kingdom" value="London, United Kingdom">
+                        <label for="search_place">
+                            <small class="sml_desc">Search the place of your moment</small>
+                        </label>
+                    </div>
                     <hr>
+                    <!-- Coordinate North-South -->
+                    <div class="input-group mb-2">
+                        <input type="number" class="form-control  border-top-0 border-right-0 border-dark"
+                            value="0.1276" id="longitude" />
+                    </div>
+                    <!-- Coordinate North-South End -->
+
+                    <!-- Coordinate East-West -->
+                    <div class="input-group mb-1">
+                        <input type="number" class="form-control border-top-0 border-right-0 border-dark"
+                            value="51.5073" id="latitude" />
+                    </div>
+                    <!-- Coordinate East-West End -->
                 </div>
-                <div class="tab-pane p-l-15 p-r-15" id="moment">
-                    <hr>
-                    moment
-                </div>
-            </div> -->
+                <!-- Design End.. -->
+            </div>
         </div>
         <div id="main-content">
             <div class="preview_wrapper" id="preview_wrapper">
                 <div class="wrapper_shape vertical" id="wrapper_shape">
                     <div class="product_wrapper" id="product_wrapper">
                         <div class="product">
-                            <div class="product_type classic" id="product_type">
-                                <!-- <div class="message_heading astronomer_heading">
-                                    <h5>🤍 OUR LUCKY STARS 🤍</h5>
-                                </div> -->
+                            <div class="product_type" id="product_type">
+                                <div class="wrapper_message header astronomer_heading">
+                                    <div class="message_heading">
+                                        <h5>🤍 OUR LUCKY STARS 🤍</h5>
+                                    </div>
+                                </div>
                                 <div class="map" id="map">
                                 </div>
-                                <!-- <div class="wrapper_message" id="wrapper_message">
+                                <div class="wrapper_message footer" id="wrapper_message">
                                     <div class="message_heading">
                                         <h5>🤍 OUR LUCKY STARS 🤍</h5>
                                     </div>
@@ -94,7 +188,7 @@
                                             </span>
                                         </small>
                                     </div>
-                                </div> -->
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -108,11 +202,20 @@
     <script src="assets/dashboard/assets/bundles/mainscripts.bundle.js"></script>
     <script src="assets/editor/js/jquery.datetimepicker.full.js"></script>
 
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOLf24aCsK0BZTv4xOeQwSruCFiOQGqsk&libraries=places"></script>
     <script type="text/javascript" src="assets/map/d3.min.js"></script>
     <script type="text/javascript" src="assets/map/d3.geo.projection.min.js"></script>
     <script type="text/javascript" src="assets/map/celestial.min.js"></script>
     <script src="assets/editor/js/main.js"></script>
-    <!-- <script src="assets/editor/js/map.js"></script> -->
+    <script>
+        function toggleFunction(x) {
+            x.classList.toggle("rotate")
+        }
+
+
+    </script>
+    <script src="assets/editor/js/map.js"></script>
 
 </body>
 
