@@ -1,3 +1,9 @@
+*,
+*::after,
+*::before {
+    font-family: "Segoe UI", Tahoma, sans-serif !important;
+}
+
 .offcanvas-active {
     #wrapper {
         #left-sidebar {
@@ -13,8 +19,10 @@
 
     .navbar-fixed-top {
         width: 100%;
+
         .nav-tabs {
             width: 100%;
+
             .nav-item {
                 .nav-link {
                     position: relative;
@@ -25,17 +33,23 @@
                     padding: 0.5rem .6rem;
                     font-size: .5rem;
                     text-transform: uppercase;
+
                     .nav_img {
                         padding-bottom: 2px;
                     }
+
                     .nav_toggle {
                         width: 25px;
                         height: 25px;
+
                         .toggle {
                             display: inline-block;
                             cursor: pointer;
                             margin: 0;
-                            .bar1, .bar2, .bar3 {
+
+                            .bar1,
+                            .bar2,
+                            .bar3 {
                                 background-color: #333;
                                 width: 22px;
                                 height: 2px;
@@ -48,15 +62,19 @@
                     }
                 }
             }
+
             .list_menu {
                 flex-grow: 1;
+
                 &.rotate {
                     .bar1 {
                         transform: translate(0, 7px) rotate(-45deg);
                     }
+
                     .bar2 {
                         opacity: 0;
                     }
+
                     .bar3 {
                         transform: translate(0, -7px) rotate(45deg);
                     }
@@ -75,10 +93,13 @@
             margin-top: .5rem;
             margin-bottom: .5rem;
         }
+
+        // Image Select Wrapper.
         .image_select_wrapper {
             display: flex;
             flex-wrap: wrap;
             justify-content: start;
+
             .image_select {
                 max-width: 20%;
                 min-width: 20%;
@@ -86,6 +107,7 @@
                 margin-bottom: 15px;
                 cursor: pointer;
                 padding: 5px;
+
                 .image {
                     position: relative;
                     display: block;
@@ -127,20 +149,160 @@
                         border-radius: 50%;
                         border: 2px solid #49c5b744;
                         transition: all .15s;
+
                         img {
                             padding: 8px;
                         }
                     }
                 }
 
-                &:hover, &.selected {
+                &:hover,
+                &.selected {
                     .image {
                         border-color: #49C5B6;
-                        box-shadow: 0 1px 10px rgba(34,34,34,.25);
+                        box-shadow: 0 1px 10px rgba(34, 34, 34, .25);
                     }
                 }
             }
         }
+
+        // Image Select Wrapper End.
+
+        // Color Wrapper.
+        .color_select_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+
+            .color_select {
+                max-width: 20%;
+                min-width: 20%;
+                text-align: center;
+                margin-bottom: 15px;
+                font-size: 0;
+                cursor: pointer;
+                padding: 5px;
+
+                .image {
+                    position: relative;
+                    display: block;
+                    overflow: hidden;
+                    line-height: 0;
+                    border: 2px solid #e9e9e9;
+                    transition: all .15s;
+                    border-radius: 2px;
+                    padding-top: 125%;
+
+                    >.color {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        -o-object-fit: contain;
+                        object-fit: contain;
+                        margin: auto;
+                        padding: 0;
+                    }
+
+                }
+
+                .name {
+                    display: block;
+                    margin-top: 5px;
+                    font-size: .8rem;
+                }
+
+                &.border_circle {
+                    .image {
+                        position: relative;
+                        display: block;
+                        padding-top: calc(100% - 2px);
+                        overflow: hidden;
+                        line-height: 0;
+                        border-radius: 50%;
+                        border: 2px solid #49c5b744;
+                        transition: all .15s;
+
+                        img {
+                            padding: 8px;
+                        }
+                    }
+                }
+
+                &:hover,
+                &.selected {
+                    .image {
+                        border-color: #49C5B6;
+                        box-shadow: 0 1px 10px rgba(34, 34, 34, .25);
+                    }
+                }
+
+            }
+
+        }
+
+        // Color Wrapper End.
+
+        // Font Select Wrapper.
+        .font_select_wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: start;
+
+            .font_select {
+                max-width: 20%;
+                min-width: 20%;
+                text-align: center;
+                margin-bottom: 15px;
+                font-size: 0;
+                cursor: pointer;
+                padding: 5px;
+
+                .font_text {
+                    position: relative;
+                    display: block;
+                    overflow: hidden;
+                    line-height: 0;
+                    padding-top: calc(100% - 2px);
+                    border-radius: 50%;
+                    border: 2px solid #49c5b744;
+                    transition: all .15s;
+
+                    &::before {
+                        content: "Abc";
+                        font-size: 22px;
+                        font-family: var(--font-style);
+                        background-color: #fff;
+                        padding: 8px;
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        width: 100%;
+                        height: 100%;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                    }
+
+                    &:hover,
+                    &.selected {
+                        border-color: #49C5B6;
+                        box-shadow: 0 1px 10px rgba(34, 34, 34, .25);
+                    }
+                }
+
+                .name {
+                    display: block;
+                    margin-top: 5px;
+                    font-size: .7rem;
+                }
+
+            }
+
+        }
+
+        // Font Select Wrapper End.
     }
 
     #main-content {
@@ -223,23 +385,26 @@
                                         color: white;
                                         text-align: center;
                                     }
+
                                     @media (orientation: landscape) {
                                         h5 {
                                             font-size: .6rem;
                                         }
                                     }
                                 }
+
                                 .message_desc {
-                                    > small {
+                                    >small {
                                         display: flex;
                                         flex-direction: column;
                                         align-items: center;
-    
+
                                         span {
                                             color: white;
                                             font-weight: 400;
                                             font-size: .7rem;
                                         }
+
                                         @media (orientation: landscape) {
                                             span {
                                                 font-size: .4rem;
@@ -260,12 +425,14 @@
     #wrapper {
         .navbar-fixed-top {
             width: calc(100% - 67.2%);
+
             .nav-tabs {
                 .nav-item {
                     .nav-link {
                         font-size: .8rem;
                     }
                 }
+
                 .list_menu {
                     display: none;
                 }
@@ -287,27 +454,30 @@
                     .product_wrapper {
                         .product {
                             margin: 25px;
+
                             .product_type {
                                 .map {
-    
+
                                     canvas {
                                         width: inherit;
                                     }
                                 }
-    
+
                                 .wrapper_message {
                                     .message_heading {
                                         h5 {
                                             font-size: 1rem;
                                         }
                                     }
+
                                     .message_desc {
-                                        > small {
+                                        >small {
                                             span {
                                                 color: white;
                                                 font-weight: 400;
                                                 font-size: .7rem;
                                             }
+
                                             @media (orientation: landscape) {
                                                 span {
                                                     font-size: .7rem;

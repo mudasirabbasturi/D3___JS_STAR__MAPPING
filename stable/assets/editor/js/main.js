@@ -88,5 +88,27 @@ document.addEventListener("DOMContentLoaded", function () {
         aspectRatioHandler(largScreen, smallScreen)
     }, true)
 
-
 })
+
+function toggleFunction(x) {
+    x.classList.toggle("rotate")
+}
+
+
+function redirectToPrintSize(target) {
+    $('.print_size_content .tab-pane').removeClass('active');
+    var ok = $(target).addClass('active');
+    console.log(ok)
+}
+
+$('#datePicker').datetimepicker({
+    lang: 'ch',
+    timepicker: false,
+    format: 'd/m/Y',
+});
+
+$('#timePicker').datetimepicker({
+    datepicker: false,
+    format: 'H:i',
+    step: 1
+});
