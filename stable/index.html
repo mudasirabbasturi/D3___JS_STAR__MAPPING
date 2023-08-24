@@ -21,6 +21,7 @@
         .print_style_tab_content .tab-pane.active {
             display: flex;
         }
+
     </style>
 </head>
 
@@ -38,7 +39,7 @@
     <!-- End Of Loader -->
 
     <div id="wrapper">
-        <nav class="navbar navbar-fixed-top" id="fixed_nav_bar">
+        <nav class="navbar navbar-fixed-top shadow-lg bg-white" id="fixed_nav_bar">
             <ul class="nav nav-tabs nav_scroll_horizontally clearfix" id="myTab">
                 <li class="nav-item">
                     <a class="nav-link active" data-toggle="tab" href="#style">
@@ -169,7 +170,7 @@
                         <hr>
                     </h6>
                     <div class="image_select_wrapper print_layout">
-                        <div class="image_select border_circle vertical selected" data-type="vertical"
+                        <div class="image_select border_circle layout_style vertical selected" data-type="vertical"
                             data-href="#vertical" onclick="redirectToPrintSize('#vertical')">
 
                             <span class="image">
@@ -178,7 +179,7 @@
                             <span class="name">Vertical</span>
 
                         </div>
-                        <div class="image_select border_circle horizontal" data-type="horizontal"
+                        <div class="image_select border_circle layout_style horizontal" data-type="horizontal"
                             data-href="#horizontal" onclick="redirectToPrintSize('#horizontal')">
 
                             <span class="image">
@@ -188,8 +189,8 @@
 
                         </div>
 
-                        <div class="image_select border_circle square" data-type="square" data-href="#square"
-                            onclick="redirectToPrintSize('#square')">
+                        <div class="image_select border_circle layout_style square" data-type="square"
+                            data-href="#square" onclick="redirectToPrintSize('#square')">
 
                             <span class="image">
                                 <img src="assets/editor/svg/square.svg" alt="img" class="img-fluid">
@@ -208,7 +209,7 @@
                     <div class="tab-content print_size_content print_size p-0">
                         <div class="tab-pane active" id="vertical">
                             <div class="image_select_wrapper">
-                                <div class="image_select border_circle selected" data-size="0.8">
+                                <div class="image_select size_vertical border_circle selected" data-size="0.8">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-s.svg" alt="img" class="img-fluid">
                                     </span>
@@ -217,7 +218,7 @@
                                     </span>
                                     <span class="name">30x40 cm</span>
                                 </div>
-                                <div class="image_select border_circle" data-size="0.93">
+                                <div class="image_select size_vertical border_circle" data-size="0.93">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-m.svg" alt="img" class="img-fluid">
                                     </span>
@@ -226,7 +227,7 @@
                                     </span>
                                     <span class="name">45x60 cm</span>
                                 </div>
-                                <div class="image_select border_circle" data-size="0.98">
+                                <div class="image_select size_vertical border_circle" data-size="0.98">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-l.svg" alt="img" class="img-fluid">
                                     </span>
@@ -235,7 +236,7 @@
                                     </span>
                                     <span class="name">50x70 cm</span>
                                 </div>
-                                <div class="image_select border_circle" data-size="1.05">
+                                <div class="image_select size_vertical border_circle" data-size="1.05">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-xl.svg" alt="img" class="img-fluid">
                                     </span>
@@ -248,7 +249,7 @@
                         </div>
                         <div class="tab-pane" id="horizontal">
                             <div class="image_select_wrapper">
-                                <div class="image_select border_circle" data-size="0.65">
+                                <div class="image_select size_horizontal border_circle" data-size="0.65">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-s.svg" alt="img" class="img-fluid">
                                     </span>
@@ -257,7 +258,7 @@
                                     </span>
                                     <span class="name">30x40 cm</span>
                                 </div>
-                                <div class="image_select border_circle selected" data-size="0.82">
+                                <div class="image_select size_horizontal border_circle selected" data-size="0.82">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-m.svg" alt="img" class="img-fluid">
                                     </span>
@@ -266,7 +267,7 @@
                                     </span>
                                     <span class="name">45x60 cm</span>
                                 </div>
-                                <div class="image_select border_circle" data-size="0.87">
+                                <div class="image_select size_horizontal border_circle" data-size="0.87">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-l.svg" alt="img" class="img-fluid">
                                     </span>
@@ -275,7 +276,7 @@
                                     </span>
                                     <span class="name">50x70 cm</span>
                                 </div>
-                                <div class="image_select border_circle" data-size="1">
+                                <div class="image_select size_horizontal border_circle" data-size="1">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-xl.svg" alt="img" class="img-fluid">
                                     </span>
@@ -288,7 +289,7 @@
                         </div>
                         <div class="tab-pane" id="square">
                             <div class="image_select_wrapper">
-                                <div class="image_select border_circle" data-size="0.65">
+                                <div class="image_select size_square border_circle" data-size="0.65">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-s.svg" alt="img" class="img-fluid">
                                     </span>
@@ -297,7 +298,7 @@
                                     </span>
                                     <span class="name">30x40 cm</span>
                                 </div>
-                                <div class="image_select border_circle selected" data-size="0.82">
+                                <div class="image_select size_square border_circle selected" data-size="0.82">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-m.svg" alt="img" class="img-fluid">
                                     </span>
@@ -325,9 +326,11 @@
                     <div class="form-group">
                         <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
                             id="location" placeholder="London, United Kingdom" value="London, United Kingdom">
+
                         <label for="search_place">
                             <small class="sml_desc">Search the place of your moment</small>
                         </label>
+
                     </div>
                     <hr>
                     <!-- Moment Location End. -->
@@ -341,7 +344,9 @@
                         <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
                             placeholder="01/08/2023" id="datePicker" />
                         <label for="datePicker">
-                            <small class="sml_desc">Select the date of your moment</small>
+                            <small class="sml_desc">
+                                Select the date of your moment.
+                            </small>
                         </label>
                     </div>
                     <hr>
@@ -358,16 +363,15 @@
                         <hr>
                     </h6>
                     <div class="form-group disabledEdit" id="time_moment">
-                        <input type="text" 
-                               id="timePicker"
-                               class="form-control mb-1 border-top-0 border-right-0 border-dark" 
-                               placeholder="00:00" />
+                        <input type="text" id="timePicker"
+                            class="form-control mb-1 border-top-0 border-right-0 border-dark" placeholder="00:00" />
 
                         <label for="">
                             <small class="sml_desc">Select a specific time (optional). The default time is
                                 midnight.</small>
                         </label>
-                    </div><hr>
+                    </div>
+                    <hr>
                     <!-- Moment Time End. -->
 
                     <!-- Moment Coordinates -->
@@ -384,12 +388,11 @@
 
                         <!-- Coordinate North-South -->
                         <div class="input-group mb-2">
-                            <input type="number" 
-                                   class="form-control  border-top-0 border-right-0 border-dark"
-                                   value="0.1276" placeholder="" />
+                            <input type="number" class="form-control  border-top-0 border-right-0 border-dark"
+                                value="0.1276" placeholder="" />
                             <div class="input-group-prepend">
                                 <select name="cars"
-                                        class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
+                                    class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
                                     <option value="north">N</option>
                                     <option value="south">S</option>
                                 </select>
@@ -410,7 +413,7 @@
                             </div>
                         </div>
                         <!-- Coordinate East-West End -->
-                        <label for="usr">
+                        <label for="">
                             <small class="sml_desc">Note: Changes to the coordinates and cardinals will change the
                                 location and the
                                 visible night sky.</small>
@@ -430,9 +433,9 @@
                         <hr>
                     </h6>
                     <div class="form-group">
-                        <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                            id="usr" value="🤍 OUR LUCKY STARS 🤍">
-                        <label for="usr">
+                        <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark" id=""
+                            value="🤍 OUR LUCKY STARS 🤍">
+                        <label for="">
                             <small class="sml_desc">Find your sayings here.</small>
                         </label>
                     </div>
@@ -446,7 +449,8 @@
                     <div class="form-group disabledEdit" id="time_message">
                         <div class="input-group align-items-center">
                             <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                                id="usr" value="20th September 2021">
+                                id="custom_date" value="20th September 2021">
+
                             <div class="input-group-prepend ml-2 border border-left-0 border-right-0 border-top-0 border-dark"
                                 style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
                                 <label class="switch">
@@ -455,7 +459,7 @@
                                 </label>
                             </div>
                         </div>
-                        <label for="usr" style="display: inline-block; width: 70%;">
+                        <label for="" style="display: inline-block; width: 70%;">
                             <small class="sml_desc">Customize the date text here. Stars position is not affected by
                                 this.</small>
                         </label>
@@ -470,7 +474,7 @@
                     <div class="form-group disabledEdit" id="location_message">
                         <div class="input-group align-items-center">
                             <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                                id="usr" value="London, United Kingdom">
+                                id="custom_location" value="London, United Kingdom">
                             <div class="input-group-prepend ml-2 border border-left-0 border-right-0 border-top-0 border-dark"
                                 style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
                                 <label class="switch">
@@ -519,7 +523,10 @@
                 <div class="tab-pane p-l-15 p-r-15" id="design">
 
                     <!-- Star Map Elements. -->
-                    <h6><hr>Star Map Elements.<hr></h6>
+                    <h6>
+                        <hr>Star Map Elements.
+                        <hr>
+                    </h6>
                     <div class="image_select_wrapper">
                         <div class="image_select border_circle selected">
                             <span class="image">
@@ -561,152 +568,164 @@
                     <!-- Star Map Elements End. -->
 
                     <!-- Star Map Color. -->
-                    <h6><hr>Star Map Color.<hr></h6>
+                    <h6>
+                        <hr>Star Map Color.
+                        <hr>
+                    </h6>
                     <div class="color_select_wrapper star_map_color">
-                        <div class="color_select border_circle selected">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(0, 0, 0);">
+                                <span class="star_color color" style="background-color: rgb(0, 0, 0);">
                                 </span>
                             </span>
                             <span class="name">Black</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(77, 77, 89);"></span>
+                                <span class="star_color color" style="background-color: rgb(77, 77, 89);"></span>
                             </span>
                             <span class="name">Grey</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(25, 31, 57);"></span>
+                                <span class="star_color color" style="background-color: rgb(25, 31, 57);"></span>
                             </span>
                             <span class="name">Midnight Blue</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(15, 90, 113);"></span>
+                                <span class="star_color color" style="background-color: rgb(15, 90, 113);"></span>
                             </span>
                             <span class="name">Chatham Blue</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(143, 11, 27);"></span>
+                                <span class="star_color color" style="background-color: rgb(143, 11, 27);"></span>
                             </span>
                             <span class="name">Deep Red</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(9, 20, 118);"></span>
+                                <span class="star_color color" style="background-color: rgb(9, 20, 118);"></span>
                             </span>
                             <span class="name">Royal Blue</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(137, 70, 152);"></span>
+                                <span class="star_color color" style="background-color: rgb(137, 70, 152);"></span>
                             </span>
                             <span class="name">Royal Purple</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(103, 122, 47);"></span>
+                                <span class="star_color color" style="background-color: rgb(103, 122, 47);"></span>
                             </span>
                             <span class="name">Spring Green</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(227, 155, 117);"></span>
+                                <span class="star_color color" style="background-color: rgb(227, 155, 117);"></span>
                             </span>
                             <span class="name">Dark Salmon</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select star_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(199, 124, 101);"></span>
+                                <span class="star_color color" style="background-color: rgb(199, 124, 101);"></span>
                             </span>
                             <span class="name">Sienna</span>
+                        </div>
+                        <div class="color_select star_color_select border_circle selected">
+                            <span class="image">
+                                <span class="star_color color" style="background-color: unset"></span>
+                            </span>
+                            <span class="name">None</span>
                         </div>
 
                     </div>
                     <!-- Star Map Color End. -->
 
                     <!-- Background Color. -->
-                    <h6><hr>Frame Color.<hr></h6>
+                    <h6>
+                        <hr>Frame Color.
+                        <hr>
+                    </h6>
                     <div class="color_select_wrapper star_map_color">
-                        <div class="color_select border_circle selected">
+                        <div class="color_select frame_color_select border_circle selected">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(0, 0, 0);">
+                                <span class="color frame_color" style="background-color: rgb(0, 0, 0);">
                                 </span>
                             </span>
                             <span class="name">Black</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(77, 77, 89);"></span>
+                                <span class="color frame_color" style="background-color: rgb(77, 77, 89);"></span>
                             </span>
                             <span class="name">Grey</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(25, 31, 57);"></span>
+                                <span class="color frame_color" style="background-color: rgb(25, 31, 57);"></span>
                             </span>
                             <span class="name">Midnight Blue</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(15, 90, 113);"></span>
+                                <span class="color frame_color" style="background-color: rgb(15, 90, 113);"></span>
                             </span>
                             <span class="name">Chatham Blue</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(143, 11, 27);"></span>
+                                <span class="color frame_color" style="background-color: rgb(143, 11, 27);"></span>
                             </span>
                             <span class="name">Deep Red</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(9, 20, 118);"></span>
+                                <span class="color frame_color" style="background-color: rgb(9, 20, 118);"></span>
                             </span>
                             <span class="name">Royal Blue</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(137, 70, 152);"></span>
+                                <span class="color frame_color" style="background-color: rgb(137, 70, 152);"></span>
                             </span>
                             <span class="name">Royal Purple</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(103, 122, 47);"></span>
+                                <span class="color frame_color" style="background-color: rgb(103, 122, 47);"></span>
                             </span>
                             <span class="name">Spring Green</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(227, 155, 117);"></span>
+                                <span class="color frame_color" style="background-color: rgb(227, 155, 117);"></span>
                             </span>
                             <span class="name">Dark Salmon</span>
                         </div>
 
-                        <div class="color_select border_circle">
+                        <div class="color_select frame_color_select border_circle">
                             <span class="image">
-                                <span class="color" style="background-color: rgb(199, 124, 101);"></span>
+                                <span class="color frame_color" style="background-color: rgb(199, 124, 101);"></span>
                             </span>
                             <span class="name">Sienna</span>
                         </div>
@@ -715,81 +734,259 @@
                     <!-- Background Color End. -->
 
                     <!-- Border Type. -->
-                    <h6><hr>Border Type.<hr></h6>
+                    <h6>
+                        <hr>Border Type.
+                        <hr>
+                    </h6>
                     <div class="image_select_wrapper">
-                        <div class="image_select border_circle selected">
+                        <div class="image_select borderSelect border_circle" data-border="none">
                             <span class="image">
                                 <img src="assets/editor/svg/none.svg" alt="img" class="img-fluid">
                             </span>
                             <span class="name">No border</span>
                         </div>
-                        <div class="image_select border_circle">
+                        <div class="image_select borderSelect border_circle selected" data-border="2px solid white">
                             <span class="image">
                                 <img src="assets/editor/svg/single.svg" alt="img" class="img-fluid">
                             </span>
-                            <span class="name">Single border</span>
+                            <span class="name">border</span>
                         </div>
                     </div>
                     <!-- Border Type End. -->
 
+                    <!-- Border Color. -->
+                    <!-- <h6>
+                        <hr>Border Color.
+                        <hr>
+                    </h6>
+                    <div>
+                         <input type="color" name="" id="">
+                    </div> -->
+                    <!-- Border Color End. -->
+
                     <!-- Message Fonts. -->
-                    <h6><hr>Message Fonts.<hr></h6>
+                    <h6>
+                        <hr>Message Fonts.
+                        <hr>
+                    </h6>
                     <div class="font_select_wrapper text_fonts">
                         <div class="font_select">
-                            <span class="font_text" style="--font-style: 'Lato', sans-serif;"></span>
+                            <span class="font_text msg_fonts" style="--font-style: 'Lato', sans-serif;"></span>
                             <span class="name">Classic</span>
                         </div>
                         <div class="font_select">
-                            <span class="font_text" style="--font-style: 'Spectral', serif;"></span>
+                            <span class="font_text msg_fonts" style="--font-style: 'Spectral', serif;"></span>
                             <span class="name">Elegant</span>
                         </div>
                         <div class="font_select">
-                            <span class="font_text selected" style="--font-style: 'Dancing Script', cursive;"></span>
+                            <span class="font_text msg_fonts selected" style="--font-style: 'Dancing Script', cursive;"></span>
                             <span class="name">Poetic</span>
                         </div>
                         <div class="font_select">
-                            <span class="font_text" style="--font-style: 'Life Savers', cursive;"></span>
+                            <span class="font_text msg_fonts" style="--font-style: 'Life Savers', cursive;"></span>
                             <span class="name">Playful</span>
                         </div>
                         <div class="font_select">
-                            <span class="font_text"
-                                style="--font-style: 'Waiting for the Sunrise', cursive;"></span>
+                            <span class="font_text msg_fonts" style="--font-style: 'Waiting for the Sunrise', cursive;"></span>
                             <span class="name">Sketch</span>
                         </div>
                     </div>
                     <!-- Message Fonts End. -->
 
                     <!-- Fonts Details. -->
-                    <h6><hr>Details Fonts.<hr></h6>
+                    <h6>
+                        <hr>Details Fonts.
+                        <hr>
+                    </h6>
                     <div class="font_select_wrapper text_fonts">
                         <div class="font_select">
-                            <span class="font_text" style="--font-style: 'Lato', sans-serif;"></span>
+                            <span class="font_text dtls_fonts" style="--font-style: 'Lato', sans-serif;"></span>
                             <span class="name">Classic</span>
                         </div>
                         <div class="font_select">
-                            <span class="font_text selected" style="--font-style: 'Spectral', serif;"></span>
+                            <span class="font_text dtls_fonts selected" style="--font-style: 'Spectral', serif;"></span>
                             <span class="name">Elegant</span>
                         </div>
                         <div class="font_select">
-                            <span class="font_text" style="--font-style: 'Dancing Script', cursive;"></span>
+                            <span class="font_text dtls_fonts" style="--font-style: 'Dancing Script', cursive;"></span>
                             <span class="name">Poetic</span>
                         </div>
                         <div class="font_select">
-                            <span class="font_text" style="--font-style: 'Life Savers', cursive;"></span>
+                            <span class="font_text dtls_fonts" style="--font-style: 'Life Savers', cursive;"></span>
                             <span class="name">Playful</span>
                         </div>
                         <div class="font_select">
-                            <span class="font_text"
-                                style="--font-style: 'Waiting for the Sunrise', cursive;"></span>
+                            <span class="font_text dtls_fonts" style="--font-style: 'Waiting for the Sunrise', cursive;"></span>
                             <span class="name">Sketch</span>
                         </div>
                     </div>
                     <!-- Fonts Details End. -->
 
                 </div>
-                <!-- Design. -->
-
                 <!-- Design End. -->
+
+                <!-- Product. -->
+                <div class="tab-pane p-l-15 p-r-15" id="product">
+
+                    <h6>
+                        <hr>Product Finish.
+                        <hr>
+                    </h6>
+                    <div class="image_select_wrapper">
+                        <div class="image_select border_circle selected " data-href="#poster"
+                            onclick="redirectTo('#poster')">
+                            <span class="image">
+                                <img src="assets/editor/svg/poster.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">poster</span>
+                        </div>
+                        <div class="image_select border_circle" data-href="#canvas" onclick="redirectTo('#canvas')">
+                            <span class="image">
+                                <img src="assets/editor/svg/canvas.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">canvas</span>
+                        </div>
+                        <div class="image_select border_circle" data-href="#download" onclick="redirectTo('#download')">
+                            <span class="image">
+                                <img src="assets/editor/svg/download.svg" alt="img" class="img-fluid">
+                            </span>
+                            <span class="name">download</span>
+                        </div>
+                    </div>
+                    <div class="tab-content detail_tab_content pl-0 pr-0">
+                        <div id="poster" class="tab-pane active">
+                            <hr>
+                            <h6><small><b>Solid Wood Frame</b></small></h6>
+                            <hr>
+                            <div class="image_select_wrapper star_map_elements">
+                                <div class="image_select border_circle selected" data-src="none">
+                                    <span class="image">
+                                        <img src="assets/editor/svg/none.svg">
+                                    </span>
+                                    <span class="price">£ 00.00</span>
+                                    <span class="name">frame (None)</span>
+                                </div>
+
+                                <div class="image_select border_circle" data-src="black_beach">
+                                    <span class="image">
+                                        <img src="assets/editor/svg/black-beech.svg">
+                                    </span>
+                                    <!-- <span class="label-favorite">Favorite</span> -->
+                                    <span class="price">£ 34.00</span>
+                                    <span class="name">Black (Beech)</span>
+                                </div>
+
+                                <div class="image_select border_circle" data-src="white_beach">
+                                    <span class="image">
+                                        <img src="assets/editor/svg/white-beech.svg">
+                                    </span>
+                                    <span class="price">£ 34.00</span>
+                                    <span class="name">White (Beech)</span>
+                                </div>
+
+                                <div class="image_select border_circle" data-src="natural_beech">
+                                    <span class="image">
+                                        <img src="assets/editor/svg/natural-beech.svg">
+                                    </span>
+                                    <span class="price">£ 34.00</span>
+                                    <span class="name">Natural (Beech)</span>
+                                </div>
+
+                                <div class="image_select border_circle" data-src="natural_oak">
+                                    <span class="image">
+                                        <img src="assets/editor/svg/natural-oak.svg">
+                                    </span>
+                                    <span class="price">£ 34.00</span>
+                                    <span class="name">Natural (Oak)</span>
+                                </div>
+
+                            </div>
+                            <hr>
+                            <h6><small><b>Product Details</b></small></h6>
+                            <hr>
+                            <div class="alert alert-warning" role="alert">
+                                <small><b>3 for 2 Offer</b> Order 3 and only pay for 2!</small>
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <small><b>Free Shipping</b> Delivery in <b>5-7 business days</b>.</small>
+                            </div>
+                            <p>
+                                <b>Canvas:</b>
+                                <small class="sml_desc">
+                                    Our canvases are a finely textured linen fabric (340g/m²) which consistently
+                                    reproduces image details with outstanding clarity and detail.
+                                    The canvas frame is made of FSC® certified wood.
+                                </small>
+                            </p>
+                            <p>
+                                <b>Edge Finishing:</b>
+                                <small class="sml_desc">
+                                    The star map is wrapped around the edges of the canvas frame in the full
+                                    background color.
+                                </small>
+                            </p>
+                        </div>
+                        <div id="canvas" class="tab-pane">
+                            <hr>
+                            <h6><small><b>Product Details</b></small></h6>
+                            <hr>
+                            <div class="alert alert-warning" role="alert">
+                                <small class="sml_desc"><b>3 for 2 Offer </b> Order 3 and only pay for 2!</small>
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <small class="sml_desc"><b>Free Shipping </b> Delivery in <b>5-7 business
+                                        days</b>.</small>
+                            </div>
+                            <p>
+                                <b>Canvas:</b>
+                                <small class="sml_desc">
+                                    Our canvases are a finely textured linen fabric (340g/m²) which consistently
+                                    reproduces image details with outstanding clarity and detail.
+                                    The canvas frame is made of FSC® certified wood.
+                                </small>
+                            </p>
+                            <p>
+                                <b>Edge Finishing:</b>
+                                <small class="sml_desc">
+                                    The star map is wrapped around the edges of the canvas frame in the full
+                                    background color.
+                                </small>
+                            </p>
+                        </div>
+                        <div id="download" class="tab-pane">
+                            <hr>
+                            <h6><small><b>Product Details</b></small></h6>
+                            <hr>
+                            <div class="alert alert-warning" role="alert">
+                                <b>3 for 2 Offer:</b> Order 3 and only pay for 2!
+                            </div>
+                            <div class="alert alert-success" role="alert">
+                                <b>Immediately Available:</b> Send by email after checkout.
+                            </div>
+                            <p>
+                                <b>Printing Files:</b>
+                                <small class="sml_desc">
+                                    Our digital print files are especially useful if you run out of time. Simply
+                                    order the digital files and print your star map with a local print shop.
+                                </small>
+                            </p>
+                            <p>
+                                <b>File Formats:</b>
+                                <small class="sml_desc">
+                                    You receive your star map as JPG and PDF file.
+                                </small>
+                            </p>
+                            <p>
+                                <b>Resolution:</b>
+                                <small class="sml_desc">
+                                    The printing files are in 300 DPI respective to the print size. For example:
+                                    50x70 cm has an image size of 5906 x 8268 Pixel (48.84 Megapixel).
+                                </small>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Product End. -->
 
             </div>
         </div>
@@ -797,28 +994,30 @@
             <div class="preview_wrapper" id="preview_wrapper">
                 <div class="wrapper_shape vertical" id="wrapper_shape">
                     <div class="product_wrapper" id="product_wrapper">
-                        <div class="product">
+                        <div class="product" id="wrapper_product">
                             <div class="product_type" id="product_type">
-                                <div class="wrapper_message header astronomer_heading">
+                                <!-- <div class="wrapper_message header astronomer_heading">
                                     <div class="message_heading">
                                         <h5>🤍 OUR LUCKY STARS 🤍</h5>
                                     </div>
-                                </div>
+                                </div> -->
                                 <div class="map" id="map">
                                 </div>
                                 <div class="wrapper_message footer" id="wrapper_message">
                                     <div class="message_heading">
-                                        <h5>🤍 OUR LUCKY STARS 🤍</h5>
+                                        <h5 id="heading_text">🤍 OUR LUCKY STARS 🤍</h5>
                                     </div>
                                     <div class="message_desc">
                                         <small>
                                             <span class="date_time">
-                                                <span id="date">20th September 2021 </span>
-                                                <span id="time"> -18:00</span>
+                                                <span id="text_date">Tue, Sep 21, 2021</span>
+                                                <span> -</span>
+                                                <span id="text_time">2:44 PM</span>
                                             </span>
-                                            <span id="location">London, United Kingdom</span>
-                                            <span class="coordinates">
-                                                <span id="n_s">51.5073° N,</span>
+                                            <span id="text_location">London, United Kingdom</span>
+                                            <span class="text_coordinates">
+                                                <span id="n_s">51.5073° N</span>
+                                                <span>,</span>
                                                 <span id="e_w">51.5073° W</span>
                                             </span>
                                         </small>
@@ -836,12 +1035,14 @@
     <script src="assets/dashboard/assets/bundles/vendorscripts.bundle.js"></script>
     <script src="assets/dashboard/assets/bundles/mainscripts.bundle.js"></script>
     <script src="assets/editor/js/jquery.datetimepicker.full.js"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOLf24aCsK0BZTv4xOeQwSruCFiOQGqsk&libraries=places"></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCOLf24aCsK0BZTv4xOeQwSruCFiOQGqsk&libraries=places"></script>
     <script type="text/javascript" src="assets/map/d3.min.js"></script>
     <script type="text/javascript" src="assets/map/d3.geo.projection.min.js"></script>
     <script type="text/javascript" src="assets/map/celestial.min.js"></script>
-    <script src="assets/editor/js/main.js"></script>
-    <script src="assets/editor/js/map.js"></script>
+    <script src="assets/editor/js/aspect_ratio.js"></script>
+    <!-- <script src="assets/editor/js/main.js"></script> -->
+    <!-- <script src="assets/editor/js/map.js"></script> -->
 
 </body>
 

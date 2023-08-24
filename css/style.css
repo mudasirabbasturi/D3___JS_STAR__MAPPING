@@ -410,7 +410,6 @@
     transform: translateX(13px);
   }
   
-  /* Rounded sliders */
   .slider.round {
     border-radius: 34px;
   }

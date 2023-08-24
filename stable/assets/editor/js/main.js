@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const sidebarEle = document.getElementById("left-sidebar")
     const previewWrapperEle = document.getElementById("preview_wrapper")
     const wrapperShapeEle = document.getElementById("wrapper_shape")
+    const layOutEle = document.getElementsByClassName("layout_style")
 
     const productTypeEle = document.getElementById("product_type")
     const mapEle = document.getElementById("map")
@@ -14,17 +15,6 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const liEle = document.getElementsByClassName('nav-item')
 
-    function addOffcanvasActiveClass() {
-        bodyEle.classList.add('offcanvas-active');
-        if (!toggleEle.classList.contains('rotate')) {
-            toggleEle.classList.add('rotate');
-        }
-    }
-
-    function removeOffcanvasActiveClass() {
-        bodyEle.classList.remove('offcanvas-active');
-        toggleEle.classList.remove('rotate');
-    }
 
     function aspectRatioHandler(largScreen, smallScreen) {
 
@@ -39,7 +29,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
                 else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.height = 90 + "%"
+                    wrapperShapeEle.style.height = 67.1 + "%"
                     wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight / 1.3 + "px"
                 }
 
@@ -48,7 +38,43 @@ document.addEventListener("DOMContentLoaded", function () {
                     wrapperShapeEle.style.height = 90 + "%"
                 }
             }
-         
+            else if (classList.contains("horizontal")) {
+
+                if (previewWrapperEle.offsetWidth < previewWrapperEle.offsetHeight) {
+                    wrapperShapeEle.style.width = 81.731 + "%"
+                    wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth / 1.333 + "px"
+                }
+
+                else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
+                    wrapperShapeEle.style.height = 81.731 + "%"
+                    wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight * 1.333 + "px"
+                }
+
+                else {
+                    wrapperShapeEle.style.width = 81.731 + "%"
+                    wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth / 1.333 + "px"
+                }
+
+            }
+
+            else if(classList.contains("square")) {
+
+                if (previewWrapperEle.offsetWidth < previewWrapperEle.offsetHeight) {
+                    wrapperShapeEle.style.width = 66.9833 + "%"
+                    wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth + "px"
+                }
+
+                else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
+                    wrapperShapeEle.style.height = 66.9833 + "%"
+                    wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight  + "px"
+                }
+
+                else {
+                    wrapperShapeEle.style.width = 66.9833 + "%"
+                    wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth + "px"
+                }
+
+            }
 
         }
 
@@ -78,6 +104,41 @@ document.addEventListener("DOMContentLoaded", function () {
                     wrapperShapeEle.style.height = 90 + "%"
                 }
             }
+            else if (classList.contains("horizontal")){
+                if (previewWrapperEle.offsetWidth < previewWrapperEle.offsetHeight) {
+                    wrapperShapeEle.style.width = 90 + "%"
+                    wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth / 1.333 + "px"
+                }
+
+                else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
+                    wrapperShapeEle.style.height = 90 + "%"
+                    wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight * 1.333 + "px"
+                }
+
+                else {
+                    wrapperShapeEle.style.width = 90 + "%"
+                    wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth / 1.333 + "px"
+                }
+            }
+
+            else if(classList.contains("square")) {
+
+                if (previewWrapperEle.offsetWidth < previewWrapperEle.offsetHeight) {
+                    wrapperShapeEle.style.width = 90 + "%"
+                    wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth + "px"
+                }
+
+                else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
+                    wrapperShapeEle.style.height = 90 + "%"
+                    wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight  + "px"
+                }
+
+                else {
+                    wrapperShapeEle.style.width = 90 + "%"
+                    wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth + "px"
+                }
+
+            }
 
         }
     }
@@ -90,15 +151,30 @@ document.addEventListener("DOMContentLoaded", function () {
 
 })
 
+function addOffcanvasActiveClass() {
+    bodyEle.classList.add('offcanvas-active');
+    if (!toggleEle.classList.contains('rotate')) {
+        toggleEle.classList.add('rotate');
+    }
+}
+
+function removeOffcanvasActiveClass() {
+    bodyEle.classList.remove('offcanvas-active');
+    toggleEle.classList.remove('rotate');
+}
+
 function toggleFunction(x) {
     x.classList.toggle("rotate")
 }
 
-
 function redirectToPrintSize(target) {
-    $('.print_size_content .tab-pane').removeClass('active');
-    var ok = $(target).addClass('active');
-    console.log(ok)
+    $('.print_size_content .tab-pane').removeClass('active')
+    $(target).addClass('active')
+}
+
+function redirectTo(target) {
+    $('.detail_tab_content .tab-pane').removeClass('active')
+    $(target).addClass('active')
 }
 
 $('#datePicker').datetimepicker({

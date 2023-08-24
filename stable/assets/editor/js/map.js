@@ -128,25 +128,25 @@ document.addEventListener("DOMContentLoaded", function () {
         Celestial.display(config);
 
 
-        document.getElementById("constellation_name").onclick = () => {
-            config.constellations.names = !config.constellations.names
-            updateConfigAndRedraw()
-        };
+        // document.getElementById("constellation_name").onclick = () => {
+        //     config.constellations.names = !config.constellations.names
+        //     updateConfigAndRedraw()
+        // };
 
-        document.getElementById("constellations_line").onclick = () => {
-            config.constellations.lines = !config.constellations.lines
-            updateConfigAndRedraw();
-        };
+        // document.getElementById("constellations_line").onclick = () => {
+        //     config.constellations.lines = !config.constellations.lines
+        //     updateConfigAndRedraw();
+        // };
 
-        document.getElementById("milky_way").onclick = () => {
-            config.mw.show = !config.mw.show;
-            updateConfigAndRedraw();
-        };
+        // document.getElementById("milky_way").onclick = () => {
+        //     config.mw.show = !config.mw.show;
+        //     updateConfigAndRedraw();
+        // };
 
-        document.getElementById("graticule").onclick = () => {
-            config.lines.graticule.show = !config.lines.graticule.show
-            updateConfigAndRedraw();
-        };
+        // document.getElementById("graticule").onclick = () => {
+        //     config.lines.graticule.show = !config.lines.graticule.show
+        //     updateConfigAndRedraw();
+        // };
 
 
         function updateConfigAndRedraw() {
@@ -203,10 +203,6 @@ document.addEventListener("DOMContentLoaded", function () {
                         longEle.value = longitude;
 
                         Celestial.skyview({ "location": [latitude, longitude] });
-
-                        // var changeEvent = new Event('change', { bubbles: true });
-                        // latiEle.dispatchEvent(changeEvent);
-                        // longEle.dispatchEvent(changeEvent);
 
 
                     } else {
