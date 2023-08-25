@@ -107,53 +107,53 @@
                         <hr>
                     </h6>
                     <div class="image_select_wrapper print_style">
-                        <div class="image_select selected" data-type="classic">
+                        <div class="image_select print_style_element selected" data-type="classic">
                             <span class="image">
                                 <img src="assets/editor/images/classic.png" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Classic</span>
                         </div>
 
-                        <div class="image_select" data-type="poet">
+                        <div class="image_select print_style_element" data-type="poet">
                             <span class="image">
                                 <img src="assets/editor/images/poet.png" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Poet</span>
                         </div>
 
-                        <div class="image_select" data-type="astronomer">
+                        <div class="image_select print_style_element" data-type="astronomer">
                             <span class="image">
                                 <img src="assets/editor/images/astronomer.png" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Astronomer</span>
                         </div>
-                        <div class="image_select" data-type="aquarelles">
+                        <div class="image_select print_style_element" data-type="aquarelles">
                             <span class="image">
                                 <img src="assets/editor/images/aquarelles.png" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Aquarelles</span>
                         </div>
-                        <div class="image_select" data-type="romantic">
+                        <div class="image_select print_style_element" data-type="romantic">
                             <span class="image">
                                 <img src="assets/editor/images/romantic.png" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Romantic</span>
                         </div>
-                        <div class="image_select" data-type="modern">
+                        <div class="image_select print_style_element" data-type="modern">
                             <span class="image">
                                 <img src="assets/editor/images/modern.png" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Modern</span>
                         </div>
 
-                        <div class="image_select" data-type="photographer">
+                        <div class="image_select print_style_element" data-type="photographer">
                             <span class="image">
                                 <img src="assets/editor/images/photographer.png" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Photographer</span>
                         </div>
 
-                        <div class="image_select" data-type="explorer">
+                        <div class="image_select print_style_element" data-type="explorer">
 
                             <span class="image">
                                 <img src="assets/editor/images/explorer.png" alt="img" class="img-fluid">
@@ -289,7 +289,7 @@
                         </div>
                         <div class="tab-pane" id="square">
                             <div class="image_select_wrapper">
-                                <div class="image_select size_square border_circle" data-size="0.65">
+                                <div class="image_select size_square border_circle" data-size="0.82">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-s.svg" alt="img" class="img-fluid">
                                     </span>
@@ -298,7 +298,7 @@
                                     </span>
                                     <span class="name">30x40 cm</span>
                                 </div>
-                                <div class="image_select size_square border_circle selected" data-size="0.82">
+                                <div class="image_select size_square border_circle selected" data-size="1">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-m.svg" alt="img" class="img-fluid">
                                     </span>
@@ -324,8 +324,11 @@
                         <hr>
                     </h6>
                     <div class="form-group">
-                        <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                            id="location" placeholder="London, United Kingdom" value="London, United Kingdom">
+                        <input type="text" 
+                               class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                               id="moment_location" 
+                               placeholder="London, United Kingdom" 
+                               value="London, United Kingdom">
 
                         <label for="search_place">
                             <small class="sml_desc">Search the place of your moment</small>
@@ -341,9 +344,11 @@
                         <hr>
                     </h6>
                     <div class="form-group">
-                        <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                            placeholder="01/08/2023" id="datePicker" />
-                        <label for="datePicker">
+                        <input type="text" 
+                               class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                               value="17/08/2023" 
+                               id="moment_date_picker" />
+                        <label for="moment_date_picker">
                             <small class="sml_desc">
                                 Select the date of your moment.
                             </small>
@@ -363,8 +368,10 @@
                         <hr>
                     </h6>
                     <div class="form-group disabledEdit" id="time_moment">
-                        <input type="text" id="timePicker"
-                            class="form-control mb-1 border-top-0 border-right-0 border-dark" placeholder="00:00" />
+                        <input type="text" 
+                               id="moment_time_picker"
+                               class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                               placeholder="00:00" />
 
                         <label for="">
                             <small class="sml_desc">Select a specific time (optional). The default time is
@@ -375,50 +382,7 @@
                     <!-- Moment Time End. -->
 
                     <!-- Moment Coordinates -->
-                    <h6>
-                        <hr>
-                        <img src="assets/editor/svg/coordinates.svg" alt="">Coordinates.
-                        <label class="switch">
-                            <input type="checkbox" class="toggleSwitch" data-target="coordinates_moment">
-                            <span class="slider round"></span>
-                        </label>
-                        <hr>
-                    </h6>
-                    <div class="form-group disabledEdit" id="coordinates_moment">
-
-                        <!-- Coordinate North-South -->
-                        <div class="input-group mb-2">
-                            <input type="number" class="form-control  border-top-0 border-right-0 border-dark"
-                                value="0.1276" placeholder="" />
-                            <div class="input-group-prepend">
-                                <select name="cars"
-                                    class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
-                                    <option value="north">N</option>
-                                    <option value="south">S</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Coordinate North-South End -->
-
-                        <!-- Coordinate East-West -->
-                        <div class="input-group mb-1">
-                            <input type="number" class="form-control border-top-0 border-right-0 border-dark"
-                                value="51.5073" placeholder="" />
-                            <div class="input-group-prepend">
-                                <select name="cars"
-                                    class="custom-select border-top-0 border-left-0 border-right-0 border-dark">
-                                    <option value="north">E</option>
-                                    <option value="south">W</option>
-                                </select>
-                            </div>
-                        </div>
-                        <!-- Coordinate East-West End -->
-                        <label for="">
-                            <small class="sml_desc">Note: Changes to the coordinates and cardinals will change the
-                                location and the
-                                visible night sky.</small>
-                        </label>
-                    </div>
+                    <input type="number" id="moment_coordinates" style="visibility: hidden;" />
                     <!-- Moment Coordinates End -->
 
                 </div>
@@ -433,8 +397,9 @@
                         <hr>
                     </h6>
                     <div class="form-group">
-                        <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark" id=""
-                            value="🤍 OUR LUCKY STARS 🤍">
+                        <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                               value="🤍 OUR LUCKY STARS 🤍"
+                               id="text_message">
                         <label for="">
                             <small class="sml_desc">Find your sayings here.</small>
                         </label>
@@ -448,21 +413,28 @@
                     </h6>
                     <div class="form-group disabledEdit" id="time_message">
                         <div class="input-group align-items-center">
-                            <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                                id="custom_date" value="20th September 2021">
+
+                            <input type="text" 
+                                   class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                                   id="text_date" 
+                                   value="20th September 2021">
 
                             <div class="input-group-prepend ml-2 border border-left-0 border-right-0 border-top-0 border-dark"
-                                style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
+                                 style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
                                 <label class="switch">
-                                    <input type="checkbox" class="toggleSwitch" data-target="time_message">
+                                    <input type="checkbox" 
+                                           class="toggleSwitch" data-target="time_message">
                                     <span class="slider round"></span>
                                 </label>
                             </div>
                         </div>
+
                         <label for="" style="display: inline-block; width: 70%;">
-                            <small class="sml_desc">Customize the date text here. Stars position is not affected by
-                                this.</small>
+                            <small class="sml_desc">
+                                Customize the date text here. Stars position is not affected by this.
+                            </small>
                         </label>
+
                     </div>
                     <!-- Date End. -->
 
@@ -473,17 +445,26 @@
                     </h6>
                     <div class="form-group disabledEdit" id="location_message">
                         <div class="input-group align-items-center">
-                            <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                                id="custom_location" value="London, United Kingdom">
+
+                            <input type="text" 
+                                   class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                                   id="text_location" 
+                                   value="London, United Kingdom">
+
                             <div class="input-group-prepend ml-2 border border-left-0 border-right-0 border-top-0 border-dark"
-                                style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
-                                <label class="switch">
-                                    <input type="checkbox" class="toggleSwitch" data-target="location_message">
+                                 style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
+                               
+                                 <label class="switch">
+                                    <input type="checkbox" 
+                                           class="toggleSwitch" 
+                                           data-target="location_message">
                                     <span class="slider round"></span>
                                 </label>
+
                             </div>
+
                         </div>
-                        <label for="usr" style="display: inline-block; width: 70%;">
+                        <label for="" style="display: inline-block; width: 70%;">
                             <small class="sml_desc">Customize the location text here. Stars position is not affected
                                 by this.</small>
                         </label>
@@ -497,8 +478,11 @@
                     </h6>
                     <div class="form-group disabledEdit" id="coordinates_message">
                         <div class="input-group align-items-center">
-                            <input type="text" class="form-control mb-1 border-top-0 border-right-0 border-dark"
-                                id="usr" value="51.5073° N, 0.1276° W">
+                            <input type="text" 
+                                   class="form-control mb-1 border-top-0 border-right-0 border-dark"
+                                   id="text_coordinates" 
+                                   value="51.5073° N, 0.1276° W">
+
                             <div class="input-group-prepend ml-2 border border-left-0 border-right-0 border-top-0 border-dark"
                                 style="position: relative;border-radius: 5px;padding-bottom: 4px !important;">
                                 <label class="switch">
@@ -506,6 +490,7 @@
                                     <span class="slider round"></span>
                                 </label>
                             </div>
+
                         </div>
                         <label for="usr" style="display: inline-block; width: 70%;">
                             <small class="sml_desc">Customize the coordinates text here. Stars position is not
@@ -528,37 +513,37 @@
                         <hr>
                     </h6>
                     <div class="image_select_wrapper">
-                        <div class="image_select border_circle selected">
+                        <div class="image_select star_map_element border_circle selected">
                             <span class="image">
                                 <img src="assets/editor/svg/constellations.svg" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Constellations</span>
                         </div>
-                        <div class="image_select border_circle">
+                        <div class="image_select star_map_element border_circle">
                             <span class="image">
                                 <img src="assets/editor/svg/moon.svg" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Moon</span>
                         </div>
-                        <div class="image_select border_circle">
+                        <div class="image_select star_map_element border_circle">
                             <span class="image">
                                 <img src="assets/editor/svg/milky-way.svg" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Milky Way</span>
                         </div>
-                        <div class="image_select border_circle">
+                        <div class="image_select star_map_element border_circle">
                             <span class="image">
                                 <img src="assets/editor/svg/graticule.svg" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Graticule</span>
                         </div>
-                        <div class="image_select border_circle">
+                        <div class="image_select star_map_element border_circle">
                             <span class="image">
                                 <img src="assets/editor/svg/constellations-name.svg" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Taurus</span>
                         </div>
-                        <div class="image_select border_circle">
+                        <div class="image_select star_map_element border_circle">
                             <span class="image">
                                 <img src="assets/editor/svg/planet-position.svg" alt="img" class="img-fluid">
                             </span>
@@ -996,32 +981,23 @@
                     <div class="product_wrapper" id="product_wrapper">
                         <div class="product" id="wrapper_product">
                             <div class="product_type" id="product_type">
-                                <!-- <div class="wrapper_message header astronomer_heading">
-                                    <div class="message_heading">
-                                        <h5>🤍 OUR LUCKY STARS 🤍</h5>
-                                    </div>
-                                </div> -->
                                 <div class="map" id="map">
                                 </div>
-                                <div class="wrapper_message footer" id="wrapper_message">
-                                    <div class="message_heading">
-                                        <h5 id="heading_text">🤍 OUR LUCKY STARS 🤍</h5>
-                                    </div>
-                                    <div class="message_desc">
-                                        <small>
-                                            <span class="date_time">
-                                                <span id="text_date">Tue, Sep 21, 2021</span>
-                                                <span> -</span>
-                                                <span id="text_time">2:44 PM</span>
-                                            </span>
-                                            <span id="text_location">London, United Kingdom</span>
-                                            <span class="text_coordinates">
-                                                <span id="n_s">51.5073° N</span>
-                                                <span>,</span>
-                                                <span id="e_w">51.5073° W</span>
-                                            </span>
-                                        </small>
-                                    </div>
+                                <div class="message_heading">
+                                    <h5 id="message">🤍 OUR LUCKY STARS 🤍</h5>
+                                </div>
+                                <div class="message_desc">
+                                    <small>
+                                        <span class="date_time">
+                                            <span id="details_date">Tue, Sep 21, 2021</span>
+                                            <span> -</span>
+                                            <span id="details_time">2:44 PM</span>
+                                        </span>
+                                        <span id="details_location">London, United Kingdom</span>
+                                        <span class="text_coordinates">
+                                            <span id="details_coordinates">51.5073° N, 51.5073° W</span>
+                                        </span>
+                                    </small>
                                 </div>
                             </div>
                         </div>
