@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     /** SIDEBAR. ====================================================== */
 
+    const fixedNavBarEle = document.getElementById("fixed_nav_bar")
     /** STYLE. */
     const printStyleEle = document.getElementsByClassName("print_style_element")
     const layOutEle = document.getElementsByClassName("layout_style")
@@ -36,15 +37,21 @@ document.addEventListener("DOMContentLoaded", function () {
     const msgFontsEle = document.getElementsByClassName("msg_fonts")
     const detailFontsEle = document.getElementsByClassName("dtls_fonts")
     const borderSelectEle = document.getElementsByClassName("borderSelect")
+
+    const starMapClrDNB = document.getElementById("star_map_color_dnb")
+    const starMapClrBgDNB = document.getElementById("frame_color_bg_dnb")
+    
     /** DESIGN END. */
 
     /** SIDEBAR END. ====================================================== */
 
     /** MAIN. ============================================================== */
 
+    const mainContentEle = document.getElementById("main-content")
     const previewWrapperEle = document.getElementById("preview_wrapper")
     const wrapperShapeEle = document.getElementById("wrapper_shape")
     const productEle = document.getElementById("wrapper_product")
+    const productTypeEle = document.getElementById("product_type")
     const mapEle = document.getElementById("map")
     const messageEle = document.getElementById('message')
     const detailsDateEle = document.getElementById("details_date")
@@ -56,6 +63,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
     function aspectRatioHandler(largScreen, smallScreen) {
+  
 
         const classList = wrapperShapeEle.classList
 
@@ -127,33 +135,33 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (classList.contains("vertical")) {
                 if (previewWrapperEle.offsetWidth < previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.width = 98 + "%"
+                    wrapperShapeEle.style.width = 92 + "%"
                     wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth * 1.3 + "px"
                 }
 
                 else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.height = 98 + "%"
+                    wrapperShapeEle.style.height = 92 + "%"
                     wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight / 1.3 + "px"
                 }
 
                 else {
                     wrapperShapeEle.style.width = 75 + "%"
-                    wrapperShapeEle.style.height = 98 + "%"
+                    wrapperShapeEle.style.height = 92 + "%"
                 }
             }
             else if (classList.contains("horizontal")) {
                 if (previewWrapperEle.offsetWidth < previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.width = 98 + "%"
+                    wrapperShapeEle.style.width = 92 + "%"
                     wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth / 1.333 + "px"
                 }
 
                 else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.height = 98 + "%"
+                    wrapperShapeEle.style.height = 92 + "%"
                     wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight * 1.333 + "px"
                 }
 
                 else {
-                    wrapperShapeEle.style.width = 98 + "%"
+                    wrapperShapeEle.style.width = 92 + "%"
                     wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth / 1.333 + "px"
                 }
             }
@@ -161,23 +169,28 @@ document.addEventListener("DOMContentLoaded", function () {
             else if (classList.contains("square")) {
 
                 if (previewWrapperEle.offsetWidth < previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.width = 98 + "%"
+                    wrapperShapeEle.style.width = 92 + "%"
                     wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth + "px"
                 }
 
                 else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.height = 98 + "%"
+                    wrapperShapeEle.style.height = 92 + "%"
                     wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight + "px"
                 }
 
                 else {
-                    wrapperShapeEle.style.width = 98 + "%"
+                    wrapperShapeEle.style.width = 92 + "%"
                     wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth + "px"
                 }
 
             }
 
+            mainContentEle.style.marginTop = fixedNavBarEle.offsetHeight + "px"
+
         }
+
+        functionStarMapWH()
+
     }
 
     aspectRatioHandler(largScreen, smallScreen)
@@ -195,8 +208,12 @@ document.addEventListener("DOMContentLoaded", function () {
                 clicked.addEventListener('click', function () {
                     for (let j = 0; j < printStyleEle.length; j++) {
                         printStyleEle[j].classList.remove('selected')
+                        productTypeEle.classList.remove(printStyleEle[j].getAttribute("data-type"))
                     }
                     this.classList.add("selected")
+                    const getAttribute = this.getAttribute("data-type")
+                    productTypeEle.classList.add(getAttribute)
+                    functionStarMapWH()
                 })
             }
         }
@@ -214,6 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const getAttribute = this.getAttribute("data-type")
                     wrapperShapeEle.classList.add(getAttribute)
                     aspectRatioHandler(largScreen, smallScreen)
+                    functionStarMapWH()
                 })
             }
         }
@@ -525,6 +543,81 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     functionProduct() // PRODUCT END.
 
+    function functionStarMapWH() {
+
+        if(productTypeEle.classList.contains("classic")) {
+            mapEle.style.height = mapEle.offsetWidth + "px"
+            starMapClrDNB.style.display = "block"
+            starMapClrBgDNB.style.display = "block"
+            mapEle.style.backgroundColor = "unset"
+            wrapperShapeEle.style.backgroundColor = "black"
+            productEle.style.borderColor = "white"
+        }
+        else if(productTypeEle.classList.contains("poet")) {
+            mapEle.style.height = mapEle.offsetWidth + "px"
+            starMapClrDNB.style.display = "block"
+            starMapClrBgDNB.style.display = "block"
+            mapEle.style.backgroundColor = "unset"
+            wrapperShapeEle.style.backgroundColor = "black"
+            productEle.style.borderColor = "white"
+        }
+
+        else if(productTypeEle.classList.contains("astronomer")) {
+            mapEle.style.height = mapEle.offsetWidth + "px"
+            starMapClrDNB.style.display = "block"
+            starMapClrBgDNB.style.display = "block"
+            mapEle.style.backgroundColor = "unset"
+            wrapperShapeEle.style.backgroundColor = "black"
+            productEle.style.borderColor = "white"
+        }
+
+        else if(productTypeEle.classList.contains("aquarelles")) {
+            mapEle.style.height = mapEle.offsetWidth + "px"
+            starMapClrDNB.style.display = "none"
+            starMapClrBgDNB.style.display = "none"
+            mapEle.style.backgroundColor = "unset"
+            wrapperShapeEle.style.backgroundColor = "white"
+            productEle.style.borderColor = "black"
+        }
+
+        else if(productTypeEle.classList.contains("romantic")) {
+            mapEle.style.height = mapEle.offsetWidth + "px"
+            starMapClrDNB.style.display = "block"
+            starMapClrBgDNB.style.display = "block"
+            mapEle.style.backgroundColor = "unset"
+            wrapperShapeEle.style.backgroundColor = "black"
+            productEle.style.borderColor = "white"
+        }
+
+        else if(productTypeEle.classList.contains("modern")) {
+            mapEle.style.height = mapEle.offsetWidth + "px"
+            starMapClrDNB.style.display = "block"
+            starMapClrBgDNB.style.display = "block"
+            mapEle.style.backgroundColor = "black"
+            wrapperShapeEle.style.backgroundColor = "#333333"
+            productEle.style.borderColor = "white"
+        }
+
+        else if(productTypeEle.classList.contains("photographer")) {
+            mapEle.style.height = 85 + "%"
+            starMapClrDNB.style.display = "block"
+            starMapClrBgDNB.style.display = "block"
+            mapEle.style.backgroundColor = "black"
+            wrapperShapeEle.style.backgroundColor = "white"
+            productEle.style.borderColor = "white"
+        }
+
+        else if(productTypeEle.classList.contains("explorer")) {
+            mapEle.style.height = 100 + "%"
+            starMapClrDNB.style.display = "block"
+            starMapClrBgDNB.style.display = "block"
+            mapEle.style.backgroundColor = "black"
+            wrapperShapeEle.style.backgroundColor = "white"
+            productEle.style.borderColor = "white"
+        }
+    }
+    functionStarMapWH()
+
 })
 
 function redirectToPrintSize(target) {
@@ -542,4 +635,3 @@ toggleSwitches.on("click", function () {
         inputField.addClass('disabledEdit')
     }
 });
-
