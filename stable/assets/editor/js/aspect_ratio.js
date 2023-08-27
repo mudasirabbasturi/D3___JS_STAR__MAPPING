@@ -231,7 +231,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const getAttribute = this.getAttribute("data-type")
                     wrapperShapeEle.classList.add(getAttribute)
                     aspectRatioHandler(largScreen, smallScreen)
-                    functionStarMapWH()
+                    //functionStarMapWH()
                 })
             }
         }
@@ -613,7 +613,7 @@ document.addEventListener("DOMContentLoaded", function () {
             starMapClrBgDNB.style.display = "block"
             mapEle.style.backgroundColor = "black"
             wrapperShapeEle.style.backgroundColor = "white"
-            productEle.style.borderColor = "white"
+            // productEle.style.borderColor = "white"
         }
     }
     functionStarMapWH()

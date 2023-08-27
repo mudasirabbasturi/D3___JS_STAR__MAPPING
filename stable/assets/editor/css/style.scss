@@ -672,8 +672,45 @@ input:checked+.slider:before {
 
                             .map,
                             .message_heading,
-                            .message_desc {
+                            .message_desc,
+                            .explorer_absolute {
                                 position: absolute;
+                            }
+                            .message_heading,
+                            .message_desc {
+                                z-index: 2;
+                            }
+                            .explorer_absolute {
+                                display: none;
+                                z-index: 1;
+                            }
+
+                            .message_heading {
+                                width: 100%;
+
+                                h5 {
+                                    text-align: center;
+                                    color: white;
+                                    font-size: 1rem;
+                                    font-weight: 400;
+                                }
+
+                            }
+
+                            .message_desc {
+                                width: 100%;
+
+                                small {
+                                    display: flex;
+                                    flex-direction: column;
+                                    align-items: center;
+
+                                    span {
+                                        line-height: 1.2;
+                                        color: white;
+                                        font-size: .5rem;
+                                    }
+                                }
                             }
 
                             .map {
@@ -688,6 +725,19 @@ input:checked+.slider:before {
                                 .heart_img,
                                 .aquarelles_img {
                                     display: none;
+                                }
+                            }
+
+                            &.aquarelles, &.photographer {
+                                .message_heading {
+                                    h5 {color: black;}
+                                }
+                                .message_desc {
+                                    small {
+                                        span {
+                                            color: black;
+                                        }
+                                    }
                                 }
                             }
 
@@ -757,13 +807,6 @@ input:checked+.slider:before {
                                     }
                                 }
 
-                                #message {
-                                    color: black;
-                                }
-
-                                span {
-                                    color: black
-                                }
                             }
 
                             &.romantic {
@@ -797,6 +840,17 @@ input:checked+.slider:before {
                                     border: 0;
                                     border-radius: 0;
                                 }
+                                .message_desc {
+                                    small {
+                                        flex-wrap: wrap;
+                                        flex-direction: row;
+                                        justify-content: center;
+                                        .date_time {
+                                            width: 100%;
+                                            text-align: center;
+                                        }
+                                    }
+                                }
                             }
 
                             &.explorer {
@@ -806,32 +860,23 @@ input:checked+.slider:before {
                                     border: 0;
                                     border-radius: 0;
                                 }
-                            }
-
-                            .message_heading {
-                                width: 100%;
-
-                                h5 {
-                                    text-align: center;
-                                    color: white;
-                                    font-size: 0px;
+                                .explorer_absolute {
+                                    display: block;
+                                    width: 100%;
+                                    height: 70px;
+                                    bottom: 0;
+                                    left: 0;
+                                    background-color: rgba(2, 2, 2, 0.034);
                                 }
-
-                            }
-
-                            .message_desc {
-                                width: 100%;
-
-                                small {
-                                    display: flex;
-                                    flex-direction: column;
-                                    align-items: center;
-
-                                    span {
-                                        line-height: 1.2;
-                                        color: white;
-                                        font-weight: 500;
-                                        font-size: 0px;
+                                .message_desc {
+                                    small {
+                                        flex-wrap: wrap;
+                                        flex-direction: row;
+                                        justify-content: center;
+                                        .date_time {
+                                            width: 100%;
+                                            text-align: center;
+                                        }
                                     }
                                 }
                             }
@@ -863,10 +908,10 @@ input:checked+.slider:before {
 
                                 &.classic {
                                     .message_heading {
-                                        bottom: 15%;
+                                        bottom: 12%;
                                     }
                                     .message_desc {
-                                        bottom: 9%;
+                                        bottom: 4%;
                                     }
                                 }
 
@@ -891,18 +936,9 @@ input:checked+.slider:before {
                                 &.aquarelles {
                                     .message_heading {
                                         bottom: 15%;
-                                        #message {
-                                            color: black;
-                                        }
                                     }
                                     .message_desc {
                                         bottom: 4%;
-                                        small {
-        
-                                            span {
-                                                color: black;
-                                            }
-                                        }
                                     }
                                 }
 
@@ -913,7 +949,6 @@ input:checked+.slider:before {
                                     .message_desc {
                                         bottom: 4%;
                                         #details_location {
-                                            font-size: 1.07796875rem;
                                             margin-top: -10px;
                                             margin-bottom: 10px;
                                             order: 1;
@@ -926,39 +961,24 @@ input:checked+.slider:before {
                                 &.photographer {
                                     .message_heading {
                                         bottom: 7%;
-                                        #message {
-                                            color: black;
-                                        }
                                     }
                                     .message_desc {
                                         bottom: 0;
-                                        small {
-                                            span {
-                                                color: black;
-                                            }
-                                        }
                                     }
                                 }
 
                                 &.explorer {
                                     .message_heading {
-                                        display: flex;
-                                        justify-content: center;
-                                        align-items: center;
-                                        height: 40px;
-                                        bottom: 6%;
-                                        background-color: rgba(73, 73, 73, 0.178);
+                                        bottom: 12.9%;
                                         #message {
-                                            margin: 0;
-                                            color: rgb(255, 255, 255);
+                                            font-size: 0.99044375rem;
                                         }
                                     }
                                     .message_desc {
-                                        background-color: rgba(73, 73, 73, 0.178);
-                                        bottom: 0;
+                                        bottom: 1% ;
                                         small {
                                             span {
-                                                color: rgb(255, 255, 255);
+                                                font-size: 0.57141rem;
                                             }
                                         }
                                     }
@@ -1020,18 +1040,9 @@ input:checked+.slider:before {
                                 &.aquarelles {
                                     .message_heading {
                                         bottom: 15%;
-                                        #message {
-                                            color: black;
-                                        }
                                     }
                                     .message_desc {
                                         bottom: 4%;
-                                        small {
-        
-                                            span {
-                                                color: black;
-                                            }
-                                        }
                                     }
                                 }
 
@@ -1055,17 +1066,9 @@ input:checked+.slider:before {
                                 &.photographer {
                                     .message_heading {
                                         bottom: 7%;
-                                        #message {
-                                            color: black;
-                                        }
                                     }
                                     .message_desc {
                                         bottom: 0;
-                                        small {
-                                            span {
-                                                color: black;
-                                            }
-                                        }
                                     }
                                 }
 
@@ -1076,20 +1079,12 @@ input:checked+.slider:before {
                                         align-items: center;
                                         height: 40px;
                                         bottom: 6%;
-                                        background-color: rgba(73, 73, 73, 0.178);
-                                        #message {
+                                        h5 {
                                             margin: 0;
-                                            color: rgb(255, 255, 255);
                                         }
                                     }
                                     .message_desc {
-                                        background-color: rgba(73, 73, 73, 0.178);
                                         bottom: 0;
-                                        small {
-                                            span {
-                                                color: rgb(255, 255, 255);
-                                            }
-                                        }
                                     }
                                 }
 
@@ -1169,27 +1164,6 @@ input:checked+.slider:before {
 
             .preview_wrapper {
                 .wrapper_shape {
-
-                    &.vertical {
-                        transform: scale(0.8);
-                        .product_wrapper {
-                            .product {
-                                #product_type {
-                                    color: inherit;
-                                }
-                            }
-                        }
-
-                    }
-
-                    &.horizontal {
-                        transform: scale(0.82);
-                    }
-
-                    &.square {
-                        transform: scale(1);
-                    }
-
                     .product_wrapper {
                         .product {
                             border: 2px solid rgb(255, 255, 255);
@@ -1213,11 +1187,411 @@ input:checked+.slider:before {
                                     >small {
                                         span {
                                             font-size: 0.7256rem;
-                                            color: white;
                                         }
                                     }
                                 }
                             
+                            }
+                        }
+                    }
+
+                    &.vertical {
+                        transform: scale(0.8);
+                        .product_wrapper {
+                            .product {
+                                #product_type {
+    
+                                    &.classic {
+                                        .message_heading {
+                                            bottom: 15%;
+                                        }
+                                        .message_desc {
+                                            bottom: 9%;
+                                        }
+                                    }
+    
+                                    &.poet {
+                                        .message_heading {
+                                            bottom: 15%;
+                                            h5 {
+                                                font-size: 0.77095rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.561251875rem;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.romantic {
+                                        .message_heading {
+                                            bottom: 15%;
+                                            h5 {
+                                                font-size: 0.85951875rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.612225rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.astronomer {
+                                        .message_heading {
+                                            top: 7%;
+                                            h5 {
+                                                font-size: 1.14281875rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 5%;
+                                            span {
+                                                small {
+                                                    font-size: 0.561251875rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.aquarelles {
+                                        .message_heading {
+                                            bottom: 15%;
+                                            h5 {
+                                                font-size: 1.14281875rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.7015625rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.modern {
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.57141rem;
+                                                }
+                                            }
+                                            #details_location {
+                                                font-size: 1.07796875rem;
+                                                margin-top: -10px;
+                                                margin-bottom: 10px;
+                                            }
+                                        }
+                                    }
+    
+                                    &.photographer {
+                                        .message_heading {
+                                            bottom: 7%;
+                                        }
+                                        .message_desc {
+                                            bottom: 0;
+                                        }
+                                    }
+    
+                                    &.explorer {
+                                        .message_heading {
+                                            bottom: 5%;
+                                            #message {
+                                                font-size: 0.99044375rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 1% ;
+                                            small {
+                                                span {
+                                                    font-size: 0.57141rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+                    }
+
+                    &.horizontal {
+                        transform: scale(0.82);
+                        .product_wrapper {
+                            .product {
+                                #product_type {
+    
+                                    &.classic {
+                                        .message_heading {
+                                            bottom: 9%;
+                                            h5 {
+                                                font-size: 0.8127rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 3%;
+                                            small {
+                                                span {
+                                                    font-size: 0.516rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.poet {
+                                        .message_heading {
+                                            bottom: 10%;
+                                            h5 {
+                                                font-size: 0.54825rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.39912625rem;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.romantic {
+                                        .message_heading {
+                                            bottom: 15%;
+                                            h5 {
+                                                font-size: 0.7672625rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.5221275rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.astronomer {
+                                        .message_heading {
+                                            top: 4%;
+                                            h5 {
+                                                font-size: 0.8127rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 2%;
+                                            small {
+                                                span {
+                                                    font-size: 0.39912625rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.aquarelles {
+                                        .message_heading {
+                                            bottom: 10%;
+                                            h5 {
+                                                font-size: 0.8127rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 3%;
+                                            small {
+                                                span {
+                                                    font-size: 0.4989075rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.modern {
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.40635rem;
+                                                }
+                                            }
+                                            #details_location {
+                                                font-size: 0.76658125rem;
+                                                margin-top: -10px;
+                                                margin-bottom: 10px;
+                                            }
+                                        }
+                                    }
+    
+                                    &.photographer {
+                                        .message_heading {
+                                            bottom: 7%;
+                                        }
+                                        .message_desc {
+                                            bottom: 0;
+                                        }
+                                    }
+    
+                                    &.explorer {
+                                        .message_heading {
+                                            bottom: 7%;
+                                            #message {
+                                                font-size: 0.845725rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 1% ;
+                                            small {
+                                                span {
+                                                    font-size: 0.511743125rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                }
+                            }
+                        }
+                    }
+
+                    &.square {
+                        transform: scale(1);
+                        .product_wrapper {
+                            .product {
+                                #product_type {
+    
+                                    &.classic {
+                                        .message_heading {
+                                            bottom: 9%;
+                                            h5 {
+                                                font-size: 1.0836rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 3%;
+                                            small {
+                                                span {
+                                                    font-size: 0.688rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.poet {
+                                        .message_heading {
+                                            bottom: 12%;
+                                            h5 {
+                                                font-size: 0.731rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.532168125rem;
+                                                }
+                                            }
+                                        }
+                                    }
+
+                                    &.romantic {
+                                        .message_heading {
+                                            bottom: 15%;
+                                            h5 {
+                                                font-size: 1.0230125rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.69616875rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.astronomer {
+                                        .message_heading {
+                                            top: 5%;
+                                            h5 {
+                                                font-size: 1.0836rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 3%;
+                                            small {
+                                                span {
+                                                    font-size: 0.532168125rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.aquarelles {
+                                        .message_heading {
+                                            bottom: 12%;
+                                            h5 {
+                                                font-size: 1.0836rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 4%;
+                                            small {
+                                                span {
+                                                    font-size: 0.6652125rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                    &.modern {
+                                        .message_desc {
+                                            bottom: 4%;
+                                            #details_location {
+                                                font-size: 1.07796875rem;
+                                                margin-top: -10px;
+                                                margin-bottom: 10px;
+                                            }
+                                        }
+                                    }
+    
+                                    &.photographer {
+                                        .message_heading {
+                                            bottom: 7%;
+                                        }
+                                        .message_desc {
+                                            bottom: 0;
+                                        }
+                                    }
+    
+                                    &.explorer {
+                                        .message_heading {
+                                            bottom: 7%;
+                                            #message {
+                                                font-size: 1.12763125rem;
+                                            }
+                                        }
+                                        .message_desc {
+                                            bottom: 1% ;
+                                            small {
+                                                span {
+                                                    font-size: 0.682325rem;
+                                                }
+                                            }
+                                        }
+                                    }
+    
+                                }
                             }
                         }
                     }
