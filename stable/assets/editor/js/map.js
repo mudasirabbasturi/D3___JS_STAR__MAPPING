@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 fill: "#ddddd",
                 stroke: "#fff",
                 opacity: 0,
-                width: 2
+                width: 0
             },
 
             stars: {
