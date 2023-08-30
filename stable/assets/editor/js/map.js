@@ -219,3 +219,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
     MapFunction()
 })
+
+
+// "mer" - Mercury
+// "ven" - Venus
+// "ter" - Earth
+// "lun" - Moon
+// "mar" - Mars
+// "jup" - Jupiter
+// "sat" - Saturn

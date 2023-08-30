@@ -104,10 +104,14 @@ document.addEventListener("DOMContentLoaded", function () {
     const detailsCoordinatesEle = document.getElementById("details_coordinates")
 
     /** MAIN END. ========================================================== */
+    var config = {}
+    var [latitude, longitude] = [31.565682, 74.314183]
+    var datapath = window.location.origin + "/data/"
 
-    function MapFunction() {
 
-        const config = {
+    function functionMap() {
+
+        config = {
             container: "map",
             width: 0,
             form: false,
@@ -122,9 +126,8 @@ document.addEventListener("DOMContentLoaded", function () {
             projection: "airy",
             transform: "equatorial",
             follow: "zenith",
-            geopos: [0, 0],
-            geopos: null,
-            datapath: "https://ofrohn.github.io/data/",
+            geopos: [latitude, longitude],
+            datapath: "http://127.0.0.1:5500/D3__JS_)STAR_MAPPIGN/stable/assets/editor/js/data/",
             lines: {
                 graticule: { show: false },
                 equatorial: { show: false },
@@ -132,23 +135,61 @@ document.addEventListener("DOMContentLoaded", function () {
                 galactic: { show: false },
                 supergalactic: { show: false }
             },
-            planets: {
+
+            stars: {
                 show: true,
-                which: ["mer", "ven", "ter", "lun", "mar", "jup", "sat"],
-                symbolType: "disk",
-                names: false,
-                nameStyle: {
+                colors: false,
+                size: 3,
+                limit: 6,
+                exponent: -0.28,
+                designation: false,
+                style: { fill: "#ffff", opacity: 1 },
+                propername: false,
+                propernameType: "name",
+                propernameStyle: {
                     fill: "#ffff",
-                    font: `14px`,
-                    align: "center",
-                    baseline: "top"
+                    font: `8px`,
+                    align: "right",
+                    baseline: "center"
                 },
-                namesType: "en"
+                propernameLimit: 2.0,
             },
 
             dsos: {
                 show: false,
                 names: false,
+            },
+            planets: {
+                show: true,
+                which: ["sol", "mer", "ven", "ter", "lun", "mar", "jup", "sat", "ura", "nep"],
+                symbols: {
+                    "sol": {fill: "#ffff", size: "1"},
+                    "mer": {fill: "#ffff", size: "1"},
+                    "ven": {fill: "#ffff", size: "1"},
+                    "ter": {fill: "#ffff", size: "1"},
+                    "lun": {fill: "#ffff", size: "12"},
+                    "mar": {fill: "#ffff", size: "1"},
+                    "cer": {fill: "#ffff", size: "1"},
+                    "ves": {fill: "#ffff", size: "1"},
+                    "jup": {fill: "#ffff", size: "1"},
+                    "sat": {fill: "#ffff", size: "1"},
+                    "ura": {fill: "#ffff", size: "1"},
+                    "nep": {fill: "#ffff", size: "1"},
+                    "plu": {fill: "#ffff", size: "1"},
+                    "eri": {fill: "#ffff", size: "1"}
+                },
+                symbolType: "disk",
+                symbolStyle: { 
+                              align: "center", 
+                              baseline: "middle" },
+                names: false,
+                nameStyle: { 
+                    fill: "#ff0000", 
+                    font: "5px Ubuntu, sans-serif", 
+                    align: "top", baseline: "top" 
+                },
+
+                namesType: "desig"
             },
             constellations: {
                 show: false,
@@ -198,51 +239,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 opacity: 0,
                 width: 0
             },
-
-            stars: {
-                colors: false,
-                size: 4,
-                limit: 6,
-                exponent: -0.28,
-                designation: false,
-                style: { fill: "#ffff", opacity: 1 },
-                propername: false,
-                propernameType: "name",
-                propernameStyle: {
-                    fill: "#ffff",
-                    font: `8px`,
-                    align: "right",
-                    baseline: "center"
-                },
-                propernameLimit: 2.0,
-            }
-        };
-        Celestial.display(config);
-
-        // document.getElementById("constellation_name").onclick = () => {
-        //     config.constellations.names = !config.constellations.names
-        //     updateConfigAndRedraw()
-        // };
-
-        // document.getElementById("constellations_line").onclick = () => {
-        //     config.constellations.lines = !config.constellations.lines
-        //     updateConfigAndRedraw();
-        // };
-
-        // document.getElementById("milky_way").onclick = () => {
-        //     config.mw.show = !config.mw.show;
-        //     updateConfigAndRedraw();
-        // };
-
-        // document.getElementById("graticule").onclick = () => {
-        //     config.lines.graticule.show = !config.lines.graticule.show
-        //     updateConfigAndRedraw();
-        // };
-
-
-        function updateConfigAndRedraw() {
-            Celestial.apply(config)
         }
+
+        Celestial.display(config);
 
         function initMap() {
             var input = document.getElementById('location');
@@ -260,8 +259,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
                 detailsLocationEle.innerText = momentLocationEle.value
                 txtLocationEle.value = momentLocationEle.value
-                var latitude = place.geometry.location.lat();
-                var longitude = place.geometry.location.lng();
+                latitude = place.geometry.location.lat();
+                longitude = place.geometry.location.lng();
 
                 latitude = parseFloat(latitude.toFixed(4));
                 longitude = parseFloat(longitude.toFixed(4));
@@ -274,34 +273,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 txtCoordinatesEle.value = formattedCoordinates;
                 var inputEvent = new Event('input', { 'bubbles': true });
                 txtCoordinatesEle.dispatchEvent(inputEvent);
-                //txtCoordinatesEle.dispatchEvent(new Event('input', { 'bubbles': true }));
 
             });
-
-            // momentLocationEle.addEventListener("change", function () {
-            //     var geocoder = new google.maps.Geocoder();
-            //     var address = this.value;
-
-            //     geocoder.geocode({ 'address': address }, function (results, status) {
-            //         if (status === google.maps.GeocoderStatus.OK) {
-            //             var latitude = results[0].geometry.location.lat();
-            //             var longitude = results[0].geometry.location.lng();
-
-
-            //             const longEle = document.getElementById("longitude")
-            //             const latiEle = document.getElementById("latitude")
-
-            //             latiEle.value = latitude;
-            //             longEle.value = longitude;
-
-            //             Celestial.skyview({ "location": [latitude, longitude] });
-
-
-            //         } else {
-            //             console.log('Geocode was not successful for the following reason: ' + status);
-            //         }
-            //     });
-            // });
         }
 
 
@@ -430,7 +403,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        MapFunction()
+        functionMap()
 
         functionStarMapWH()
 
@@ -642,17 +615,6 @@ document.addEventListener("DOMContentLoaded", function () {
             })
         }
 
-        // function functionTextCoordinates() {
-        //     txtCoordinatesEle.addEventListener('keyup', function () {
-        //         if (this.value == "") {
-        //             detailsCoordinatesEle.innerText = "51.5073° N, 0.1276° W"
-        //         }
-        //         else {
-        //             detailsCoordinatesEle.innerText = this.value
-        //         }
-        //     })
-        // }
-
         function functionTextCoordinates() {
             txtCoordinatesEle.addEventListener('input', function () {
                 if (this.value === "") {
@@ -675,13 +637,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function functionDesignStarMapElement() {
             for (let i = 0; i < starMapEle.length; i++) {
-                const clicked = starMapEle[i]
+                const clicked = starMapEle[i];
                 clicked.addEventListener('click', function () {
-                    for (let j = 0; j < starMapEle.length; j++) {
-                        starMapEle[j].classList.remove('selected')
+                    if (this.classList.contains("selected")) {
+                        this.classList.remove("selected");
+                    } else {
+                        this.classList.add("selected");
                     }
-                    this.classList.add("selected")
-                })
+                    if (this.classList.contains("constellations_line")) {
+                        config.constellations.lines = !config.constellations.lines
+                        Celestial.apply(config)
+                    }
+                });
             }
         }
 
@@ -911,22 +878,22 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         if (productTypeEle.classList.contains("classic")) {
-            wrapperShapeEle.style.backgroundColor = "black";
-            mapEle.style.backgroundColor = "black";
+            wrapperShapeEle.style.backgroundColor = "#000000";
+            mapEle.style.backgroundColor = "#000000";
             productEle.style.border = borderValue;
             productEle.style.borderColor = "white";
         }
 
         else if (productTypeEle.classList.contains("poet")) {
-            wrapperShapeEle.style.backgroundColor = "black";
-            mapEle.style.backgroundColor = "black";
+            wrapperShapeEle.style.backgroundColor = "#000000";
+            mapEle.style.backgroundColor = "#000000";
             productEle.style.border = borderValue;
             productEle.style.borderColor = "white";
         }
 
         else if (productTypeEle.classList.contains("astronomer")) {
-            wrapperShapeEle.style.backgroundColor = "black";
-            mapEle.style.backgroundColor = "black";
+            wrapperShapeEle.style.backgroundColor = "#000000";
+            mapEle.style.backgroundColor = "#000000";
             productEle.style.border = borderValue;
             productEle.style.borderColor = "white";
         }
@@ -939,8 +906,8 @@ document.addEventListener("DOMContentLoaded", function () {
         }
 
         else if (productTypeEle.classList.contains("romantic")) {
-            wrapperShapeEle.style.backgroundColor = "black";
-            mapEle.style.backgroundColor = "black";
+            wrapperShapeEle.style.backgroundColor = "#000000";
+            mapEle.style.backgroundColor = "#000000";
             mapEle.style.border = "none";
             productEle.style.border = borderValue;
             productEle.style.borderColor = "white";
@@ -948,7 +915,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         else if (productTypeEle.classList.contains("modern")) {
             wrapperShapeEle.style.backgroundColor = "#1D1D1D";
-            mapEle.style.backgroundColor = "black";
+            mapEle.style.backgroundColor = "#000000";
             mapEle.style.border = "none";
             productEle.style.border = borderValue;
             productEle.style.borderColor = "#ffff";
@@ -956,14 +923,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
         else if (productTypeEle.classList.contains("photographer")) {
             wrapperShapeEle.style.backgroundColor = "white";
-            mapEle.style.backgroundColor = "black";
+            mapEle.style.backgroundColor = "#000000";
             productEle.style.border = "none";
             productEle.style.borderColor = "unset";
         }
 
         else if (productTypeEle.classList.contains("explorer")) {
             wrapperShapeEle.style.backgroundColor = "white";
-            mapEle.style.backgroundColor = "black";
+            mapEle.style.backgroundColor = "#000000";
             productEle.style.border = "none";
             productEle.style.borderColor = "unset";
         }
@@ -981,22 +948,6 @@ document.addEventListener("DOMContentLoaded", function () {
         canvas.style.margin = "auto"
     }
     functionCanvas()
-
-    function functionMapClassic() { }
-
-    function functionMapPoet() { }
-
-    function functionMapAstronomer() { }
-
-    function functionMapAquarelles() { }
-
-    function functionMapRomantic() { }
-
-    function functionMapModern() { }
-
-    function functionMapPhotographer() { }
-
-    function functionMapExplorer() { }
 
 })
 
