@@ -683,6 +683,7 @@ input:checked+.slider:before {
                             .message_desc,
                             .explorer_absolute {
                                 position: absolute;
+                                overflow: hidden;
                             }
                             .message_heading,
                             .message_desc {

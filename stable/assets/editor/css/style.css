@@ -523,6 +523,7 @@ input:checked + .slider:before {
   margin-right: 5px;
   width: calc(100% - 10px);
   height: calc(100% - 45px);
+  background-color: #ff0000;
   background-color: #E0E0E0;
   padding: 0;
   overflow: hidden;
@@ -566,6 +567,7 @@ input:checked + .slider:before {
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_desc,
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .explorer_absolute {
   position: absolute;
+  overflow: hidden;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_heading,
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_desc {

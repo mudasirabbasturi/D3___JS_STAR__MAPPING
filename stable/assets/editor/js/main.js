@@ -2,23 +2,19 @@ function toggleFunction(x) {
     x.classList.toggle("rotate")
 }
 document.addEventListener("DOMContentLoaded", function () {
-
     const bodyEle = document.getElementsByTagName('body')[0]
     const toggleEle = document.querySelector('.list_menu')
     const liEle = document.getElementsByClassName('nav-item')
-
     function addOffcanvasActiveClass() {
         bodyEle.classList.add('offcanvas-active');
         if (!toggleEle.classList.contains('rotate')) {
             toggleEle.classList.add('rotate');
         }
     }
-
     function removeOffcanvasActiveClass() {
         bodyEle.classList.remove('offcanvas-active');
         toggleEle.classList.remove('rotate');
     }
-
     function handleMediaQueryChange(mediaQuery) {
         if (mediaQuery.matches) {
             for (let i = 0; i < liEle.length; i++) {
@@ -39,13 +35,12 @@ document.addEventListener("DOMContentLoaded", function () {
     const mediaQuery = window.matchMedia('(max-width: 819px)');
     handleMediaQueryChange(mediaQuery);
     mediaQuery.addEventListener('change', handleMediaQueryChange);
-
     const largScreen = window.matchMedia("(min-width: 820px)")
     const smallScreen = window.matchMedia("(max-width: 819px)")
 
     /** SIDEBAR. ====================================================== */
-
     const fixedNavBarEle = document.getElementById("fixed_nav_bar")
+
     /** STYLE. */
     const printStyleEle = document.getElementsByClassName("print_style_element")
     const layOutEle = document.getElementsByClassName("layout_style")
@@ -77,7 +72,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const msgFontsEle = document.getElementsByClassName("msg_fonts")
     const detailFontsEle = document.getElementsByClassName("dtls_fonts")
     const borderSelectEle = document.getElementsByClassName("borderSelect")
-
     const starMapClrDNB = document.getElementById("star_map_color_dnb")
     const starMapClrBgDNB = document.getElementById("frame_color_bg_dnb")
     /** DESIGN END. */
@@ -90,7 +84,6 @@ document.addEventListener("DOMContentLoaded", function () {
     /** SIDEBAR END. ====================================================== */
 
     /** MAIN. ============================================================== */
-
     const mainContentEle = document.getElementById("main-content")
     const previewWrapperEle = document.getElementById("preview_wrapper")
     const wrapperShapeEle = document.getElementById("wrapper_shape")
@@ -102,18 +95,15 @@ document.addEventListener("DOMContentLoaded", function () {
     const detailsTimeEle = document.getElementById("details_time")
     const detailsLocationEle = document.getElementById("details_location")
     const detailsCoordinatesEle = document.getElementById("details_coordinates")
-
     /** MAIN END. ========================================================== */
-    var config = {}
-    var [latitude, longitude] = [31.565682, 74.314183]
-    var datapath = window.location.origin + "/data/"
-
-
+    var DATE = new Date("2021-09-25T04:00:00+0000");
+    var [LAT, LON] = [36.525321, -121.815916];
+    var FONT = "Raleway";
     function functionMap() {
-
         config = {
             container: "map",
-            width: 0,
+            width: 800,
+
             form: false,
             advanced: false,
             interactive: false,
@@ -121,13 +111,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
             zoomlevel: null,
             zoomextend: 1,
-            adaptable: true,
 
             projection: "airy",
             transform: "equatorial",
+
             follow: "zenith",
-            geopos: [latitude, longitude],
-            datapath: "http://127.0.0.1:5500/D3__JS_)STAR_MAPPIGN/stable/assets/editor/js/data/",
+            geopos: [LAT, LON],
+            datapath: "https://ofrohn.github.io/data/",
+
             lines: {
                 graticule: { show: false },
                 equatorial: { show: false },
@@ -139,109 +130,105 @@ document.addEventListener("DOMContentLoaded", function () {
             stars: {
                 show: true,
                 colors: false,
-                size: 3,
+                size: 6,
                 limit: 6,
                 exponent: -0.28,
                 designation: false,
-                style: { fill: "#ffff", opacity: 1 },
+                propername: false,
                 propername: false,
                 propernameType: "name",
                 propernameStyle: {
-                    fill: "#ffff",
-                    font: `8px`,
+                    fill: "#ddddbb",
+                    font: `8px ${FONT}`,
                     align: "right",
                     baseline: "center"
                 },
-                propernameLimit: 2.0,
+                propernameLimit: 2.0
+            },
+
+            planets: {
+                show: true,
+                which: ["sol", "mer", "ven", "ter", "lun", "mar", "jup", "sat", "ura", "nep", "plu", "eri"],
+                symbols: {
+                    "sol": { fill: "#ffff", size: "0" },
+                    "mer": { fill: "#ffff", size: "0" },
+                    "ven": { fill: "#ffff", size: "0" },
+                    "ter": { fill: "#ffff", size: "0" },
+                    "lun": { fill: "#ffff", size: "0"},
+                    "mar": { fill: "#ffff", size: "0" },
+                    "cer": { fill: "#ffff", size: "0" },
+                    "ves": { fill: "#ffff", size: "0" },
+                    "jup": { fill: "#ffff", size: "0" },
+                    "sat": { fill: "#ffff", size: "0" },
+                    "ura": { fill: "#ffff", size: "0" },
+                    "nep": { fill: "#ffff", size: "0" },
+                    "plu": { fill: "#ffff", size: "0" },
+                    "eri": { fill: "#ffff", size: "0" }
+                },
+                symbolType: "disk",
+                names: false,
+                nameStyle: {
+                    fill: "#00ccff",
+                    font: `14px ${FONT}`,
+                    align: "center",
+                    baseline: "top"
+                },
+                namesType: "en"
             },
 
             dsos: {
                 show: false,
                 names: false,
             },
-            planets: {
-                show: true,
-                which: ["sol", "mer", "ven", "ter", "lun", "mar", "jup", "sat", "ura", "nep"],
-                symbols: {
-                    "sol": {fill: "#ffff", size: "1"},
-                    "mer": {fill: "#ffff", size: "1"},
-                    "ven": {fill: "#ffff", size: "1"},
-                    "ter": {fill: "#ffff", size: "1"},
-                    "lun": {fill: "#ffff", size: "12"},
-                    "mar": {fill: "#ffff", size: "1"},
-                    "cer": {fill: "#ffff", size: "1"},
-                    "ves": {fill: "#ffff", size: "1"},
-                    "jup": {fill: "#ffff", size: "1"},
-                    "sat": {fill: "#ffff", size: "1"},
-                    "ura": {fill: "#ffff", size: "1"},
-                    "nep": {fill: "#ffff", size: "1"},
-                    "plu": {fill: "#ffff", size: "1"},
-                    "eri": {fill: "#ffff", size: "1"}
-                },
-                symbolType: "disk",
-                symbolStyle: { 
-                              align: "center", 
-                              baseline: "middle" },
-                names: false,
-                nameStyle: { 
-                    fill: "#ff0000", 
-                    font: "5px Ubuntu, sans-serif", 
-                    align: "top", baseline: "top" 
-                },
-
-                namesType: "desig"
-            },
             constellations: {
                 show: false,
                 names: false,
                 desig: false,
                 namestyle: {
-                    fill: "#ffff", align: "center", baseline: "middle", opacity: 1,
-                    font: [`14px`, `8px`, `0px`]
+                    fill: "#ffffff", align: "center", baseline: "middle", opacity: 1,
+                    font: [`14px ${FONT}`, `8px ${FONT}`, `0px ${FONT}`]
                 },
                 lines: false,
-                linestyle: { stroke: "#ffff", width: .5, opacity: 1 },
+                linestyle: { stroke: "#ffff", width: 1, opacity: 0.9 },
                 bounds: false,
-                boundstyle: { stroke: "#ffff", width: 0.5, opacity: 1, dash: [2, 4] }
+                boundstyle: { stroke: "#cccc00", width: 0.5, opacity: 0.8, dash: [2, 4] }
             },
 
             mw: {
                 show: false,
-                style: { fill: "#ffff", opacity: 0.1 }
+                style: { fill: "#ffffff", opacity: 0.1 }
             },
 
             lines: {
                 graticule: {
                     show: false,
-                    stroke: "#ffff",
+                    stroke: "#cccccc",
                     width: 0.6,
                     opacity: 0.8,
                     lon: {
                         pos: [""],
-                        fill: "#ffff",
+                        fill: "#eee",
                         font: "10px Helvetica, Arial, sans-serif"
                     },
                     lat: {
                         pos: [""],
-                        fill: "#ffff",
+                        fill: "#eee",
                         font: "10px Helvetica, Arial, sans-serif"
                     }
                 },
-                equatorial: { show: false, stroke: "#ffff", width: 1.3, opacity: 0.7 },
-                ecliptic: { show: false, stroke: "#fffff", width: 1.3, opacity: 0.7 },
-                galactic: { show: false, stroke: "#ffff", width: 1.3, opacity: 0.7 },
-                supergalactic: { show: false, stroke: "#ffff", width: 1.3, opacity: 0.7 }
+                equatorial: { show: false, stroke: "#aaaaaa", width: 1.3, opacity: 0.7 },
+                ecliptic: { show: false, stroke: "#66cc66", width: 1.3, opacity: 0.7 },
+                galactic: { show: false, stroke: "#cc6666", width: 1.3, opacity: 0.7 },
+                supergalactic: { show: false, stroke: "#cc66cc", width: 1.3, opacity: 0.7 }
             },
-
             background: {
-                fill: "#ddddd",
+                fill: "#ffffff00",
                 stroke: "#ffffff00",
-                opacity: 0,
+                opacity: 1,
                 width: 0
-            },
+            }
         }
-
-        Celestial.display(config);
+        Celestial.display(config)
 
         function initMap() {
             var input = document.getElementById('location');
@@ -250,34 +237,28 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     types: ['(cities)'],
                 });
-
             google.maps.event.addListener(autocomplete, 'place_changed', function () {
                 var place = autocomplete.getPlace();
                 if (!place.geometry) {
                     return;
                 }
-
                 detailsLocationEle.innerText = momentLocationEle.value
                 txtLocationEle.value = momentLocationEle.value
-                latitude = place.geometry.location.lat();
-                longitude = place.geometry.location.lng();
+                LAT = place.geometry.location.lat();
+                LON = place.geometry.location.lng();
+                LAT = parseFloat(LAT.toFixed(4));
+                LON = parseFloat(LON.toFixed(4));
 
-                latitude = parseFloat(latitude.toFixed(4));
-                longitude = parseFloat(longitude.toFixed(4));
+                Celestial.skyview({"location": [LAT, LON]});
 
-                var latDirection = latitude >= 0 ? "N" : "S";
-                var longDirection = longitude >= 0 ? "E" : "W";
-
-                var formattedCoordinates = Math.abs(latitude) + "° " + latDirection + ", " + Math.abs(longitude) + "° " + longDirection;
-
+                var latDirection = LAT >= 0 ? "N" : "S";
+                var longDirection = LON >= 0 ? "E" : "W";
+                var formattedCoordinates = Math.abs(LAT) + "° " + latDirection + ", " + Math.abs(LON) + "° " + longDirection;
                 txtCoordinatesEle.value = formattedCoordinates;
                 var inputEvent = new Event('input', { 'bubbles': true });
                 txtCoordinatesEle.dispatchEvent(inputEvent);
-
             });
         }
-
-
         google.maps.event.addDomListener(window, 'load', initMap)
 
     }
@@ -403,14 +384,13 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
 
-        functionMap()
+        //functionMap()
 
         functionStarMapWH()
 
     }
 
     aspectRatioHandler(largScreen, smallScreen)
-
     window.addEventListener('resize', function () {
         aspectRatioHandler(largScreen, smallScreen)
     }, true)
@@ -548,6 +528,8 @@ document.addEventListener("DOMContentLoaded", function () {
             });
             $("#moment_date_picker").change(function () {
                 var currentValue = $('#moment_date_picker').datetimepicker('getValue');
+                DATE = currentValue
+                Celestial.skyview({ date: DATE })
                 var options = { weekday: 'short', month: 'short', day: 'numeric', year: 'numeric' };
                 var formattedDate = currentValue.toLocaleDateString(undefined, options);
                 detailsDateEle.innerText = formattedDate
@@ -648,6 +630,36 @@ document.addEventListener("DOMContentLoaded", function () {
                         config.constellations.lines = !config.constellations.lines
                         Celestial.apply(config)
                     }
+                    if (this.classList.contains("milky_way")) {
+                        config.mw.show = !config.mw.show
+                        Celestial.apply(config)
+                    }
+
+                    if (this.classList.contains("graticule")) {
+                        config.lines.graticule.show = !config.lines.graticule.show
+                        Celestial.apply(config)
+                    }
+
+                    if (this.classList.contains("constellation_name")) {
+                        config.constellations.names = !config.constellations.names
+                        Celestial.apply(config)
+                    }
+
+                    if (this.classList.contains("moon")) {
+                        config.planets.symbols["lun"].size = (config.planets.symbols["lun"].size === "12") ? "0" : "12"
+                        Celestial.apply(config)
+                    }
+
+                    if (this.classList.contains("planet_and_sun")) {
+                        for (var planet in config.planets.symbols) {
+                            if (planet !== "lun") {
+                                config.planets.symbols[planet].size = (config.planets.symbols[planet].size === "6") ? "0" : "6"
+                            }
+                        }
+                        config.planets.names = !config.planets.names
+                        Celestial.apply(config)
+                    }
+
                 });
             }
         }
@@ -745,7 +757,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 })
             }
         }
-
         functionDesignStarMapElement()
         functionDesignStarColorSelect()
         functionDesignStarColor()
@@ -756,7 +767,6 @@ document.addEventListener("DOMContentLoaded", function () {
         functionDesignDetailsFonts()
     }
     functionDesign() // DESIGN END.
-
     /** PRODUCT. */
     function functionProduct() {
         function functionProductFinishSelect() {
@@ -771,7 +781,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         }
         functionProductFinishSelect()
-
         function functionProductFrame() {
             let dynamicDiv = null;
             let dynamicCreated = false;
@@ -782,26 +791,20 @@ document.addEventListener("DOMContentLoaded", function () {
                     if (imgURL === "none" && this === dynamicDiv) {
                         return;
                     }
-
                     for (let j = 0; j < productFrameEle.length; j++) {
                         productFrameEle[j].classList.remove('selected');
                     }
-
                     this.classList.add("selected");
-
                     if (dynamicDiv && dynamicCreated) {
                         wrapperShapeEle.removeChild(dynamicDiv);
                         dynamicDiv = null;
                         dynamicCreated = false;
                     }
-
                     if (imgURL === "none") {
                         return;
                     }
-
                     const newDiv = document.createElement('div')
                     newDiv.classList.add('bg_frame');
-
                     const newImg = document.createElement('img')
                     const domainName = "https://mudasirabbasturi.github.io/D3___JS_STAR__MAPPING/"
                     newImg.src = `${domainName}/assets/images/${imgURL}.png`
@@ -816,9 +819,7 @@ document.addEventListener("DOMContentLoaded", function () {
         functionProductFrame()
     }
     functionProduct() // PRODUCT END.
-
     function functionStarMapWH() {
-
         if (productTypeEle.classList.contains("classic")) {
             mapEle.style.height = mapEle.offsetWidth + "px"
             starMapClrDNB.style.display = "block"
@@ -829,37 +830,31 @@ document.addEventListener("DOMContentLoaded", function () {
             starMapClrDNB.style.display = "block"
             starMapClrBgDNB.style.display = "block"
         }
-
         else if (productTypeEle.classList.contains("astronomer")) {
             mapEle.style.height = mapEle.offsetWidth + "px"
             starMapClrDNB.style.display = "block"
             starMapClrBgDNB.style.display = "block"
         }
-
         else if (productTypeEle.classList.contains("aquarelles")) {
             mapEle.style.height = mapEle.offsetWidth + "px"
             starMapClrDNB.style.display = "none"
             starMapClrBgDNB.style.display = "none"
         }
-
         else if (productTypeEle.classList.contains("romantic")) {
             mapEle.style.height = mapEle.offsetWidth + "px"
             starMapClrDNB.style.display = "block"
             starMapClrBgDNB.style.display = "block"
         }
-
         else if (productTypeEle.classList.contains("modern")) {
             mapEle.style.height = mapEle.offsetWidth + "px"
             starMapClrDNB.style.display = "block"
             starMapClrBgDNB.style.display = "block"
         }
-
         else if (productTypeEle.classList.contains("photographer")) {
             mapEle.style.height = 85 + "%"
             starMapClrDNB.style.display = "block"
             starMapClrBgDNB.style.display = "block"
         }
-
         else if (productTypeEle.classList.contains("explorer")) {
             mapEle.style.height = 100 + "%"
             starMapClrDNB.style.display = "block"
@@ -867,44 +862,37 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     functionStarMapWH()
-
     function functionBorderBackground() {
-
         if (largScreen.matches) {
             borderValue = "2px solid white";
         }
         else if (smallScreen.matches) {
             borderValue = "1px solid white";
         }
-
         if (productTypeEle.classList.contains("classic")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
             productEle.style.border = borderValue;
             productEle.style.borderColor = "white";
         }
-
         else if (productTypeEle.classList.contains("poet")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
             productEle.style.border = borderValue;
             productEle.style.borderColor = "white";
         }
-
         else if (productTypeEle.classList.contains("astronomer")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
             productEle.style.border = borderValue;
             productEle.style.borderColor = "white";
         }
-
         else if (productTypeEle.classList.contains("aquarelles")) {
             wrapperShapeEle.style.backgroundColor = "white";
             mapEle.style.backgroundColor = "white";
             productEle.style.border = "none";
             productEle.style.borderColor = "unset";
         }
-
         else if (productTypeEle.classList.contains("romantic")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
@@ -912,7 +900,6 @@ document.addEventListener("DOMContentLoaded", function () {
             productEle.style.border = borderValue;
             productEle.style.borderColor = "white";
         }
-
         else if (productTypeEle.classList.contains("modern")) {
             wrapperShapeEle.style.backgroundColor = "#1D1D1D";
             mapEle.style.backgroundColor = "#000000";
@@ -920,14 +907,12 @@ document.addEventListener("DOMContentLoaded", function () {
             productEle.style.border = borderValue;
             productEle.style.borderColor = "#ffff";
         }
-
         else if (productTypeEle.classList.contains("photographer")) {
             wrapperShapeEle.style.backgroundColor = "white";
             mapEle.style.backgroundColor = "#000000";
             productEle.style.border = "none";
             productEle.style.borderColor = "unset";
         }
-
         else if (productTypeEle.classList.contains("explorer")) {
             wrapperShapeEle.style.backgroundColor = "white";
             mapEle.style.backgroundColor = "#000000";
@@ -936,31 +921,28 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     functionBorderBackground()
-
     function functionCanvas() {
         const canvas = document.querySelector("canvas")
         canvas.style.width = mapEle.offsetWidth + "px"
+        canvas.style.height = mapEle.offsetHeight + "px"
         canvas.style.position = "absolute"
         canvas.style.left = "0"
         canvas.style.right = "0"
         canvas.style.top = "0"
         canvas.style.bottom = "0"
         canvas.style.margin = "auto"
+        canvas.style.zIndex = "7"
     }
     functionCanvas()
-
 })
-
 function redirectToPrintSize(target) {
     $('.print_size_content .tab-pane').removeClass('active')
     $(target).addClass('active')
 }
-
 function redirectTo(target) {
     $('.detail_tab_content .tab-pane').removeClass('active');
     $(target).addClass('active');
 }
-
 var toggleSwitches = $(".toggleSwitch");
 toggleSwitches.on("click", function () {
     var targetId = $(this).data("target");

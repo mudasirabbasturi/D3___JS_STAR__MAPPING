@@ -1,10 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
-
     function MapFunction() {
         // const DATE = new Date("2021-09-25T04:00:00+0000");
         // const [LAT, LON] = [36.525321, -121.815916];
         // const FONT = "Raleway";
-
         const config = {
             container: "map",
             width: 0,
@@ -122,37 +120,26 @@ document.addEventListener("DOMContentLoaded", function () {
                 propernameLimit: 2.0,
             }
         };
-
-
-
         Celestial.display(config);
-
-
         // document.getElementById("constellation_name").onclick = () => {
         //     config.constellations.names = !config.constellations.names
         //     updateConfigAndRedraw()
         // };
-
         // document.getElementById("constellations_line").onclick = () => {
         //     config.constellations.lines = !config.constellations.lines
         //     updateConfigAndRedraw();
         // };
-
         // document.getElementById("milky_way").onclick = () => {
         //     config.mw.show = !config.mw.show;
         //     updateConfigAndRedraw();
         // };
-
         // document.getElementById("graticule").onclick = () => {
         //     config.lines.graticule.show = !config.lines.graticule.show
         //     updateConfigAndRedraw();
         // };
-
-
         function updateConfigAndRedraw() {
             Celestial.apply(config)
         }
-
         function initMap() {
             var input = document.getElementById('location');
             var autocomplete = new google.maps.places.Autocomplete(
@@ -160,22 +147,17 @@ document.addEventListener("DOMContentLoaded", function () {
                 {
                     types: ['(cities)'],
                 });
-
             google.maps.event.addListener(autocomplete, 'place_changed', function () {
                 var place = autocomplete.getPlace();
                 if (!place.geometry) {
                     return;
                 }
-
                 var latitude = place.geometry.location.lat();
                 var longitude = place.geometry.location.lng();
-
                 const longEle = document.getElementById("longitude")
                 const latiEle = document.getElementById("latitude")
-
                 latiEle.value = latitude;
                 longEle.value = longitude;
-
                 var address = '';
                 if (place.address_components) {
                     address = [
@@ -185,42 +167,28 @@ document.addEventListener("DOMContentLoaded", function () {
                     ].join(' ');
                 }
             });
-
             input.addEventListener("change", function () {
                 var geocoder = new google.maps.Geocoder();
                 var address = this.value;
-
                 geocoder.geocode({ 'address': address }, function (results, status) {
                     if (status === google.maps.GeocoderStatus.OK) {
                         var latitude = results[0].geometry.location.lat();
                         var longitude = results[0].geometry.location.lng();
-
-
                         const longEle = document.getElementById("longitude")
                         const latiEle = document.getElementById("latitude")
-
                         latiEle.value = latitude;
                         longEle.value = longitude;
-
                         Celestial.skyview({ "location": [latitude, longitude] });
-
-
                     } else {
                         console.log('Geocode was not successful for the following reason: ' + status);
                     }
                 });
             });
         }
-
-
         google.maps.event.addDomListener(window, 'load', initMap)
-
     }
-
     MapFunction()
 })
-
-
 // "mer" - Mercury
 // "ven" - Venus
 // "ter" - Earth
