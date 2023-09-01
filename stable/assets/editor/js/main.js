@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function functionMap() {
         config = {
             container: "map",
-            width: 800,
+            width: 900,
 
             form: false,
             advanced: false,
@@ -262,6 +262,7 @@ document.addEventListener("DOMContentLoaded", function () {
         google.maps.event.addDomListener(window, 'load', initMap)
 
     }
+    functionMap()
 
     function aspectRatioHandler(largScreen, smallScreen) {
 
@@ -380,12 +381,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             }
 
-            // mainContentEle.style.marginTop = fixedNavBarEle.offsetHeight + "px"
-
         }
-
-        //functionMap()
-
         functionStarMapWH()
 
     }

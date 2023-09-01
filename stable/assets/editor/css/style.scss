@@ -639,7 +639,6 @@ input:checked+.slider:before {
         margin-right: 5px;
         width: calc(100% - 10px);
         height: calc(100% - 45px);
-        background-color: #ff0000;
         background-color: #E0E0E0;
         padding: 0;
         overflow: hidden;
@@ -683,7 +682,6 @@ input:checked+.slider:before {
                             .message_desc,
                             .explorer_absolute {
                                 position: absolute;
-                                overflow: hidden;
                             }
                             .message_heading,
                             .message_desc {
@@ -700,7 +698,7 @@ input:checked+.slider:before {
                                 h5 {
                                     text-align: center;
                                     color: white;
-                                    font-size: 1rem;
+                                    font-size: 0.541rem;
                                     font-weight: 400;
                                 }
 
@@ -715,9 +713,9 @@ input:checked+.slider:before {
                                     align-items: center;
 
                                     span {
-                                        line-height: 1.2;
                                         color: white;
-                                        font-size: .5rem;
+                                        font-size: 0.38rem;
+                                        font-weight: 400;
                                     }
                                 }
                             }
@@ -727,6 +725,7 @@ input:checked+.slider:before {
                                 right: 0;
                                 margin-right: auto;
                                 margin-left: auto;
+                                border: 1px solid #ffff;
                                 border-radius: 50%;
 
                                 .astro_img,
@@ -929,11 +928,20 @@ input:checked+.slider:before {
                                         bottom: 12%;
                                     }
                                     .message_desc {
+                                        bottom: 5%;
+                                    }
+                                }
+
+                                &.poet {
+                                    .message_heading {
+                                        bottom: 15%;
+                                    }
+                                    .message_desc {
                                         bottom: 4%;
                                     }
                                 }
 
-                                &.poet, &.romantic {
+                                &.romantic {
                                     .message_heading {
                                         bottom: 15%;
                                     }
@@ -960,21 +968,21 @@ input:checked+.slider:before {
                                     }
                                 }
 
-                                // &.modern {
-                                //     .message_heading {
-                                //         display: none;
-                                //     }
-                                //     .message_desc {
-                                //         bottom: 4%;
-                                //         #details_location {
-                                //             margin-top: -10px;
-                                //             margin-bottom: 10px;
-                                //             order: 1;
-                                //         }
-                                //         .date_time {order: 2;}
-                                //         .text_coordinates {order: 3;}
-                                //     }
-                                // }
+                                &.modern {
+                                    .message_heading {
+                                        display: none;
+                                    }
+                                    .message_desc {
+                                        bottom: 4%;
+                                        #details_location {
+                                            margin-top: -10px;
+                                            margin-bottom: 10px;
+                                            order: 1;
+                                        }
+                                        .date_time {order: 2;}
+                                        .text_coordinates {order: 3;}
+                                    }
+                                }
 
                                 &.photographer {
                                     .message_heading {
@@ -1214,7 +1222,7 @@ input:checked+.slider:before {
                     }
 
                     &.vertical {
-                        transform: scale(0.8);
+                        //transform: scale(0.8);
                         .product_wrapper {
                             .product {
                                 #product_type {
@@ -1315,24 +1323,35 @@ input:checked+.slider:before {
                                     &.photographer {
                                         .message_heading {
                                             bottom: 7%;
+                                            h5 {
+                                                font-size: 0.99044375rem;
+                                                font-weight: 400;
+                                            }
                                         }
                                         .message_desc {
                                             bottom: 0;
+                                            span {
+                                                small {
+                                                    font-size: 0.57141rem;
+                                                    font-weight: 400;
+                                                }
+                                            }
                                         }
                                     }
     
                                     &.explorer {
                                         .message_heading {
                                             bottom: 5%;
-                                            #message {
+                                            h5 {
                                                 font-size: 0.99044375rem;
+                                                font-weight: 400;
                                             }
                                         }
                                         .message_desc {
                                             bottom: 1% ;
                                             small {
                                                 span {
-                                                    font-size: 0.57141rem;
+                                                    font-size: 0.72446875rem;
                                                 }
                                             }
                                         }
@@ -1344,7 +1363,7 @@ input:checked+.slider:before {
                     }
 
                     &.horizontal {
-                        transform: scale(0.82);
+                        //transform: scale(0.82);
                         .product_wrapper {
                             .product {
                                 #product_type {
@@ -1453,9 +1472,19 @@ input:checked+.slider:before {
                                     &.photographer {
                                         .message_heading {
                                             bottom: 7%;
+                                            h5 {
+                                                font-size: 0.80545rem;
+                                                font-weight: 400;
+                                            }
                                         }
                                         .message_desc {
                                             bottom: 0;
+                                            small {
+                                                span {
+                                                    font-size: 0.58873125rem;
+                                                    font-weight: 400;
+                                                }
+                                            }
                                         }
                                     }
     
@@ -1482,7 +1511,7 @@ input:checked+.slider:before {
                     }
 
                     &.square {
-                        transform: scale(1);
+                        //transform: scale(1);
                         .product_wrapper {
                             .product {
                                 #product_type {
@@ -1586,24 +1615,35 @@ input:checked+.slider:before {
                                     &.photographer {
                                         .message_heading {
                                             bottom: 7%;
+                                            h5 {
+                                                font-size: 1.12763125rem;
+                                                font-weight: 400;
+                                            }
                                         }
                                         .message_desc {
                                             bottom: 0;
+                                            small {
+                                                span {
+                                                    font-size: 0.682325rem;
+                                                    font-weight: 400;
+                                                }
+                                            }
                                         }
                                     }
     
                                     &.explorer {
                                         .message_heading {
                                             bottom: 7%;
-                                            #message {
+                                            h5 {
                                                 font-size: 1.12763125rem;
+                                                font-weight: 400;
                                             }
                                         }
                                         .message_desc {
                                             bottom: 1% ;
                                             small {
                                                 span {
-                                                    font-size: 0.682325rem;
+                                                    font-size: 0.824225rem;
                                                 }
                                             }
                                         }

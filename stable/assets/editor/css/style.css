@@ -523,7 +523,6 @@ input:checked + .slider:before {
   margin-right: 5px;
   width: calc(100% - 10px);
   height: calc(100% - 45px);
-  background-color: #ff0000;
   background-color: #E0E0E0;
   padding: 0;
   overflow: hidden;
@@ -567,7 +566,6 @@ input:checked + .slider:before {
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_desc,
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .explorer_absolute {
   position: absolute;
-  overflow: hidden;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_heading,
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_desc {
@@ -583,7 +581,7 @@ input:checked + .slider:before {
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_heading h5 {
   text-align: center;
   color: white;
-  font-size: 1rem;
+  font-size: 0.541rem;
   font-weight: 400;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_desc {
@@ -595,15 +593,16 @@ input:checked + .slider:before {
   align-items: center;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_desc small span {
-  line-height: 1.2;
   color: white;
-  font-size: 0.5rem;
+  font-size: 0.38rem;
+  font-weight: 400;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .map {
   left: 0;
   right: 0;
   margin-right: auto;
   margin-left: auto;
+  border: 1px solid white;
   border-radius: 50%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .map .astro_img,
@@ -736,12 +735,18 @@ input:checked + .slider:before {
   bottom: 12%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.classic .message_desc {
-  bottom: 4%;
+  bottom: 5%;
 }
-#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.poet .message_heading, #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.romantic .message_heading {
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.poet .message_heading {
   bottom: 15%;
 }
-#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.poet .message_desc, #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.romantic .message_desc {
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.poet .message_desc {
+  bottom: 4%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.romantic .message_heading {
+  bottom: 15%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.romantic .message_desc {
   bottom: 4%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.astronomer .message_heading {
@@ -755,6 +760,23 @@ input:checked + .slider:before {
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.aquarelles .message_desc {
   bottom: 4%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.modern .message_heading {
+  display: none;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.modern .message_desc {
+  bottom: 4%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.modern .message_desc #details_location {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  order: 1;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.modern .message_desc .date_time {
+  order: 2;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.modern .message_desc .text_coordinates {
+  order: 3;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.photographer .message_heading {
   bottom: 7%;
@@ -878,9 +900,6 @@ input:checked + .slider:before {
   #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .message_desc > small span {
     font-size: 0.7256rem;
   }
-  #wrapper #main-content .preview_wrapper .wrapper_shape.vertical {
-    transform: scale(0.8);
-  }
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.classic .message_heading {
     bottom: 15%;
   }
@@ -949,23 +968,29 @@ input:checked + .slider:before {
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.photographer .message_heading {
     bottom: 7%;
   }
+  #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.photographer .message_heading h5 {
+    font-size: 0.99044375rem;
+    font-weight: 400;
+  }
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.photographer .message_desc {
     bottom: 0;
+  }
+  #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.photographer .message_desc span small {
+    font-size: 0.57141rem;
+    font-weight: 400;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.explorer .message_heading {
     bottom: 5%;
   }
-  #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.explorer .message_heading #message {
+  #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.explorer .message_heading h5 {
     font-size: 0.99044375rem;
+    font-weight: 400;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.explorer .message_desc {
     bottom: 1%;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.explorer .message_desc small span {
-    font-size: 0.57141rem;
-  }
-  #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal {
-    transform: scale(0.82);
+    font-size: 0.72446875rem;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.classic .message_heading {
     bottom: 9%;
@@ -1039,8 +1064,16 @@ input:checked + .slider:before {
   #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.photographer .message_heading {
     bottom: 7%;
   }
+  #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.photographer .message_heading h5 {
+    font-size: 0.80545rem;
+    font-weight: 400;
+  }
   #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.photographer .message_desc {
     bottom: 0;
+  }
+  #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.photographer .message_desc small span {
+    font-size: 0.58873125rem;
+    font-weight: 400;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.explorer .message_heading {
     bottom: 7%;
@@ -1053,9 +1086,6 @@ input:checked + .slider:before {
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.explorer .message_desc small span {
     font-size: 0.511743125rem;
-  }
-  #wrapper #main-content .preview_wrapper .wrapper_shape.square {
-    transform: scale(1);
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.classic .message_heading {
     bottom: 9%;
@@ -1126,20 +1156,29 @@ input:checked + .slider:before {
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.photographer .message_heading {
     bottom: 7%;
   }
+  #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.photographer .message_heading h5 {
+    font-size: 1.12763125rem;
+    font-weight: 400;
+  }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.photographer .message_desc {
     bottom: 0;
+  }
+  #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.photographer .message_desc small span {
+    font-size: 0.682325rem;
+    font-weight: 400;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.explorer .message_heading {
     bottom: 7%;
   }
-  #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.explorer .message_heading #message {
+  #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.explorer .message_heading h5 {
     font-size: 1.12763125rem;
+    font-weight: 400;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.explorer .message_desc {
     bottom: 1%;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.explorer .message_desc small span {
-    font-size: 0.682325rem;
+    font-size: 0.824225rem;
   }
 }
 .bg_frame {
