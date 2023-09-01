@@ -102,7 +102,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function functionMap() {
         config = {
             container: "map",
-            width: 900,
+            width: 1200,
 
             form: false,
             advanced: false,
@@ -111,7 +111,8 @@ document.addEventListener("DOMContentLoaded", function () {
 
             zoomlevel: null,
             zoomextend: 1,
-
+        
+            //projection: "august",
             projection: "airy",
             transform: "equatorial",
 
@@ -223,9 +224,9 @@ document.addEventListener("DOMContentLoaded", function () {
             },
             background: {
                 fill: "#ffffff00",
-                stroke: "#ffffff00",
+                stroke: "#ffff",
                 opacity: 1,
-                width: 0
+                width: 6
             }
         }
         Celestial.display(config)
@@ -324,6 +325,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
             }
+            functionStarMapWH()
+            functionCanvas()
 
         }
 
@@ -383,6 +386,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         }
         functionStarMapWH()
+        functionCanvas()
 
     }
 
@@ -406,7 +410,6 @@ document.addEventListener("DOMContentLoaded", function () {
                     const getAttribute = this.getAttribute("data-type")
                     productTypeEle.classList.add(getAttribute)
                     functionStarMapWH()
-                    functionBorderBackground()
                 })
             }
         }
@@ -424,6 +427,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const getAttribute = this.getAttribute("data-type")
                     wrapperShapeEle.classList.add(getAttribute)
                     aspectRatioHandler(largScreen, smallScreen)
+                    functionCanvas()
                 })
             }
         }
@@ -859,64 +863,52 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     functionStarMapWH()
     function functionBorderBackground() {
-        if (largScreen.matches) {
-            borderValue = "2px solid white";
-        }
-        else if (smallScreen.matches) {
-            borderValue = "1px solid white";
-        }
+
+        // if (largScreen.matches) {
+        //     borderValue = "2px solid white";
+        // }
+        // else if (smallScreen.matches) {
+        //     borderValue = "1px solid white";
+        // }
+
         if (productTypeEle.classList.contains("classic")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
-            productEle.style.border = borderValue;
-            productEle.style.borderColor = "white";
         }
         else if (productTypeEle.classList.contains("poet")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
-            productEle.style.border = borderValue;
-            productEle.style.borderColor = "white";
         }
         else if (productTypeEle.classList.contains("astronomer")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
-            productEle.style.border = borderValue;
-            productEle.style.borderColor = "white";
         }
         else if (productTypeEle.classList.contains("aquarelles")) {
             wrapperShapeEle.style.backgroundColor = "white";
             mapEle.style.backgroundColor = "white";
-            productEle.style.border = "none";
-            productEle.style.borderColor = "unset";
         }
         else if (productTypeEle.classList.contains("romantic")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
             mapEle.style.border = "none";
-            productEle.style.border = borderValue;
-            productEle.style.borderColor = "white";
+            Celestial.reproject({projection: "bonne"})
         }
         else if (productTypeEle.classList.contains("modern")) {
             wrapperShapeEle.style.backgroundColor = "#1D1D1D";
             mapEle.style.backgroundColor = "#000000";
             mapEle.style.border = "none";
-            productEle.style.border = borderValue;
-            productEle.style.borderColor = "#ffff";
         }
         else if (productTypeEle.classList.contains("photographer")) {
             wrapperShapeEle.style.backgroundColor = "white";
             mapEle.style.backgroundColor = "#000000";
-            productEle.style.border = "none";
-            productEle.style.borderColor = "unset";
         }
         else if (productTypeEle.classList.contains("explorer")) {
             wrapperShapeEle.style.backgroundColor = "white";
             mapEle.style.backgroundColor = "#000000";
-            productEle.style.border = "none";
-            productEle.style.borderColor = "unset";
         }
     }
     functionBorderBackground()
+
     function functionCanvas() {
         const canvas = document.querySelector("canvas")
         canvas.style.width = mapEle.offsetWidth + "px"
@@ -929,7 +921,8 @@ document.addEventListener("DOMContentLoaded", function () {
         canvas.style.margin = "auto"
         canvas.style.zIndex = "7"
     }
-    functionCanvas()
+    functionCanvas();
+      
 })
 function redirectToPrintSize(target) {
     $('.print_size_content .tab-pane').removeClass('active')

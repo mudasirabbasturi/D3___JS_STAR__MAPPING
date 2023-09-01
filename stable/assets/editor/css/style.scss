@@ -725,8 +725,6 @@ input:checked+.slider:before {
                                 right: 0;
                                 margin-right: auto;
                                 margin-left: auto;
-                                border: 1px solid #ffff;
-                                border-radius: 50%;
 
                                 .astro_img,
                                 .heart_img,
@@ -771,6 +769,7 @@ input:checked+.slider:before {
                                             top: -5%;
                                             bottom: -5%;
                                             margin: auto;
+                                            z-index: 10;
                                         }
                                     }
                                 }
@@ -818,28 +817,6 @@ input:checked+.slider:before {
                                     }
                                 }
 
-                            }
-
-                            &.romantic {
-                                .map {
-                                    .heart_img {
-                                        display: block;
-                                        width: 100%;
-                                        height: 100%;
-                                        position: relative;
-
-                                        img {
-                                            position: absolute;
-                                            width: 100%;
-                                            height: 100%;
-                                            left: 0;
-                                            right: 0;
-                                            top: 0;
-                                            bottom: 0;
-                                            margin: auto;
-                                        }
-                                    }
-                                }
                             }
 
                             &.modern {
@@ -1196,7 +1173,7 @@ input:checked+.slider:before {
                             border: 2px solid #fff;
                             #product_type {
                                 .map {
-                                    border: 2px solid white;
+                                    // border: 2px solid white;
                                     canvas {
                                         width: inherit;
                                     }

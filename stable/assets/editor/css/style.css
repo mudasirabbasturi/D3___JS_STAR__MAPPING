@@ -602,8 +602,6 @@ input:checked + .slider:before {
   right: 0;
   margin-right: auto;
   margin-left: auto;
-  border: 1px solid white;
-  border-radius: 50%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .map .astro_img,
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .map .heart_img,
@@ -638,6 +636,7 @@ input:checked + .slider:before {
   top: -5%;
   bottom: -5%;
   margin: auto;
+  z-index: 10;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.poet .map, #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.aquarelles .map, #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.romantic .map {
   top: 5%;
@@ -655,22 +654,6 @@ input:checked + .slider:before {
   position: relative;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.aquarelles .map .aquarelles_img img {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  left: 0;
-  right: 0;
-  top: 0;
-  bottom: 0;
-  margin: auto;
-}
-#wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.romantic .map .heart_img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  position: relative;
-}
-#wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.romantic .map .heart_img img {
   position: absolute;
   width: 100%;
   height: 100%;
@@ -887,9 +870,6 @@ input:checked + .slider:before {
   #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product {
     margin: 25px;
     border: 2px solid #fff;
-  }
-  #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .map {
-    border: 2px solid white;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type .map canvas {
     width: inherit;
