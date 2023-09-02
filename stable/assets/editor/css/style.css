@@ -451,6 +451,7 @@ input:checked + .slider:before {
   border: 2px solid #e9e9e9;
   transition: all 0.15s;
   border-radius: 2px;
+  padding-top: 125%;
   padding-top: 100%;
 }
 #wrapper #left-sidebar .color_select_wrapper .color_select .image > .color {
@@ -466,6 +467,21 @@ input:checked + .slider:before {
 }
 #wrapper #left-sidebar .color_select_wrapper .color_select .name {
   display: block;
+  font-size: 0.8rem;
+  margin-top: 5px;
+}
+#wrapper #left-sidebar .color_select_wrapper .color_select.border_circle .image {
+  position: relative;
+  display: block;
+  padding-top: calc(100% - 2px);
+  overflow: hidden;
+  line-height: 0;
+  border-radius: 50%;
+  border: 2px solid rgba(73, 197, 183, 0.2666666667);
+  transition: all 0.15s;
+}
+#wrapper #left-sidebar .color_select_wrapper .color_select.border_circle .image img {
+  padding: 8px;
 }
 #wrapper #left-sidebar .color_select_wrapper .color_select:hover .image, #wrapper #left-sidebar .color_select_wrapper .color_select.selected .image {
   border-color: #49C5B6;
@@ -644,8 +660,22 @@ input:checked + .slider:before {
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.classic .map, #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.modern .map {
   top: 8%;
 }
+@media screen and (orientation: landscape) and (max-width: 800px) {
+  #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.classic .message_desc small span {
+    font-size: 0.3rem;
+  }
+}
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.modern .message_heading {
   display: none !important;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.modern .message_desc #details_location {
+  order: 1;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.modern .message_desc .date_time {
+  order: 2;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.modern .message_desc .text_coordinates {
+  order: 3;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.aquarelles .map .aquarelles_img {
   display: block;
@@ -662,15 +692,6 @@ input:checked + .slider:before {
   top: 0;
   bottom: 0;
   margin: auto;
-}
-#wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.modern .message_desc #details_location {
-  order: 1;
-}
-#wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.modern .message_desc .date_time {
-  order: 2;
-}
-#wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.modern .message_desc .text_coordinates {
-  order: 3;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product #product_type.photographer .map {
   top: 0;
@@ -726,17 +747,17 @@ input:checked + .slider:before {
 #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.poet .message_desc {
   bottom: 4%;
 }
-#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.romantic .message_heading {
-  bottom: 15%;
-}
-#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.romantic .message_desc {
-  bottom: 4%;
-}
 #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.astronomer .message_heading {
   top: 5%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.astronomer .message_desc {
   bottom: 5%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.romantic .message_heading {
+  bottom: 15%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.romantic .message_desc {
+  bottom: 4%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.aquarelles .message_heading {
   bottom: 15%;
@@ -791,10 +812,10 @@ input:checked + .slider:before {
 #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.classic .message_desc {
   bottom: 9%;
 }
-#wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.poet .message_heading, #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.romantic .message_heading {
+#wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.poet .message_heading {
   bottom: 15%;
 }
-#wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.poet .message_desc, #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.romantic .message_desc {
+#wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.poet .message_desc {
   bottom: 4%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.astronomer .message_heading {
@@ -807,6 +828,18 @@ input:checked + .slider:before {
   bottom: 15%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.aquarelles .message_desc {
+  bottom: 4%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.romantic .message_heading {
+  bottom: 15%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.romantic .message_desc {
+  bottom: 4%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.modern .message_heading {
+  bottom: 15%;
+}
+#wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.modern .message_desc {
   bottom: 4%;
 }
 #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.photographer .message_heading {
@@ -840,6 +873,18 @@ input:checked + .slider:before {
 #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.classic .message_desc {
   bottom: 6%;
 }
+#wrapper .fixed_top_or_bottom {
+  position: fixed;
+  width: 32.8%;
+  left: 0;
+  bottom: 0;
+  height: 74px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(221, 221, 221, 0.8666666667);
+  z-index: 99;
+}
 
 @media (min-width: 820px) {
   #wrapper .navbar-fixed-top {
@@ -867,6 +912,9 @@ input:checked + .slider:before {
     height: 100%;
     margin-top: unset;
   }
+  #wrapper #main-content .preview_wrapper .wrapper_shape {
+    transform: scale(0.93);
+  }
   #wrapper #main-content .preview_wrapper .wrapper_shape .product_wrapper .product {
     margin: 25px;
     border: 2px solid #fff;
@@ -883,8 +931,17 @@ input:checked + .slider:before {
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.classic .message_heading {
     bottom: 15%;
   }
+  #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.classic .message_heading h5 {
+    font-size: 1.14281875rem;
+    font-weight: 700;
+  }
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.classic .message_desc {
     bottom: 9%;
+  }
+  #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.classic .message_desc small span {
+    font-size: 0.7256rem;
+    font-weight: 400;
+    line-height: 15.1288px;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.vertical .product_wrapper .product #product_type.poet .message_heading {
     bottom: 15%;
@@ -983,6 +1040,7 @@ input:checked + .slider:before {
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.classic .message_desc small span {
     font-size: 0.516rem;
+    line-height: 10.2463px;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.horizontal .product_wrapper .product #product_type.poet .message_heading {
     bottom: 10%;
@@ -1072,12 +1130,15 @@ input:checked + .slider:before {
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.classic .message_heading h5 {
     font-size: 1.0836rem;
+    font-weight: 700;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.classic .message_desc {
     bottom: 3%;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.classic .message_desc small span {
-    font-size: 0.688rem;
+    font-size: 0.588rem;
+    font-weight: 400;
+    line-height: 12.3448px;
   }
   #wrapper #main-content .preview_wrapper .wrapper_shape.square .product_wrapper .product #product_type.poet .message_heading {
     bottom: 12%;
@@ -1173,4 +1234,47 @@ input:checked + .slider:before {
 .bg_frame img {
   width: 100%;
   height: 100%;
+}
+
+.modal-dialog {
+  max-width: 90% !important;
+}
+
+.summary {
+  padding: 15px;
+}
+.summary .title {
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 15px;
+}
+.summary table {
+  border-collapse: collapse;
+}
+.summary table .row-additions > :first-child {
+  font-weight: 700;
+}
+.summary table .row-additions {
+  font-size: 0.9em;
+}
+.summary table .row-additions td {
+  padding: 6px 0;
+  vertical-align: top;
+}
+.summary table .row-additions td + td {
+  padding-left: 10px;
+  font-family: Arial;
+}
+.summary .confirm-bottom-bar {
+  display: flex;
+  flex-direction: column;
+}
+.summary .confirm-bottom-bar .total-price {
+  font-size: 1.3em;
+  display: flex;
+  justify-content: space-between;
+  padding: 22px 0;
+  margin: 15px 0 30px;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
 }/*# sourceMappingURL=style.css.map */

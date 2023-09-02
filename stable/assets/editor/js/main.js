@@ -38,6 +38,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const largScreen = window.matchMedia("(min-width: 820px)")
     const smallScreen = window.matchMedia("(max-width: 819px)")
 
+
     /** SIDEBAR. ====================================================== */
     const fixedNavBarEle = document.getElementById("fixed_nav_bar")
 
@@ -111,7 +112,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             zoomlevel: null,
             zoomextend: 1,
-            
+
             projection: "airy",
             transform: "equatorial",
 
@@ -154,7 +155,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     "mer": { fill: "#ffff", size: "0" },
                     "ven": { fill: "#ffff", size: "0" },
                     "ter": { fill: "#ffff", size: "0" },
-                    "lun": { fill: "#ffff", size: "0"},
+                    "lun": { fill: "#ffff", size: "0" },
                     "mar": { fill: "#ffff", size: "0" },
                     "cer": { fill: "#ffff", size: "0" },
                     "ves": { fill: "#ffff", size: "0" },
@@ -249,7 +250,7 @@ document.addEventListener("DOMContentLoaded", function () {
                 LAT = parseFloat(LAT.toFixed(4));
                 LON = parseFloat(LON.toFixed(4));
 
-                Celestial.skyview({"location": [LAT, LON]});
+                Celestial.skyview({ "location": [LAT, LON] });
 
                 var latDirection = LAT >= 0 ? "N" : "S";
                 var longDirection = LON >= 0 ? "E" : "W";
@@ -324,7 +325,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
             }
-
+            functionStarMapWH()
+            functionBorderBackground()
+            functionCanvas()
         }
 
         else if (smallScreen.matches) {
@@ -380,7 +383,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
             }
-
+            functionStarMapWH()
+            functionBorderBackground()
+            functionCanvas()
         }
 
     }
@@ -414,23 +419,11 @@ document.addEventListener("DOMContentLoaded", function () {
                         setTimeout(() => {
                             mapEle.style.visibility = "visible"
                             functionStarMapWH()
+                            functionBorderBackground()
                             functionCanvas()
-                         }, 100);
+                        }, 100);
                     }
-                    
-                    if (productTypeEle.classList.contains("aquarelles")) {
-                        mapEle.style.visibility = "hidden"
-                        Celestial.reproject({ projection: "airy" })
-                        config.background.stroke = "#ffffff00"
-                        config.background.width = 0
 
-                        Celestial.apply(config)
-                        setTimeout(() => {
-                            mapEle.style.visibility = "visible"
-                            functionStarMapWH()
-                            functionCanvas()
-                         }, 100);
-                    }
 
                     if (productTypeEle.classList.contains("astronomer")) {
                         mapEle.style.visibility = "hidden"
@@ -438,7 +431,7 @@ document.addEventListener("DOMContentLoaded", function () {
                         Celestial.setStyle({
                             background: {
                                 fill: "#fa0000"
-                            } 
+                            }
                         })
                         config.background.width = 0
                         Celestial.apply(config)
@@ -446,8 +439,74 @@ document.addEventListener("DOMContentLoaded", function () {
                         setTimeout(() => {
                             mapEle.style.visibility = "visible"
                             functionStarMapWH()
+                            functionBorderBackground()
                             functionCanvas()
-                         }, 100);
+                        }, 100);
+                    }
+
+                    if (productTypeEle.classList.contains("aquarelles")) {
+                        mapEle.style.visibility = "hidden"
+                        Celestial.reproject({ projection: "airy" })
+                        config.background.fill = "#ffffff00"
+                        config.background.stroke = "#ffffff00"
+                        config.background.width = 0
+
+                        Celestial.apply(config)
+                        setTimeout(() => {
+                            mapEle.style.visibility = "visible"
+                            functionStarMapWH()
+                            functionBorderBackground()
+                            functionCanvas()
+                        }, 100);
+                    }
+
+                    if (productTypeEle.classList.contains("modern")) {
+                        mapEle.style.visibility = "hidden"
+                        Celestial.reproject({ projection: "airy" })
+                        config.background.fill = "black"
+                        config.background.stroke = "#ffffff00"
+                        config.background.width = 0
+
+                        Celestial.apply(config)
+                        setTimeout(() => {
+                            mapEle.style.visibility = "visible"
+                            functionStarMapWH()
+                            functionBorderBackground()
+                            functionCanvas()
+                        }, 100);
+
+                    }
+
+                    if (productTypeEle.classList.contains("photographer")) {
+                        mapEle.style.visibility = "hidden"
+                        Celestial.reproject({ projection: "cylindricalStereographic" })
+                        config.background.fill = "#ffffff00"
+                        config.background.stroke = "#ffffff00"
+                        config.background.width = 0
+
+                        Celestial.apply(config)
+                        setTimeout(() => {
+                            mapEle.style.visibility = "visible"
+                            functionStarMapWH()
+                            functionBorderBackground()
+                            functionCanvas()
+                        }, 100);
+                    }
+
+                    if (productTypeEle.classList.contains("explorer")) {
+                        mapEle.style.visibility = "hidden"
+                        Celestial.reproject({ projection: "cylindricalStereographic" })
+                        config.background.fill = "#ffffff00"
+                        config.background.stroke = "#ffffff00"
+                        config.background.width = 0
+
+                        Celestial.apply(config)
+                        setTimeout(() => {
+                            mapEle.style.visibility = "visible"
+                            functionStarMapWH()
+                            functionBorderBackground()
+                            functionCanvas()
+                        }, 100);
                     }
 
                     else {
@@ -459,15 +518,14 @@ document.addEventListener("DOMContentLoaded", function () {
                         setTimeout(() => {
                             mapEle.style.visibility = "visible"
                             functionStarMapWH()
+                            functionBorderBackground()
                             functionCanvas()
-                         }, 100);
+                        }, 100);
                     }
-                    
+
                 })
             }
         }
-
-        
 
         function functionPrintLayout() {
             const arrayClass = ['vertical', 'horizontal', 'square']
@@ -486,7 +544,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     functionCanvas()
                 })
             }
-            
+
         }
 
         function functionPrintSizesVertical() {
@@ -504,8 +562,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const getAttribute = this.getAttribute("data-size")
                     const getValue = parseFloat(getAttribute)
                     this.classList.add("selected")
-                    wrapperShapeEle.style.transform = "scale(" + getValue + ")"
-
+                    if (largScreen.matches) {
+                        wrapperShapeEle.style.transform = "scale(" + getValue + ")"
+                    }
                 })
 
             }
@@ -527,7 +586,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const getValue = parseFloat(getAttribute)
 
                     this.classList.add("selected")
-                    wrapperShapeEle.style.transform = "scale(" + getValue + ")"
+                    if (largScreen.matches) {
+                        wrapperShapeEle.style.transform = "scale(" + getValue + ")"
+                    }
 
                 })
 
@@ -551,7 +612,9 @@ document.addEventListener("DOMContentLoaded", function () {
                     const getValue = parseFloat(getAttribute)
 
                     this.classList.add("selected")
-                    wrapperShapeEle.style.transform = "scale(" + getValue + ")"
+                    if (largScreen.matches) {
+                        wrapperShapeEle.style.transform = "scale(" + getValue + ")"
+                    }
 
                 })
 
@@ -739,7 +802,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 clicked.addEventListener('click', function () {
                     const computedStyle = getComputedStyle(this);
                     const bgColor = computedStyle.backgroundColor;
-                    mapEle.style.backgroundColor = bgColor
+                    config.background.fill = bgColor
+                    Celestial.apply(config)
                 })
             }
         }
@@ -825,6 +889,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     functionDesign() // DESIGN END.
     /** PRODUCT. */
+
     function functionProduct() {
         function functionProductFinishSelect() {
             for (let i = 0; i < productFinshSelectEle.length; i++) {
@@ -920,26 +985,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
     functionStarMapWH()
+
     function functionBorderBackground() {
-
-        // if (largScreen.matches) {
-        //     borderValue = "2px solid white";
-        // }
-        // else if (smallScreen.matches) {
-        //     borderValue = "1px solid white";
-        // }
-
+        mapEle.style.backgroundColor = "unset";
         if (productTypeEle.classList.contains("classic")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
-            mapEle.style.backgroundColor = "#000000";
         }
         else if (productTypeEle.classList.contains("poet")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
-            mapEle.style.backgroundColor = "#000000";
         }
         else if (productTypeEle.classList.contains("astronomer")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
-            mapEle.style.backgroundColor = "#000000";
         }
         else if (productTypeEle.classList.contains("aquarelles")) {
             wrapperShapeEle.style.backgroundColor = "white";
@@ -947,21 +1003,17 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         else if (productTypeEle.classList.contains("romantic")) {
             wrapperShapeEle.style.backgroundColor = "#000000";
-            mapEle.style.backgroundColor = "#000000";
-            mapEle.style.border = "none";
         }
         else if (productTypeEle.classList.contains("modern")) {
             wrapperShapeEle.style.backgroundColor = "#1D1D1D";
-            mapEle.style.backgroundColor = "#000000";
-            mapEle.style.border = "none";
         }
         else if (productTypeEle.classList.contains("photographer")) {
             wrapperShapeEle.style.backgroundColor = "white";
-            mapEle.style.backgroundColor = "#000000";
+            mapEle.style.backgroundColor = "black"
         }
         else if (productTypeEle.classList.contains("explorer")) {
             wrapperShapeEle.style.backgroundColor = "white";
-            mapEle.style.backgroundColor = "#000000";
+            mapEle.style.backgroundColor = "black"
         }
     }
     functionBorderBackground()
@@ -977,10 +1029,19 @@ document.addEventListener("DOMContentLoaded", function () {
         canvas.style.bottom = "0"
         canvas.style.margin = "auto"
         canvas.style.zIndex = "1"
-        canvas.style.overflow = "hidden"
     }
     functionCanvas();
-      
+
+    function functionPreview() {
+        document.getElementById("preview").onclick = () => {
+            document.getElementById("cart_location").innerText = detailsLocationEle.innerText
+            document.getElementById("cart_message").innerText = messageEle.innerText
+            document.getElementById("cart_date").innerText = detailsDateEle.innerText + " - " + detailsTimeEle.innerText
+            document.getElementById("cart_coordinates").innerText = detailsCoordinatesEle.innerText
+        }
+    }
+    functionPreview()
+
 })
 function redirectToPrintSize(target) {
     $('.print_size_content .tab-pane').removeClass('active')

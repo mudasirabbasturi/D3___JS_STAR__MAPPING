@@ -19,7 +19,6 @@
         .print_style_tab_content .tab-pane.active {
             display: flex;
         }
-
     </style>
 </head>
 
@@ -133,7 +132,7 @@
                         </div>
                         <div class="image_select print_style_element" data-type="romantic">
                             <span class="image">
-                                <img src="assets/editor/images/romantic2.png" alt="img" class="img-fluid">
+                                <img src="assets/editor/images/romantic3.png" alt="img" class="img-fluid">
                             </span>
                             <span class="name">Romantic</span>
                         </div>
@@ -207,7 +206,7 @@
                     <div class="tab-content print_size_content print_size p-0">
                         <div class="tab-pane active" id="vertical">
                             <div class="image_select_wrapper">
-                                <div class="image_select size_vertical border_circle selected" data-size="0.8">
+                                <div class="image_select size_vertical border_circle" data-size="0.8">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-s.svg" alt="img" class="img-fluid">
                                     </span>
@@ -216,7 +215,7 @@
                                     </span>
                                     <span class="name">30x40 cm</span>
                                 </div>
-                                <div class="image_select size_vertical border_circle" data-size="0.93">
+                                <div class="image_select size_vertical border_circle selected" data-size="0.93">
                                     <span class="image">
                                         <img src="assets/editor/svg/size-m.svg" alt="img" class="img-fluid">
                                     </span>
@@ -610,13 +609,6 @@
                                 </span>
                                 <span class="name">Sienna</span>
                             </div>
-                            <div class="color_select star_color_select border_circle selected">
-                                <span class="image">
-                                    <span class="star_color color" style="background-color: unset"></span>
-                                </span>
-                                <span class="name">None</span>
-                            </div>
-
                         </div>
                     </div>
                     <!-- Star Map Color End. -->
@@ -700,13 +692,13 @@
                                 </span>
                                 <span class="name">Sienna</span>
                             </div>
-                            <div class="color_select frame_color_select border_circle">
+                            <!-- <div class="color_select frame_color_select border_circle">
                                 <span class="image">
                                     <span class="color frame_color"
                                         style="background-color: rgb(255, 255, 255);"></span>
                                 </span>
                                 <span class="name">White</span>
-                            </div>
+                            </div> -->
 
                         </div>
                     </div>
@@ -989,7 +981,7 @@
                                     </div>
                                 </div>
                                 <div class="message_heading">
-                                    <h5 id="message">🤍 OUR LUCKY STARS 🤍</h5>
+                                    <h5 id="message">🤍 Memorable Moments 🤍</h5>
                                 </div>
                                 <div class="message_desc">
                                     <small>
@@ -1009,6 +1001,75 @@
                         </div>
                     </div>
                 </div>
+            </div>
+        </div>
+        <div class="fixed_top_or_bottom" id="fixed_top_or_bottom">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-6">
+                        <button class="btn btn-small">
+                            <small>Customize With Form.</small>
+                        </button>
+                    </div>
+                    <div class="col-6 float-right">
+                        <button class="btn btn-small float-right" data-toggle="modal" data-target="#myModal" id="preview">
+                            Preview & Add To Cart.
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myModal">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+
+                <!-- Modal Header -->
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+
+                <!-- Modal body -->
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-12 col-md-6">Image</div>
+                        <div class="col-12 col-md-6">
+                            <div class="summary">
+                                <div class="title" id="cart_print_style">Classic - 50x70 cm</div>
+                                <table>
+                                    <tr class="row-additions">
+                                        <td class="label-text">Location:</td>
+                                        <td class="label-value" id="cart_location"><span>London, United Kingdom</span></td>
+                                    </tr>
+                                    <tr class="row-additions">
+                                        <td class="label-text">Message:</td>
+                                        <td class="label-value"><span id="cart_message">🤍 Memorable Moments Collection 🤍</span></td>
+                                    </tr>
+                                    <tr class="row-additions">
+                                        <td class="label-text">Date:</td>
+                                        <td class="label-value"><span id="cart_date">20th September 2021</span></td>
+                                    </tr>
+                                    <tr class="row-additions">
+                                        <td class="label-text">Coordinates:</td>
+                                        <td class="label-value"><span id="cart_coordinates">51.5073° N, 0.1276° W</span></td>
+                                    </tr>
+                                </table>
+                                <div class="confirm-bottom-bar">
+                                    <div class="total-price">
+                                        <div class="total">Total</div>
+                                        <div class="total">£ 44.00</div>
+                                    </div>
+                                    <div class="button-bottom">
+                                        <!-- <button class="button btn-continue">Continue Edit</button> -->
+                                        <a class="btn btn-success" href="#">Add To Cart</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </div>

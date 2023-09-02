@@ -317,8 +317,9 @@ input:checked+.slider:before {
         .navbar-fixed-top {
             bottom: 0;
             top: unset;
-          }
-          #left-sidebar {
+        }
+
+        #left-sidebar {
             margin-top: 0px;
         }
     }
@@ -328,11 +329,14 @@ input:checked+.slider:before {
 #wrapper {
     height: 100vh;
     overflow: hidden;
+
     .navbar-fixed-top {
         width: 100%;
+
         .nav-tabs {
             width: 100%;
             border: none !important;
+
             .nav-item {
                 .nav-link {
                     position: relative;
@@ -358,6 +362,7 @@ input:checked+.slider:before {
                         position: relative;
                         width: 25px;
                         height: 25px;
+
                         img {
                             position: absolute;
                             width: 100%;
@@ -519,7 +524,7 @@ input:checked+.slider:before {
                     border: 2px solid #e9e9e9;
                     transition: all .15s;
                     border-radius: 2px;
-                    // padding-top: 125%;
+                    padding-top: 125%;
                     padding-top: 100%;
 
                     >.color {
@@ -538,26 +543,26 @@ input:checked+.slider:before {
 
                 .name {
                     display: block;
-                    // font-size: .8rem;
-                    // margin-top: 5px;
+                    font-size: .8rem;
+                    margin-top: 5px;
                 }
 
-                // &.border_circle {
-                //     .image {
-                //         position: relative;
-                //         display: block;
-                //         padding-top: calc(100% - 2px);
-                //         overflow: hidden;
-                //         line-height: 0;
-                //         border-radius: 50%;
-                //         border: 2px solid #49c5b744;
-                //         transition: all .15s;
+                &.border_circle {
+                    .image {
+                        position: relative;
+                        display: block;
+                        padding-top: calc(100% - 2px);
+                        overflow: hidden;
+                        line-height: 0;
+                        border-radius: 50%;
+                        border: 2px solid #49c5b744;
+                        transition: all .15s;
 
-                //         img {
-                //             padding: 8px;
-                //         }
-                //     }
-                // }
+                        img {
+                            padding: 8px;
+                        }
+                    }
+                }
 
                 &:hover,
                 &.selected {
@@ -683,10 +688,12 @@ input:checked+.slider:before {
                             .explorer_absolute {
                                 position: absolute;
                             }
+
                             .message_heading,
                             .message_desc {
                                 z-index: 2;
                             }
+
                             .explorer_absolute {
                                 display: none;
                                 z-index: 1;
@@ -733,10 +740,14 @@ input:checked+.slider:before {
                                 }
                             }
 
-                            &.aquarelles, &.photographer {
+                            &.aquarelles,
+                            &.photographer {
                                 .message_heading {
-                                    h5 {color: black;}
+                                    h5 {
+                                        color: black;
+                                    }
                                 }
+
                                 .message_desc {
                                     small {
                                         span {
@@ -790,9 +801,36 @@ input:checked+.slider:before {
                                 }
                             }
 
+                            @media screen and (orientation:landscape) {
+                                @media screen and (max-width: 800px) {
+                                    &.classic {
+                                        .message_desc {
+                                            small {
+                                                span {
+                                                    font-size: .3rem;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
                             &.modern {
                                 .message_heading {
                                     display: none !important;
+                                }
+                                .message_desc {
+                                    #details_location {
+                                        order: 1;
+                                    }
+
+                                    .date_time {
+                                        order: 2;
+                                    }
+
+                                    .text_coordinates {
+                                        order: 3;
+                                    }
                                 }
                             }
 
@@ -819,27 +857,19 @@ input:checked+.slider:before {
 
                             }
 
-                            &.modern {
-                                    .message_desc {
-                                        #details_location {
-                                            order: 1;
-                                        }
-                                        .date_time {order: 2;}
-                                        .text_coordinates {order: 3;}
-                                    }
-                                }
-
                             &.photographer {
                                 .map {
                                     top: 0;
                                     width: 100%;
                                     border-radius: 0;
                                 }
+
                                 .message_desc {
                                     small {
                                         flex-wrap: wrap;
                                         flex-direction: row;
                                         justify-content: center;
+
                                         .date_time {
                                             width: 100%;
                                             text-align: center;
@@ -854,6 +884,7 @@ input:checked+.slider:before {
                                     width: 100%;
                                     border-radius: 0;
                                 }
+
                                 .explorer_absolute {
                                     display: block;
                                     width: 100%;
@@ -862,11 +893,13 @@ input:checked+.slider:before {
                                     left: 0;
                                     background-color: rgba(2, 2, 2, 0.034);
                                 }
+
                                 .message_desc {
                                     small {
                                         flex-wrap: wrap;
                                         flex-direction: row;
                                         justify-content: center;
+
                                         .date_time {
                                             width: 100%;
                                             text-align: center;
@@ -904,6 +937,7 @@ input:checked+.slider:before {
                                     .message_heading {
                                         bottom: 12%;
                                     }
+
                                     .message_desc {
                                         bottom: 5%;
                                     }
@@ -913,15 +947,7 @@ input:checked+.slider:before {
                                     .message_heading {
                                         bottom: 15%;
                                     }
-                                    .message_desc {
-                                        bottom: 4%;
-                                    }
-                                }
 
-                                &.romantic {
-                                    .message_heading {
-                                        bottom: 15%;
-                                    }
                                     .message_desc {
                                         bottom: 4%;
                                     }
@@ -931,8 +957,19 @@ input:checked+.slider:before {
                                     .message_heading {
                                         top: 5%;
                                     }
+
                                     .message_desc {
                                         bottom: 5%;
+                                    }
+                                }
+
+                                &.romantic {
+                                    .message_heading {
+                                        bottom: 15%;
+                                    }
+
+                                    .message_desc {
+                                        bottom: 4%;
                                     }
                                 }
 
@@ -940,6 +977,7 @@ input:checked+.slider:before {
                                     .message_heading {
                                         bottom: 15%;
                                     }
+
                                     .message_desc {
                                         bottom: 4%;
                                     }
@@ -949,15 +987,23 @@ input:checked+.slider:before {
                                     .message_heading {
                                         display: none;
                                     }
+
                                     .message_desc {
                                         bottom: 4%;
+
                                         #details_location {
                                             margin-top: -10px;
                                             margin-bottom: 10px;
                                             order: 1;
                                         }
-                                        .date_time {order: 2;}
-                                        .text_coordinates {order: 3;}
+
+                                        .date_time {
+                                            order: 2;
+                                        }
+
+                                        .text_coordinates {
+                                            order: 3;
+                                        }
                                     }
                                 }
 
@@ -965,6 +1011,7 @@ input:checked+.slider:before {
                                     .message_heading {
                                         bottom: 7%;
                                     }
+
                                     .message_desc {
                                         bottom: 0;
                                     }
@@ -973,12 +1020,15 @@ input:checked+.slider:before {
                                 &.explorer {
                                     .message_heading {
                                         bottom: 12.9%;
+
                                         #message {
                                             font-size: 0.99044375rem;
                                         }
                                     }
+
                                     .message_desc {
-                                        bottom: 1% ;
+                                        bottom: 1%;
+
                                         small {
                                             span {
                                                 font-size: 0.57141rem;
@@ -1017,24 +1067,28 @@ input:checked+.slider:before {
                                     .message_heading {
                                         bottom: 15%;
                                     }
+
                                     .message_desc {
                                         bottom: 9%;
                                     }
                                 }
 
-                                &.poet, &.romantic {
+                                &.poet {
                                     .message_heading {
                                         bottom: 15%;
                                     }
+
                                     .message_desc {
                                         bottom: 4%;
                                     }
                                 }
 
+
                                 &.astronomer {
                                     .message_heading {
                                         top: 5%;
                                     }
+
                                     .message_desc {
                                         bottom: 5%;
                                     }
@@ -1044,32 +1098,35 @@ input:checked+.slider:before {
                                     .message_heading {
                                         bottom: 15%;
                                     }
+
+                                    .message_desc {
+                                        bottom: 4%;
+                                    }
+                                }
+                                &.romantic {
+                                    .message_heading {
+                                        bottom: 15%;
+                                    }
+
+                                    .message_desc {
+                                        bottom: 4%;
+                                    }
+                                }
+                                &.modern {
+                                    .message_heading {
+                                        bottom: 15%;
+                                    }
+
                                     .message_desc {
                                         bottom: 4%;
                                     }
                                 }
 
-                                // &.modern {
-                                //     .message_heading {
-                                //         display: none;
-                                //     }
-                                //     .message_desc {
-                                //         bottom: 4%;
-                                //         #details_location {
-                                //             font-size: 1.07796875rem;
-                                //             margin-top: -10px;
-                                //             margin-bottom: 10px;
-                                //             order: 1;
-                                //         }
-                                //         .date_time {order: 2;}
-                                //         .text_coordinates {order: 3;}
-                                //     }
-                                // }
-
                                 &.photographer {
                                     .message_heading {
                                         bottom: 7%;
                                     }
+
                                     .message_desc {
                                         bottom: 0;
                                     }
@@ -1082,10 +1139,12 @@ input:checked+.slider:before {
                                         align-items: center;
                                         height: 40px;
                                         bottom: 6%;
+
                                         h5 {
                                             margin: 0;
                                         }
                                     }
+
                                     .message_desc {
                                         bottom: 0;
                                     }
@@ -1100,6 +1159,7 @@ input:checked+.slider:before {
                     .product_wrapper {
                         .product {
                             #product_type {
+
                                 &.classic,
                                 &.poet,
                                 &.aquarelles,
@@ -1109,15 +1169,18 @@ input:checked+.slider:before {
                                         width: 75%;
                                     }
                                 }
+
                                 &.astronomer {
                                     .map {
                                         width: 70%;
                                     }
                                 }
+
                                 &.classic {
                                     .message_heading {
                                         bottom: 10%;
                                     }
+
                                     .message_desc {
                                         bottom: 6%;
                                     }
@@ -1129,6 +1192,18 @@ input:checked+.slider:before {
             }
         }
     }
+    .fixed_top_or_bottom {
+        position: fixed;
+        width: calc(100% - 67.2%);
+        left: 0;
+        bottom: 0;
+        height: 74px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: #dddd;
+        z-index: 99;
+    }
 }
 
 
@@ -1139,9 +1214,11 @@ input:checked+.slider:before {
 
             .nav-tabs {
                 padding: 0 5px;
+
                 .nav-item {
                     .nav-link {
                         font-size: .8rem;
+
                         .nav_img {
                             width: 30px;
                             height: 30px;
@@ -1167,13 +1244,15 @@ input:checked+.slider:before {
 
             .preview_wrapper {
                 .wrapper_shape {
+                    transform: scale(0.93);
+
                     .product_wrapper {
                         .product {
                             margin: 25px;
                             border: 2px solid #fff;
+
                             #product_type {
                                 .map {
-                                    // border: 2px solid white;
                                     canvas {
                                         width: inherit;
                                     }
@@ -1183,9 +1262,9 @@ input:checked+.slider:before {
                                     h5 {
                                         font-size: 1.14281875rem;
                                     }
-    
+
                                 }
-                                
+
                                 .message_desc {
                                     >small {
                                         span {
@@ -1193,35 +1272,51 @@ input:checked+.slider:before {
                                         }
                                     }
                                 }
-                            
+
                             }
                         }
                     }
 
                     &.vertical {
-                        //transform: scale(0.8);
                         .product_wrapper {
                             .product {
                                 #product_type {
-    
+
                                     &.classic {
                                         .message_heading {
                                             bottom: 15%;
+
+                                            h5 {
+                                                font-size: 1.14281875rem;
+                                                font-weight: 700;
+                                            }
                                         }
+
                                         .message_desc {
                                             bottom: 9%;
+
+                                            small {
+                                                span {
+                                                    font-size: 0.7256rem;
+                                                    font-weight: 400;
+                                                    line-height: 15.1288px;
+                                                }
+                                            }
                                         }
                                     }
-    
+
                                     &.poet {
                                         .message_heading {
                                             bottom: 15%;
+
                                             h5 {
                                                 font-size: 0.77095rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.561251875rem;
@@ -1233,12 +1328,15 @@ input:checked+.slider:before {
                                     &.romantic {
                                         .message_heading {
                                             bottom: 15%;
+
                                             h5 {
                                                 font-size: 0.85951875rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.612225rem;
@@ -1246,16 +1344,19 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.astronomer {
                                         .message_heading {
                                             top: 7%;
+
                                             h5 {
                                                 font-size: 1.14281875rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 5%;
+
                                             span {
                                                 small {
                                                     font-size: 0.561251875rem;
@@ -1263,16 +1364,19 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.aquarelles {
                                         .message_heading {
                                             bottom: 15%;
+
                                             h5 {
                                                 font-size: 1.14281875rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.7015625rem;
@@ -1280,15 +1384,17 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.modern {
                                         .message_desc {
                                             bottom: 5%;
+
                                             small {
                                                 span {
                                                     font-size: 0.57141rem;
                                                 }
                                             }
+
                                             #details_location {
                                                 font-size: 1.07796875rem;
                                                 margin-top: -15px;
@@ -1296,17 +1402,20 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.photographer {
                                         .message_heading {
                                             bottom: 7%;
+
                                             h5 {
                                                 font-size: 0.99044375rem;
                                                 font-weight: 400;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 0;
+
                                             span {
                                                 small {
                                                     font-size: 0.57141rem;
@@ -1315,17 +1424,20 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.explorer {
                                         .message_heading {
                                             bottom: 5%;
+
                                             h5 {
                                                 font-size: 0.99044375rem;
                                                 font-weight: 400;
                                             }
                                         }
+
                                         .message_desc {
-                                            bottom: 1% ;
+                                            bottom: 1%;
+
                                             small {
                                                 span {
                                                     font-size: 0.72446875rem;
@@ -1333,44 +1445,50 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                 }
                             }
                         }
                     }
 
                     &.horizontal {
-                        //transform: scale(0.82);
                         .product_wrapper {
                             .product {
                                 #product_type {
-    
+
                                     &.classic {
                                         .message_heading {
                                             bottom: 9%;
+
                                             h5 {
                                                 font-size: 0.8127rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 3%;
+
                                             small {
                                                 span {
                                                     font-size: 0.516rem;
+                                                    line-height: 10.2463px;
                                                 }
                                             }
                                         }
                                     }
-    
+
                                     &.poet {
                                         .message_heading {
                                             bottom: 10%;
+
                                             h5 {
                                                 font-size: 0.54825rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.39912625rem;
@@ -1382,12 +1500,15 @@ input:checked+.slider:before {
                                     &.romantic {
                                         .message_heading {
                                             bottom: 15%;
+
                                             h5 {
                                                 font-size: 0.7672625rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.5221275rem;
@@ -1395,16 +1516,19 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.astronomer {
                                         .message_heading {
                                             top: 4%;
+
                                             h5 {
                                                 font-size: 0.8127rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 2%;
+
                                             small {
                                                 span {
                                                     font-size: 0.39912625rem;
@@ -1412,16 +1536,19 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.aquarelles {
                                         .message_heading {
                                             bottom: 10%;
+
                                             h5 {
                                                 font-size: 0.8127rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 3%;
+
                                             small {
                                                 span {
                                                     font-size: 0.4989075rem;
@@ -1429,15 +1556,17 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.modern {
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.40635rem;
                                                 }
                                             }
+
                                             #details_location {
                                                 font-size: 0.76658125rem;
                                                 // margin-top: -10px;
@@ -1445,17 +1574,20 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.photographer {
                                         .message_heading {
                                             bottom: 7%;
+
                                             h5 {
                                                 font-size: 0.80545rem;
                                                 font-weight: 400;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 0;
+
                                             small {
                                                 span {
                                                     font-size: 0.58873125rem;
@@ -1464,16 +1596,19 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.explorer {
                                         .message_heading {
                                             bottom: 7%;
+
                                             #message {
                                                 font-size: 0.845725rem;
                                             }
                                         }
+
                                         .message_desc {
-                                            bottom: 1% ;
+                                            bottom: 1%;
+
                                             small {
                                                 span {
                                                     font-size: 0.511743125rem;
@@ -1481,44 +1616,54 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                 }
                             }
                         }
                     }
 
                     &.square {
+
                         //transform: scale(1);
                         .product_wrapper {
                             .product {
                                 #product_type {
-    
+
                                     &.classic {
                                         .message_heading {
                                             bottom: 9%;
+
                                             h5 {
                                                 font-size: 1.0836rem;
+                                                font-weight: 700;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 3%;
+
                                             small {
                                                 span {
-                                                    font-size: 0.688rem;
+                                                    font-size: 0.588rem;
+                                                    font-weight: 400;
+                                                    line-height: 12.3448px;
                                                 }
                                             }
                                         }
                                     }
-    
+
                                     &.poet {
                                         .message_heading {
                                             bottom: 12%;
+
                                             h5 {
                                                 font-size: 0.731rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.532168125rem;
@@ -1530,12 +1675,15 @@ input:checked+.slider:before {
                                     &.romantic {
                                         .message_heading {
                                             bottom: 15%;
+
                                             h5 {
                                                 font-size: 1.0230125rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.69616875rem;
@@ -1543,16 +1691,19 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.astronomer {
                                         .message_heading {
                                             top: 5%;
+
                                             h5 {
                                                 font-size: 1.0836rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 3%;
+
                                             small {
                                                 span {
                                                     font-size: 0.532168125rem;
@@ -1560,16 +1711,19 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.aquarelles {
                                         .message_heading {
                                             bottom: 12%;
+
                                             h5 {
                                                 font-size: 1.0836rem;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 4%;
+
                                             small {
                                                 span {
                                                     font-size: 0.6652125rem;
@@ -1577,10 +1731,11 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.modern {
                                         .message_desc {
                                             bottom: 4%;
+
                                             #details_location {
                                                 font-size: 1.07796875rem;
                                                 // margin-top: -10px;
@@ -1588,17 +1743,20 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.photographer {
                                         .message_heading {
                                             bottom: 7%;
+
                                             h5 {
                                                 font-size: 1.12763125rem;
                                                 font-weight: 400;
                                             }
                                         }
+
                                         .message_desc {
                                             bottom: 0;
+
                                             small {
                                                 span {
                                                     font-size: 0.682325rem;
@@ -1607,17 +1765,20 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                     &.explorer {
                                         .message_heading {
                                             bottom: 7%;
+
                                             h5 {
                                                 font-size: 1.12763125rem;
                                                 font-weight: 400;
                                             }
                                         }
+
                                         .message_desc {
-                                            bottom: 1% ;
+                                            bottom: 1%;
+
                                             small {
                                                 span {
                                                     font-size: 0.824225rem;
@@ -1625,7 +1786,7 @@ input:checked+.slider:before {
                                             }
                                         }
                                     }
-    
+
                                 }
                             }
                         }
@@ -1645,7 +1806,51 @@ input:checked+.slider:before {
     top: -3%;
     z-index: -1;
 }
+
 .bg_frame img {
     width: 100%;
     height: 100%;
+}
+
+.modal-dialog {
+    max-width: 90% !important;
+}
+
+.summary {
+    padding: 15px;
+    .title {
+        font-weight: 700;
+        font-size: 18px;
+        margin-bottom: 15px;
+    }
+    table {
+        border-collapse: collapse;
+        .row-additions>:first-child {
+            font-weight: 700;
+        }
+        .row-additions {
+            font-size: .9em;
+            td {
+                padding: 6px 0;
+                vertical-align: top;
+            }
+        }
+        .row-additions td+td {
+            padding-left: 10px;
+            font-family: Arial;
+        }
+    }
+    .confirm-bottom-bar {
+        display: flex;
+        flex-direction: column;
+        .total-price {
+            font-size: 1.3em;
+            display: flex;
+            justify-content: space-between;
+            padding: 22px 0;
+            margin: 15px 0 30px;
+            border-top: 1px solid #e0e0e0;
+            border-bottom: 1px solid #e0e0e0;
+        }
+    }
 }
