@@ -211,7 +211,7 @@
                                         <img src="assets/editor/svg/size-s.svg" alt="img" class="img-fluid">
                                     </span>
                                     <span class="price">
-                                        <small><b>£ 34.00</b></small>
+                                        <small><b>£ 33.00</b></small>
                                     </span>
                                     <span class="name">30x40 cm</span>
                                 </div>
@@ -1033,7 +1033,9 @@
                 <!-- Modal body -->
                 <div class="modal-body">
                     <div class="row">
-                        <div class="col-12 col-md-6">Image</div>
+                        <div class="col-12 col-md-6">
+                            <div id="final_image"></div>
+                        </div>
                         <div class="col-12 col-md-6">
                             <div class="summary">
                                 <div class="title" id="cart_print_style">Classic - 50x70 cm</div>
@@ -1058,7 +1060,7 @@
                                 <div class="confirm-bottom-bar">
                                     <div class="total-price">
                                         <div class="total">Total</div>
-                                        <div class="total">£ 44.00</div>
+                                        <div class="total" id="cart_price">£ 44.00</div>
                                     </div>
                                     <div class="button-bottom">
                                         <!-- <button class="button btn-continue">Continue Edit</button> -->
@@ -1085,6 +1087,7 @@
     <script type="text/javascript" src="assets/map/d3.min.js"></script>
     <script type="text/javascript" src="assets/map/d3.geo.projection.min.js"></script>
     <script type="text/javascript" src="assets/map/celestial.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.5.0-beta4/html2canvas.min.js"></script>
     <script src="assets/editor/js/main.js"></script>
 
 

@@ -38,6 +38,10 @@ document.addEventListener("DOMContentLoaded", function () {
     const largScreen = window.matchMedia("(min-width: 820px)")
     const smallScreen = window.matchMedia("(max-width: 819px)")
 
+    /** Globla variable */
+    var cartPrintDesign = "classic"
+    var cartPrintSize = "45x60 cm"
+    var cartPriceValue = "£ 34.00"
 
     /** SIDEBAR. ====================================================== */
     const fixedNavBarEle = document.getElementById("fixed_nav_bar")
@@ -408,6 +412,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     }
                     this.classList.add("selected")
                     const getAttribute = this.getAttribute("data-type")
+                    cartPrintDesign = getAttribute
                     productTypeEle.classList.add(getAttribute)
 
                     if (productTypeEle.classList.contains("romantic")) {
@@ -549,77 +554,65 @@ document.addEventListener("DOMContentLoaded", function () {
 
         function functionPrintSizesVertical() {
             for (let i = 0; i < SizeVerticalEle.length; i++) {
-
                 const clicked = SizeVerticalEle[i]
-
                 clicked.addEventListener('click', function () {
-
                     for (let j = 0; j < SizeVerticalEle.length; j++) {
-
                         SizeVerticalEle[j].classList.remove("selected")
                     }
-
                     const getAttribute = this.getAttribute("data-size")
                     const getValue = parseFloat(getAttribute)
                     this.classList.add("selected")
+                    const nameElement = this.querySelector(".name");
+                    const priceElement = this.querySelector(".price small b");
+                    cartPrintSize = nameElement.textContent;
+                    cartPriceValue = priceElement.textContent;
                     if (largScreen.matches) {
                         wrapperShapeEle.style.transform = "scale(" + getValue + ")"
                     }
                 })
-
             }
-
         }
 
         function functionPrintSizesHorizontal() {
             for (let i = 0; i < SizeHorizontalEle.length; i++) {
-
                 const clicked = SizeHorizontalEle[i]
-
                 clicked.addEventListener('click', function () {
-
                     for (let j = 0; j < SizeHorizontalEle.length; j++) {
                         SizeHorizontalEle[j].classList.remove("selected")
                     }
-
                     const getAttribute = this.getAttribute("data-size")
                     const getValue = parseFloat(getAttribute)
-
                     this.classList.add("selected")
+                    const nameElement = this.querySelector(".name");
+                    const priceElement = this.querySelector(".price small b");
+                    cartPrintSize = nameElement.textContent;
+                    cartPriceValue = priceElement.textContent;
                     if (largScreen.matches) {
                         wrapperShapeEle.style.transform = "scale(" + getValue + ")"
                     }
-
                 })
-
             }
-
         }
 
         function functionPrintSizesSquare() {
-
             for (let i = 0; i < SizeSquarelEle.length; i++) {
-
                 const clicked = SizeSquarelEle[i]
-
                 clicked.addEventListener('click', function () {
-
                     for (let j = 0; j < SizeSquarelEle.length; j++) {
                         SizeSquarelEle[j].classList.remove("selected")
                     }
-
                     const getAttribute = this.getAttribute("data-size")
                     const getValue = parseFloat(getAttribute)
-
                     this.classList.add("selected")
+                    const nameElement = this.querySelector(".name");
+                    const priceElement = this.querySelector(".price small b");
+                    cartPrintSize = nameElement.textContent;
+                    cartPriceValue = priceElement.textContent;
                     if (largScreen.matches) {
                         wrapperShapeEle.style.transform = "scale(" + getValue + ")"
                     }
-
                 })
-
             }
-
         }
 
         functionPrintStyle()
@@ -1034,10 +1027,23 @@ document.addEventListener("DOMContentLoaded", function () {
 
     function functionPreview() {
         document.getElementById("preview").onclick = () => {
+
+            document.getElementById("cart_print_style").innerText = cartPrintDesign + " - " + cartPrintSize
             document.getElementById("cart_location").innerText = detailsLocationEle.innerText
             document.getElementById("cart_message").innerText = messageEle.innerText
             document.getElementById("cart_date").innerText = detailsDateEle.innerText + " - " + detailsTimeEle.innerText
             document.getElementById("cart_coordinates").innerText = detailsCoordinatesEle.innerText
+            document.getElementById("cart_price").innerText = cartPriceValue
+
+            const divToCapture = document.getElementById("wrapper_shape");
+            html2canvas(divToCapture).then(function (canvas) {
+                const img = new Image();
+                img.src = canvas.toDataURL("image/png");
+                setTimeout(() => {
+                    document.getElementById("final_image").appendChild(img);
+                }, 500);
+            });
+            
         }
     }
     functionPreview()
