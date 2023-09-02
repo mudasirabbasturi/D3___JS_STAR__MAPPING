@@ -111,8 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
             zoomlevel: null,
             zoomextend: 1,
-        
-            //projection: "august",
+            
             projection: "airy",
             transform: "equatorial",
 
@@ -325,8 +324,6 @@ document.addEventListener("DOMContentLoaded", function () {
                 }
 
             }
-            functionStarMapWH()
-            functionCanvas()
 
         }
 
@@ -385,8 +382,6 @@ document.addEventListener("DOMContentLoaded", function () {
             }
 
         }
-        functionStarMapWH()
-        functionCanvas()
 
     }
 
@@ -409,10 +404,70 @@ document.addEventListener("DOMContentLoaded", function () {
                     this.classList.add("selected")
                     const getAttribute = this.getAttribute("data-type")
                     productTypeEle.classList.add(getAttribute)
-                    functionStarMapWH()
+
+                    if (productTypeEle.classList.contains("romantic")) {
+                        mapEle.style.visibility = "hidden"
+                        Celestial.reproject({ projection: "bonne" })
+                        config.background.stroke = "#ffff"
+                        config.background.width = 6
+                        Celestial.apply(config)
+                        setTimeout(() => {
+                            mapEle.style.visibility = "visible"
+                            functionStarMapWH()
+                            functionCanvas()
+                         }, 100);
+                    }
+                    
+                    if (productTypeEle.classList.contains("aquarelles")) {
+                        mapEle.style.visibility = "hidden"
+                        Celestial.reproject({ projection: "airy" })
+                        config.background.stroke = "#ffffff00"
+                        config.background.width = 0
+
+                        Celestial.apply(config)
+                        setTimeout(() => {
+                            mapEle.style.visibility = "visible"
+                            functionStarMapWH()
+                            functionCanvas()
+                         }, 100);
+                    }
+
+                    if (productTypeEle.classList.contains("astronomer")) {
+                        mapEle.style.visibility = "hidden"
+                        Celestial.reproject({ projection: "airy" })
+                        Celestial.setStyle({
+                            background: {
+                                fill: "#fa0000"
+                            } 
+                        })
+                        config.background.width = 0
+                        Celestial.apply(config)
+
+                        setTimeout(() => {
+                            mapEle.style.visibility = "visible"
+                            functionStarMapWH()
+                            functionCanvas()
+                         }, 100);
+                    }
+
+                    else {
+                        mapEle.style.visibility = "hidden"
+                        Celestial.reproject({ projection: "airy" })
+                        config.background.stroke = "#ffff"
+                        config.background.width = 6
+                        Celestial.apply(config)
+                        setTimeout(() => {
+                            mapEle.style.visibility = "visible"
+                            functionStarMapWH()
+                            functionCanvas()
+                         }, 100);
+                    }
+                    
                 })
             }
         }
+
+        
 
         function functionPrintLayout() {
             const arrayClass = ['vertical', 'horizontal', 'square']
@@ -427,9 +482,11 @@ document.addEventListener("DOMContentLoaded", function () {
                     const getAttribute = this.getAttribute("data-type")
                     wrapperShapeEle.classList.add(getAttribute)
                     aspectRatioHandler(largScreen, smallScreen)
+                    functionStarMapWH()
                     functionCanvas()
                 })
             }
+            
         }
 
         function functionPrintSizesVertical() {
@@ -819,6 +876,7 @@ document.addEventListener("DOMContentLoaded", function () {
         functionProductFrame()
     }
     functionProduct() // PRODUCT END.
+
     function functionStarMapWH() {
         if (productTypeEle.classList.contains("classic")) {
             mapEle.style.height = mapEle.offsetWidth + "px"
@@ -891,7 +949,6 @@ document.addEventListener("DOMContentLoaded", function () {
             wrapperShapeEle.style.backgroundColor = "#000000";
             mapEle.style.backgroundColor = "#000000";
             mapEle.style.border = "none";
-            Celestial.reproject({projection: "bonne"})
         }
         else if (productTypeEle.classList.contains("modern")) {
             wrapperShapeEle.style.backgroundColor = "#1D1D1D";
@@ -919,7 +976,8 @@ document.addEventListener("DOMContentLoaded", function () {
         canvas.style.top = "0"
         canvas.style.bottom = "0"
         canvas.style.margin = "auto"
-        canvas.style.zIndex = "7"
+        canvas.style.zIndex = "1"
+        canvas.style.overflow = "hidden"
     }
     functionCanvas();
       
