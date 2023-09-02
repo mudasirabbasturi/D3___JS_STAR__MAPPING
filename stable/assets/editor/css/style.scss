@@ -1855,8 +1855,13 @@ input:checked+.slider:before {
     }
 }
 
-.final_image {
-    img {
-        width: 100%;
+.modal_preview_wrapper {
+    align-items: center;
+    #final_image {
+        padding-left: 20px;
+        padding-right: 20px;
+        img {
+            width: 100%;
+        }
     }
 }

@@ -1277,4 +1277,15 @@ input:checked + .slider:before {
   margin: 15px 0 30px;
   border-top: 1px solid #e0e0e0;
   border-bottom: 1px solid #e0e0e0;
+}
+
+.modal_preview_wrapper {
+  align-items: center;
+}
+.modal_preview_wrapper #final_image {
+  padding-left: 20px;
+  padding-right: 20px;
+}
+.modal_preview_wrapper #final_image img {
+  width: 100%;
 }/*# sourceMappingURL=style.css.map */

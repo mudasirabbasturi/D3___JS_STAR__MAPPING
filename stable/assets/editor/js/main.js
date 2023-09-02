@@ -1039,11 +1039,13 @@ document.addEventListener("DOMContentLoaded", function () {
             html2canvas(divToCapture).then(function (canvas) {
                 const img = new Image();
                 img.src = canvas.toDataURL("image/png");
-                setTimeout(() => {
+                img.onload = function () {
+                    alert('image is ready')
                     document.getElementById("final_image").appendChild(img);
-                }, 500);
+                };
             });
-            
+
+
         }
     }
     functionPreview()
