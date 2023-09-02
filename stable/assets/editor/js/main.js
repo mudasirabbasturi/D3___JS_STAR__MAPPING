@@ -566,6 +566,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const priceElement = this.querySelector(".price small b");
                     cartPrintSize = nameElement.textContent;
                     cartPriceValue = priceElement.textContent;
+                    document.getElementById("final_price").innerText = cartPriceValue
                     if (largScreen.matches) {
                         wrapperShapeEle.style.transform = "scale(" + getValue + ")"
                     }
@@ -587,6 +588,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const priceElement = this.querySelector(".price small b");
                     cartPrintSize = nameElement.textContent;
                     cartPriceValue = priceElement.textContent;
+                    document.getElementById("final_price").innerText = cartPriceValue
                     if (largScreen.matches) {
                         wrapperShapeEle.style.transform = "scale(" + getValue + ")"
                     }
@@ -608,6 +610,7 @@ document.addEventListener("DOMContentLoaded", function () {
                     const priceElement = this.querySelector(".price small b");
                     cartPrintSize = nameElement.textContent;
                     cartPriceValue = priceElement.textContent;
+                    document.getElementById("final_price").innerText = cartPriceValue
                     if (largScreen.matches) {
                         wrapperShapeEle.style.transform = "scale(" + getValue + ")"
                     }
@@ -1059,7 +1062,7 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("modal_loader").style.height = 100 + "%"
             showLoader()
 
-            const divToCapture = document.getElementById("product_wrapper");
+            const divToCapture = document.getElementById("preview_wrapper");
             html2canvas(divToCapture).then(function (canvas) {
                 const img = new Image();
                 img.src = canvas.toDataURL("image/jpg");
