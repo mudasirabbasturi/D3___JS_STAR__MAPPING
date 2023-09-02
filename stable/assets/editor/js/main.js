@@ -338,12 +338,12 @@ document.addEventListener("DOMContentLoaded", function () {
 
             if (classList.contains("vertical")) {
                 if (previewWrapperEle.offsetWidth < previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.width = 92 + "%"
+                    wrapperShapeEle.style.width = 85 + "%"
                     wrapperShapeEle.style.height = wrapperShapeEle.offsetWidth * 1.3 + "px"
                 }
 
                 else if (previewWrapperEle.offsetWidth > previewWrapperEle.offsetHeight) {
-                    wrapperShapeEle.style.height = 92 + "%"
+                    wrapperShapeEle.style.height = 85 + "%"
                     wrapperShapeEle.style.width = wrapperShapeEle.offsetHeight / 1.3 + "px"
                 }
 
@@ -982,30 +982,38 @@ document.addEventListener("DOMContentLoaded", function () {
     function functionBorderBackground() {
         mapEle.style.backgroundColor = "unset";
         if (productTypeEle.classList.contains("classic")) {
-            wrapperShapeEle.style.backgroundColor = "#000000";
+            wrapperShapeEle.style.backgroundColor = "#000000"
+            product_wrapper.style.backgroundColor = "inherit"
         }
         else if (productTypeEle.classList.contains("poet")) {
-            wrapperShapeEle.style.backgroundColor = "#000000";
+            wrapperShapeEle.style.backgroundColor = "#000000"
+            product_wrapper.style.backgroundColor = "inherit"
         }
         else if (productTypeEle.classList.contains("astronomer")) {
-            wrapperShapeEle.style.backgroundColor = "#000000";
+            wrapperShapeEle.style.backgroundColor = "#000000"
+            product_wrapper.style.backgroundColor = "inherit"
         }
         else if (productTypeEle.classList.contains("aquarelles")) {
-            wrapperShapeEle.style.backgroundColor = "white";
+            wrapperShapeEle.style.backgroundColor = "white"
+            product_wrapper.style.backgroundColor = "inherit"
             mapEle.style.backgroundColor = "white";
         }
         else if (productTypeEle.classList.contains("romantic")) {
-            wrapperShapeEle.style.backgroundColor = "#000000";
+            wrapperShapeEle.style.backgroundColor = "#000000"
+            product_wrapper.style.backgroundColor = "inherit"
         }
         else if (productTypeEle.classList.contains("modern")) {
-            wrapperShapeEle.style.backgroundColor = "#1D1D1D";
+            wrapperShapeEle.style.backgroundColor = "#1D1D1D"
+            product_wrapper.style.backgroundColor = "inherit"
         }
         else if (productTypeEle.classList.contains("photographer")) {
-            wrapperShapeEle.style.backgroundColor = "white";
+            wrapperShapeEle.style.backgroundColor = "white"
+            product_wrapper.style.backgroundColor = "inherit"
             mapEle.style.backgroundColor = "black"
         }
         else if (productTypeEle.classList.contains("explorer")) {
-            wrapperShapeEle.style.backgroundColor = "white";
+            wrapperShapeEle.style.backgroundColor = "white"
+            product_wrapper.style.backgroundColor = "inherit"
             mapEle.style.backgroundColor = "black"
         }
     }
@@ -1025,9 +1033,21 @@ document.addEventListener("DOMContentLoaded", function () {
     }
     functionCanvas();
 
+    function showLoader() {
+        document.getElementById("modal_loader").style.display = "block"
+    }
+
+    function hideLoader() {
+        document.getElementById("modal_loader").style.display = "none"
+    }
+
+    function destroyImage() {
+        document.getElementById("final_image").innerHTML = '';
+    }
+
+
     function functionPreview() {
         document.getElementById("preview").onclick = () => {
-
             document.getElementById("cart_print_style").innerText = cartPrintDesign + " - " + cartPrintSize
             document.getElementById("cart_location").innerText = detailsLocationEle.innerText
             document.getElementById("cart_message").innerText = messageEle.innerText
@@ -1035,20 +1055,33 @@ document.addEventListener("DOMContentLoaded", function () {
             document.getElementById("cart_coordinates").innerText = detailsCoordinatesEle.innerText
             document.getElementById("cart_price").innerText = cartPriceValue
 
-            const divToCapture = document.getElementById("wrapper_shape");
+            document.getElementById("modal_loader").style.width = 100 + "%"
+            document.getElementById("modal_loader").style.height = 100 + "%"
+            showLoader()
+
+            const divToCapture = document.getElementById("product_wrapper");
             html2canvas(divToCapture).then(function (canvas) {
                 const img = new Image();
-                img.src = canvas.toDataURL("image/png");
+                img.src = canvas.toDataURL("image/jpg");
                 img.onload = function () {
-                    alert('image is ready')
+                    hideLoader()
                     document.getElementById("final_image").appendChild(img);
                 };
             });
 
+            $('#myModal').modal({ backdrop: 'static', keyboard: false })
 
         }
     }
+    
     functionPreview()
+
+
+
+
+    document.querySelector('[data-dismiss="modal"]').onclick = () => {
+        destroyImage()
+    }
 
 })
 function redirectToPrintSize(target) {

@@ -5872,3 +5872,46 @@ function backupEight(){
         }
     });
 }
+
+    // function functionPreview() {
+    //     document.getElementById("preview").onclick = () => {
+    //         document.getElementById("cart_print_style").innerText = cartPrintDesign + " - " + cartPrintSize;
+    //         document.getElementById("cart_location").innerText = detailsLocationEle.innerText;
+    //         document.getElementById("cart_message").innerText = messageEle.innerText;
+    //         document.getElementById("cart_date").innerText = detailsDateEle.innerText + " - " + detailsTimeEle.innerText;
+    //         document.getElementById("cart_coordinates").innerText = detailsCoordinatesEle.innerText;
+    //         document.getElementById("cart_price").innerText = cartPriceValue;
+    
+    //         document.getElementById("modal_loader").style.width = 100 + "%";
+    //         document.getElementById("modal_loader").style.height = 100 + "%";
+    //         showLoader();
+    
+    //         const divToCapture = document.getElementById("product_wrapper");
+    //             const cartPrintSizeParts = cartPrintSize.match(/(\d+(\.\d+)?)(\s*)x(\s*)(\d+(\.\d+)?)(\s*)cm/);
+    //         let imgWidth = 0;
+    //         let imgHeight = 0;
+    
+    //         if (cartPrintSizeParts) {
+    //             const widthCm = parseFloat(cartPrintSizeParts[1]);
+    //             const heightCm = parseFloat(cartPrintSizeParts[5]);
+                
+    //             const cmToPixels = 37.795276;
+    //             imgWidth = widthCm * cmToPixels;
+    //             imgHeight = heightCm * cmToPixels;
+    //         }
+    
+    //         html2canvas(divToCapture, {
+    //             width: imgWidth,
+    //             height: imgHeight
+    //         }).then(function (canvas) {
+    //             const img = new Image();
+    //             img.src = canvas.toDataURL("image/png");
+    //             img.onload = function () {
+    //                 hideLoader();
+    //                 document.getElementById("final_image").appendChild(img);
+    //             };
+    //         });
+    
+    //         $('#myModal').modal({ backdrop: 'static', keyboard: false });
+    //     }
+    // }

@@ -420,6 +420,9 @@ input:checked+.slider:before {
         left: unset;
         height: 100%;
         margin-top: 45px;
+        #tab_content_main {
+            margin-bottom: 150px;
+        }
 
         hr {
             margin-top: .5rem;
@@ -819,6 +822,7 @@ input:checked+.slider:before {
                                 .message_heading {
                                     display: none !important;
                                 }
+
                                 .message_desc {
                                     #details_location {
                                         order: 1;
@@ -1103,6 +1107,7 @@ input:checked+.slider:before {
                                         bottom: 4%;
                                     }
                                 }
+
                                 &.romantic {
                                     .message_heading {
                                         bottom: 15%;
@@ -1112,6 +1117,7 @@ input:checked+.slider:before {
                                         bottom: 4%;
                                     }
                                 }
+
                                 &.modern {
                                     .message_heading {
                                         bottom: 15%;
@@ -1192,17 +1198,50 @@ input:checked+.slider:before {
             }
         }
     }
+
     .fixed_top_or_bottom {
         position: fixed;
-        width: calc(100% - 67.2%);
+        width: 100%;
+        top: 0;
+        right: 0;
         left: 0;
-        bottom: 0;
-        height: 74px;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        background-color: #dddd;
+        bottom: unset;
+        height: 44px;
         z-index: 99;
+        background-color: rgba(255, 255, 255, 0);
+
+        .top_or_bottom_content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .pricing_save_for_later {
+                display: flex;
+                flex-direction: column;
+
+                small {
+                    font-size: 12px;
+                    color: rgb(68, 68, 68);
+                }
+
+                a {
+                    font-size: 13px;
+                    color: #49C5B6;
+                }
+            }
+
+            .preview_cart {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+
+                button {
+                    font-size: 11px;
+                }
+            }
+
+        }
+
     }
 }
 
@@ -1794,6 +1833,39 @@ input:checked+.slider:before {
                 }
             }
         }
+
+        .fixed_top_or_bottom {
+            position: fixed;
+            width: calc(100% - 67.2%);
+            top: unset;
+            left: 0;
+            bottom: 5px;
+            height: 74px;
+            background-color: white;
+
+            .top_or_bottom_content {
+                .pricing_save_for_later {
+                    small {
+                        font-size: 20px;
+                    }
+    
+                    a {
+                        font-size: 18px;
+                    }
+                }
+    
+                .preview_cart {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+    
+                    button {
+                        font-size: 14px;
+                    }
+                }
+            }
+
+        }
     }
 }
 
@@ -1818,31 +1890,39 @@ input:checked+.slider:before {
 
 .summary {
     padding: 15px;
+
     .title {
         font-weight: 700;
         font-size: 18px;
         margin-bottom: 15px;
     }
+
     table {
         border-collapse: collapse;
+
         .row-additions>:first-child {
             font-weight: 700;
         }
+
         .row-additions {
             font-size: .9em;
+
             td {
                 padding: 6px 0;
                 vertical-align: top;
             }
         }
+
         .row-additions td+td {
             padding-left: 10px;
             font-family: Arial;
         }
     }
+
     .confirm-bottom-bar {
         display: flex;
         flex-direction: column;
+
         .total-price {
             font-size: 1.3em;
             display: flex;
@@ -1855,13 +1935,30 @@ input:checked+.slider:before {
     }
 }
 
+
 .modal_preview_wrapper {
     align-items: center;
+
     #final_image {
         padding-left: 20px;
         padding-right: 20px;
+
         img {
             width: 100%;
         }
+    }
+}
+
+#modal_content {
+    position: relative;
+
+    #modal_loader {
+        position: absolute;
+        background: #49c5b678;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        margin: auto;
     }
 }

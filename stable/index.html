@@ -93,7 +93,7 @@
             </ul>
         </nav>
         <div id="left-sidebar" class="sidebar">
-            <div class="tab-content p-l-0 p-r-0 mt-4 mb-5">
+            <div class="tab-content p-l-0 p-r-0 mt-4" id="tab_content_main">
 
                 <!-- Style. -->
                 <div class="tab-pane p-l-15 p-r-15 active" id="style">
@@ -1005,14 +1005,13 @@
         </div>
         <div class="fixed_top_or_bottom" id="fixed_top_or_bottom">
             <div class="container-fluid">
-                <div class="row">
-                    <div class="col-6">
-                        <button class="btn btn-small">
-                            <small>Customize With Form.</small>
-                        </button>
+                <div class="top_or_bottom_content">
+                    <div class="pricing_save_for_later">
+                        <small>£ 33.00</small>
+                        <a href="#">Save for later</a>
                     </div>
-                    <div class="col-6 float-right">
-                        <button class="btn btn-small float-right" data-toggle="modal" data-target="#myModal" id="preview">
+                    <div class="preview_cart">
+                        <button class="btn btn-sm btn-outline-info float-right" data-toggle="modal" data-target="#myModal" id="preview">
                             Preview & Add To Cart.
                         </button>
                     </div>
@@ -1023,8 +1022,15 @@
 
     <div class="modal fade" id="myModal">
         <div class="modal-dialog modal-xl modal-dialog-centered">
-            <div class="modal-content">
-
+            <div class="modal-content" id="modal_content">
+                <div class="page-loader-wrapper" id="modal_loader">
+                    <div class="loader">
+                        <div class="m-t-30">
+                            <img src="assets/editor/svg/milky-way.svg" alt="Mudasir Abbas Turi" width="48" height="48">
+                        </div>
+                        <p>Please wait...</p>
+                    </div>
+                </div>
                 <!-- Modal Header -->
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
