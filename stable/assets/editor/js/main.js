@@ -235,27 +235,67 @@ document.addEventListener("DOMContentLoaded", function () {
         }
         Celestial.display(config)
 
+        // function initMap() {
+        //     var input = document.getElementById('location');
+        //     var autocomplete = new google.maps.places.Autocomplete(
+        // /** @type {HTMLInputElement} */(momentLocationEle),
+        //         {
+        //             types: ['(cities)'],
+        //         });
+        //     google.maps.event.addListener(autocomplete, 'place_changed', function () {
+        //         var place = autocomplete.getPlace();
+        //         if (!place.geometry) {
+        //             return;
+        //         }
+        //         detailsLocationEle.innerText = momentLocationEle.value
+        //         txtLocationEle.value = momentLocationEle.value
+        //         LAT = place.geometry.location.lat();
+        //         LON = place.geometry.location.lng();
+        //         LAT = parseFloat(LAT.toFixed(4));
+        //         LON = parseFloat(LON.toFixed(4));
+
+        //         Celestial.skyview({ "location": [LAT, LON] });
+
+        //         var latDirection = LAT >= 0 ? "N" : "S";
+        //         var longDirection = LON >= 0 ? "E" : "W";
+        //         var formattedCoordinates = Math.abs(LAT) + "° " + latDirection + ", " + Math.abs(LON) + "° " + longDirection;
+        //         txtCoordinatesEle.value = formattedCoordinates;
+        //         var inputEvent = new Event('input', { 'bubbles': true });
+        //         txtCoordinatesEle.dispatchEvent(inputEvent);
+        //     });
+        // }
+        // google.maps.event.addDomListener(window, 'load', initMap)
+
         function initMap() {
             var input = document.getElementById('location');
             var autocomplete = new google.maps.places.Autocomplete(
-        /** @type {HTMLInputElement} */(momentLocationEle),
+                /** @type {HTMLInputElement} */(momentLocationEle),
                 {
-                    types: ['(cities)'],
-                });
+                    types: ['geocode'], // Specify 'geocode' type to get detailed address information.
+                }
+            );
             google.maps.event.addListener(autocomplete, 'place_changed', function () {
                 var place = autocomplete.getPlace();
                 if (!place.geometry) {
                     return;
                 }
-                detailsLocationEle.innerText = momentLocationEle.value
-                txtLocationEle.value = momentLocationEle.value
-                LAT = place.geometry.location.lat();
-                LON = place.geometry.location.lng();
+                var formattedAddress = place.formatted_address;
+                var city = "";
+                for (var component of place.address_components) {
+                    if (component.types.includes('locality')) {
+                        city = component.long_name;
+                        break;
+                    }
+                }
+                var lat = place.geometry.location.lat();
+                var lng = place.geometry.location.lng();
+                momentLocationEle.value = formattedAddress;
+                txtLocationEle.value = formattedAddress;
+                LAT = lat;
+                LON = lng;
                 LAT = parseFloat(LAT.toFixed(4));
                 LON = parseFloat(LON.toFixed(4));
-
                 Celestial.skyview({ "location": [LAT, LON] });
-
                 var latDirection = LAT >= 0 ? "N" : "S";
                 var longDirection = LON >= 0 ? "E" : "W";
                 var formattedCoordinates = Math.abs(LAT) + "° " + latDirection + ", " + Math.abs(LON) + "° " + longDirection;
@@ -264,7 +304,9 @@ document.addEventListener("DOMContentLoaded", function () {
                 txtCoordinatesEle.dispatchEvent(inputEvent);
             });
         }
-        google.maps.event.addDomListener(window, 'load', initMap)
+        
+        google.maps.event.addDomListener(window, 'load', initMap);
+        
 
     }
     functionMap()
@@ -1105,3 +1147,4 @@ toggleSwitches.on("click", function () {
         inputField.addClass('disabledEdit')
     }
 });
+
